@@ -68,11 +68,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseConnection.cs" />
-    <Compile Include="frmMilkTea.cs">
+    <Compile Include="frmAddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMilkTea.Designer.cs">
-      <DependentUpon>frmMilkTea.cs</DependentUpon>
+    <Compile Include="frmAddProduct.Designer.cs">
+      <DependentUpon>frmAddProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProductsManager.cs">
       <SubType>Form</SubType>
@@ -121,8 +121,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transact.cs" />
     <Compile Include="TransactionHistory.cs" />
-    <EmbeddedResource Include="frmMilkTea.resx">
-      <DependentUpon>frmMilkTea.cs</DependentUpon>
+    <EmbeddedResource Include="frmAddProduct.resx">
+      <DependentUpon>frmAddProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductsManager.resx">
       <DependentUpon>frmProductsManager.cs</DependentUpon>

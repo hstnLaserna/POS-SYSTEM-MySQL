@@ -139,10 +139,6 @@
             this.lblSINumber = new System.Windows.Forms.Label();
             this.lblCustomer = new System.Windows.Forms.Label();
             this.txtCustomer = new System.Windows.Forms.TextBox();
-            this.txtChange = new System.Windows.Forms.TextBox();
-            this.txtVATable = new System.Windows.Forms.TextBox();
-            this.txtVATAmount = new System.Windows.Forms.TextBox();
-            this.txtTotalAmtDue = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.p4 = new System.Windows.Forms.Label();
             this.p2 = new System.Windows.Forms.Label();
@@ -156,6 +152,10 @@
             this.lblAmtDue = new System.Windows.Forms.Label();
             this.txtCash = new System.Windows.Forms.TextBox();
             this.txtDisplay = new System.Windows.Forms.TextBox();
+            this.txtTotalAmtDue = new System.Windows.Forms.Label();
+            this.txtVATable = new System.Windows.Forms.Label();
+            this.txtVATAmount = new System.Windows.Forms.Label();
+            this.txtChange = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -1602,13 +1602,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.txtChange);
+            this.panel1.Controls.Add(this.txtVATAmount);
+            this.panel1.Controls.Add(this.txtVATable);
+            this.panel1.Controls.Add(this.txtTotalAmtDue);
             this.panel1.Controls.Add(this.lblSINumber);
             this.panel1.Controls.Add(this.lblCustomer);
             this.panel1.Controls.Add(this.txtCustomer);
-            this.panel1.Controls.Add(this.txtChange);
-            this.panel1.Controls.Add(this.txtVATable);
-            this.panel1.Controls.Add(this.txtVATAmount);
-            this.panel1.Controls.Add(this.txtTotalAmtDue);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.p4);
             this.panel1.Controls.Add(this.p2);
@@ -1644,7 +1644,7 @@
             this.lblCustomer.AutoSize = true;
             this.lblCustomer.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomer.ForeColor = System.Drawing.Color.Black;
-            this.lblCustomer.Location = new System.Drawing.Point(35, 27);
+            this.lblCustomer.Location = new System.Drawing.Point(36, 27);
             this.lblCustomer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new System.Drawing.Size(119, 16);
@@ -1653,73 +1653,13 @@
             // 
             // txtCustomer
             // 
-            this.txtCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomer.Location = new System.Drawing.Point(172, 22);
+            this.txtCustomer.Font = new System.Drawing.Font("Maiandra GD", 10.2F);
+            this.txtCustomer.Location = new System.Drawing.Point(171, 15);
             this.txtCustomer.Name = "txtCustomer";
-            this.txtCustomer.Size = new System.Drawing.Size(176, 24);
+            this.txtCustomer.Size = new System.Drawing.Size(176, 28);
             this.txtCustomer.TabIndex = 74;
             this.txtCustomer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustomer_KeyPress);
             this.txtCustomer.Leave += new System.EventHandler(this.txtCustomer_Leave);
-            // 
-            // txtChange
-            // 
-            this.txtChange.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtChange.BackColor = System.Drawing.Color.Cornsilk;
-            this.txtChange.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChange.Location = new System.Drawing.Point(170, 185);
-            this.txtChange.Margin = new System.Windows.Forms.Padding(4);
-            this.txtChange.MaxLength = 9999999;
-            this.txtChange.Name = "txtChange";
-            this.txtChange.ReadOnly = true;
-            this.txtChange.Size = new System.Drawing.Size(176, 25);
-            this.txtChange.TabIndex = 73;
-            this.txtChange.Text = "0.00";
-            this.txtChange.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtVATable
-            // 
-            this.txtVATable.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtVATable.BackColor = System.Drawing.Color.Cornsilk;
-            this.txtVATable.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVATable.Location = new System.Drawing.Point(170, 86);
-            this.txtVATable.Margin = new System.Windows.Forms.Padding(4);
-            this.txtVATable.MaxLength = 9999999;
-            this.txtVATable.Name = "txtVATable";
-            this.txtVATable.ReadOnly = true;
-            this.txtVATable.Size = new System.Drawing.Size(176, 25);
-            this.txtVATable.TabIndex = 71;
-            this.txtVATable.Text = "0.00";
-            this.txtVATable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtVATAmount
-            // 
-            this.txtVATAmount.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtVATAmount.BackColor = System.Drawing.Color.Cornsilk;
-            this.txtVATAmount.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVATAmount.Location = new System.Drawing.Point(170, 119);
-            this.txtVATAmount.Margin = new System.Windows.Forms.Padding(4);
-            this.txtVATAmount.MaxLength = 9999999;
-            this.txtVATAmount.Name = "txtVATAmount";
-            this.txtVATAmount.ReadOnly = true;
-            this.txtVATAmount.Size = new System.Drawing.Size(176, 25);
-            this.txtVATAmount.TabIndex = 72;
-            this.txtVATAmount.Text = "0.00";
-            this.txtVATAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtTotalAmtDue
-            // 
-            this.txtTotalAmtDue.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtTotalAmtDue.BackColor = System.Drawing.Color.Cornsilk;
-            this.txtTotalAmtDue.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalAmtDue.Location = new System.Drawing.Point(170, 53);
-            this.txtTotalAmtDue.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTotalAmtDue.MaxLength = 9999999;
-            this.txtTotalAmtDue.Name = "txtTotalAmtDue";
-            this.txtTotalAmtDue.ReadOnly = true;
-            this.txtTotalAmtDue.Size = new System.Drawing.Size(176, 25);
-            this.txtTotalAmtDue.TabIndex = 69;
-            this.txtTotalAmtDue.Text = "0.00";
-            this.txtTotalAmtDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
             // 
@@ -1859,13 +1799,14 @@
             // txtCash
             // 
             this.txtCash.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtCash.BackColor = System.Drawing.Color.Cornsilk;
-            this.txtCash.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCash.Location = new System.Drawing.Point(170, 155);
+            this.txtCash.BackColor = System.Drawing.Color.White;
+            this.txtCash.Font = new System.Drawing.Font("Maiandra GD", 10.2F);
+            this.txtCash.ForeColor = System.Drawing.Color.Black;
+            this.txtCash.Location = new System.Drawing.Point(171, 149);
             this.txtCash.Margin = new System.Windows.Forms.Padding(4);
             this.txtCash.MaxLength = 10;
             this.txtCash.Name = "txtCash";
-            this.txtCash.Size = new System.Drawing.Size(176, 25);
+            this.txtCash.Size = new System.Drawing.Size(176, 28);
             this.txtCash.TabIndex = 51;
             this.txtCash.Text = "0.00";
             this.txtCash.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1888,6 +1829,54 @@
             this.txtDisplay.Size = new System.Drawing.Size(350, 592);
             this.txtDisplay.TabIndex = 69;
             this.txtDisplay.TabStop = false;
+            // 
+            // txtTotalAmtDue
+            // 
+            this.txtTotalAmtDue.BackColor = System.Drawing.Color.Cornsilk;
+            this.txtTotalAmtDue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTotalAmtDue.Font = new System.Drawing.Font("Maiandra GD", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalAmtDue.Location = new System.Drawing.Point(171, 52);
+            this.txtTotalAmtDue.Name = "txtTotalAmtDue";
+            this.txtTotalAmtDue.Size = new System.Drawing.Size(176, 25);
+            this.txtTotalAmtDue.TabIndex = 71;
+            this.txtTotalAmtDue.Text = "0.00";
+            this.txtTotalAmtDue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtVATable
+            // 
+            this.txtVATable.BackColor = System.Drawing.Color.Cornsilk;
+            this.txtVATable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVATable.Font = new System.Drawing.Font("Maiandra GD", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVATable.Location = new System.Drawing.Point(171, 85);
+            this.txtVATable.Name = "txtVATable";
+            this.txtVATable.Size = new System.Drawing.Size(176, 25);
+            this.txtVATable.TabIndex = 77;
+            this.txtVATable.Text = "0.00";
+            this.txtVATable.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtVATAmount
+            // 
+            this.txtVATAmount.BackColor = System.Drawing.Color.Cornsilk;
+            this.txtVATAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVATAmount.Font = new System.Drawing.Font("Maiandra GD", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVATAmount.Location = new System.Drawing.Point(171, 118);
+            this.txtVATAmount.Name = "txtVATAmount";
+            this.txtVATAmount.Size = new System.Drawing.Size(176, 25);
+            this.txtVATAmount.TabIndex = 78;
+            this.txtVATAmount.Text = "0.00";
+            this.txtVATAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtChange
+            // 
+            this.txtChange.BackColor = System.Drawing.Color.Cornsilk;
+            this.txtChange.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtChange.Font = new System.Drawing.Font("Maiandra GD", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChange.Location = new System.Drawing.Point(171, 184);
+            this.txtChange.Name = "txtChange";
+            this.txtChange.Size = new System.Drawing.Size(176, 25);
+            this.txtChange.TabIndex = 79;
+            this.txtChange.Text = "0.00";
+            this.txtChange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // frmMain
             // 
@@ -1970,10 +1959,6 @@
         private System.Windows.Forms.Label lblMT1;
         private System.Windows.Forms.Label lblMT3;
         private System.Windows.Forms.Label lblMT2;
-        private System.Windows.Forms.TextBox txtTotalAmtDue;
-        private System.Windows.Forms.TextBox txtVATable;
-        private System.Windows.Forms.TextBox txtVATAmount;
-        private System.Windows.Forms.TextBox txtChange;
         private System.Windows.Forms.Label lblMS3;
         private System.Windows.Forms.Label lblMS2;
         private System.Windows.Forms.Label lblMS1;
@@ -2062,6 +2047,10 @@
         private System.Windows.Forms.Label lblFR6;
         private System.Windows.Forms.Button btnFR8;
         private System.Windows.Forms.Button btnFR6;
+        private System.Windows.Forms.Label txtTotalAmtDue;
+        private System.Windows.Forms.Label txtVATable;
+        private System.Windows.Forms.Label txtVATAmount;
+        private System.Windows.Forms.Label txtChange;
 
     }
 }

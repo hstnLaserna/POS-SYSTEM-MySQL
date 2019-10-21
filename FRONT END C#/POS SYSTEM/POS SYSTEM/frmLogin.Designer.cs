@@ -88,7 +88,7 @@
             this.txtPassword.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.Location = new System.Drawing.Point(257, 204);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.MaxLength = 20;
@@ -105,7 +105,7 @@
             this.txtUsername.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsername.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtUsername.ForeColor = System.Drawing.Color.Black;
             this.txtUsername.Location = new System.Drawing.Point(257, 160);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.MaxLength = 20;

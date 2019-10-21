@@ -85,7 +85,7 @@ namespace POS_SYSTEM
                 connection.Open();
                 try
                 {
-                    mySqlDataAdapter = new MySqlDataAdapter("SELECT name, price1, price2, price3 FROM " + DatabaseConnection.ProductsTable + " WHERE isAvailable = 1 AND productType = 'milktea';", connection);
+                    mySqlDataAdapter = new MySqlDataAdapter("SELECT name, price1, price2, price3 FROM " + DatabaseConnection.ProductsTable + " WHERE isAvailable = 1 AND productType = 'milktea' ORDER BY name ASC;", connection);
                     mySqlDataAdapter.Fill(dataTable);
                     foreach (DataRow row in dataTable.Rows)
                     {
@@ -97,7 +97,7 @@ namespace POS_SYSTEM
 
                     dataTable.Clear();
 
-                    mySqlDataAdapter = new MySqlDataAdapter("SELECT name, price1, price2, price3 FROM " + DatabaseConnection.ProductsTable + " WHERE isAvailable = 1 AND productType = 'milkshake';", connection);
+                    mySqlDataAdapter = new MySqlDataAdapter("SELECT name, price1, price2, price3 FROM " + DatabaseConnection.ProductsTable + " WHERE isAvailable = 1 AND productType = 'milkshake' ORDER BY name ASC;", connection);
                     mySqlDataAdapter.Fill(dataTable);
                     foreach (DataRow row in dataTable.Rows)
                     {
@@ -109,7 +109,7 @@ namespace POS_SYSTEM
                     dataTable.Clear();
 
 
-                    mySqlDataAdapter = new MySqlDataAdapter("SELECT name, price1, price2, price3 FROM " + DatabaseConnection.ProductsTable + " WHERE isAvailable = 1 AND productType = 'frappe';", connection);
+                    mySqlDataAdapter = new MySqlDataAdapter("SELECT name, price1, price2, price3 FROM " + DatabaseConnection.ProductsTable + " WHERE isAvailable = 1 AND productType = 'frappe' ORDER BY name ASC;", connection);
                     mySqlDataAdapter.Fill(dataTable);
                     foreach (DataRow row in dataTable.Rows)
                     {
@@ -306,7 +306,7 @@ namespace POS_SYSTEM
         {
             int selectedIndex = Convert.ToInt32(((Button)sender).Tag);
             MilkTeaName = mtFlavors[selectedIndex];
-            frmMilkTea frmMilkTea = new frmMilkTea(MilkTeaName, mtPrice1[selectedIndex], mtPrice2[selectedIndex], mtPrice3[selectedIndex]);
+            frmAddProduct frmMilkTea = new frmAddProduct(MilkTeaName, mtPrice1[selectedIndex], mtPrice2[selectedIndex], mtPrice3[selectedIndex]);
             frmMilkTea.ShowDialog();
             updateDisplay();
         }
@@ -314,7 +314,7 @@ namespace POS_SYSTEM
         {
             int selectedIndex = Convert.ToInt32(((Button)sender).Tag);
             MilkTeaName = msFlavors[selectedIndex];
-            frmMilkTea frmMilkTea = new frmMilkTea(MilkTeaName, msPrice1[selectedIndex], msPrice2[selectedIndex], msPrice3[selectedIndex]);
+            frmAddProduct frmMilkTea = new frmAddProduct(MilkTeaName, msPrice1[selectedIndex], msPrice2[selectedIndex], msPrice3[selectedIndex]);
             frmMilkTea.ShowDialog();
             updateDisplay();
         }
@@ -322,7 +322,7 @@ namespace POS_SYSTEM
         {
             int selectedIndex = Convert.ToInt32(((Button)sender).Tag);
             MilkTeaName = frFlavors[selectedIndex];
-            frmMilkTea frmMilkTea = new frmMilkTea(MilkTeaName, frPrice1[selectedIndex], frPrice2[selectedIndex], frPrice3[selectedIndex]);
+            frmAddProduct frmMilkTea = new frmAddProduct(MilkTeaName, frPrice1[selectedIndex], frPrice2[selectedIndex], frPrice3[selectedIndex]);
             frmMilkTea.ShowDialog();
             updateDisplay();
         }

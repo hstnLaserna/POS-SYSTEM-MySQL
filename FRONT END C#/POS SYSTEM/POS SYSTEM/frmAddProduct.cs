@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace POS_SYSTEM
 {
-    public partial class frmMilkTea : Form
+    public partial class frmAddProduct : Form
     {
         MilkTea Milktea = new MilkTea();
         Transact Transact = new Transact();
@@ -23,14 +23,14 @@ namespace POS_SYSTEM
         public static string hist;
 
 
-        public frmMilkTea(string MilkTeaName, double price1, double price2, double price3)
+        public frmAddProduct(string MilkTeaName, double price1, double price2, double price3)
         {
             InitializeComponent();
             Milktea.MilkteaName = MilkTeaName;
             Price1 = price1;
             Price2 = price2;
             Price3 = price3;
-            lblMilkTeaName.Text = Milktea.MilkteaName;
+            lblProductName.Text = Milktea.MilkteaName;
             numQuantity.Text = quantity.ToString();
             rbtn100P.Checked = true;
         }
@@ -76,21 +76,25 @@ namespace POS_SYSTEM
 
         private void getSizePrice(object sender, EventArgs e)
         {
-            rb = sender as RadioButton;
-            if (rb.Text == "Regular")
+            rb = ((RadioButton)sender);
+            if (rb.Name == "radSize1")
             {
                 Milktea.SizePrice = Price1;
             }
-            else if (rb.Text == "Large")
+            else if (rb.Name == "radSize2")
             {
                 Milktea.SizePrice = Price2;
             }
+            else if (rb.Name == "radSize3")
+            {
+                Milktea.SizePrice = Price3;
+            }
+            else { }
             Milktea.Size = rb.Text;
         }
         private void getSugarLevel(object sender, EventArgs e)
         {
-            rb = sender as RadioButton;
-            Milktea.SugarLevel = rb.Text;
+            Milktea.SugarLevel = ((RadioButton)sender).Text;
         }
 
         private double getSinkersPrice(object sender)
@@ -168,7 +172,7 @@ namespace POS_SYSTEM
 
         private void formResize()
         {
-            lblMilkTeaName.Location = new System.Drawing.Point(ClientSize.Width / 2 - (lblMilkTeaName.Size.Width / 2), lblMilkTeaName.Location.Y);
+            lblProductName.Location = new System.Drawing.Point(ClientSize.Width / 2 - (lblProductName.Size.Width / 2), lblProductName.Location.Y);
             //tabControl1.Size = new System.Drawing.Size(ClientSize.Width * 3 / 4, ClientSize.Height - 5);
             /*grpVendoUI.Size = new System.Drawing.Size(ClientSize.Width * 4 / 5, 850);
             grpVendoUI.Location = new System.Drawing.Point(ClientSize.Width / 2 - ((grpVendoUI.Size.Width) / 2), ClientSize.Height / 2 - ((grpVendoUI.Size.Height) / 2));
