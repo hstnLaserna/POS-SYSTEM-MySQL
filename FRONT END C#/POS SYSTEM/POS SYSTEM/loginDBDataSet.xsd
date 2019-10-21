@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="loginDBDataSet" targetNamespace="http://tempuri.org/loginDBDataSet.xsd" xmlns:mstns="http://tempuri.org/loginDBDataSet.xsd" xmlns="http://tempuri.org/loginDBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="loginDBConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="loginDBConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.POS_SYSTEM.Properties.Settings.GlobalReference.Default.loginDBConnectionString1" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblloginTableAdapter" GeneratorDataComponentClassName="tblloginTableAdapter" Name="tbllogin" UserDataComponentName="tblloginTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="loginDBConnectionString1 (Settings)" DbObjectName="logindb.tbllogin" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `LoginID`, `UserName`, `Password`, `FirstName`, `LastName`, `Position`, `isEnabled`, `log_attempts`, `answer1`, `answer2`, `tempopw` FROM `tbllogin`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="loginDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="loginDBDataSet" msprop:Generator_UserDSName="loginDBDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tbllogin" msprop:Generator_TableClassName="tblloginDataTable" msprop:Generator_TableVarName="tabletbllogin" msprop:Generator_TablePropName="tbllogin" msprop:Generator_RowDeletingName="tblloginRowDeleting" msprop:Generator_RowChangingName="tblloginRowChanging" msprop:Generator_RowEvHandlerName="tblloginRowChangeEventHandler" msprop:Generator_RowDeletedName="tblloginRowDeleted" msprop:Generator_UserTableName="tbllogin" msprop:Generator_RowChangedName="tblloginRowChanged" msprop:Generator_RowEvArgName="tblloginRowChangeEvent" msprop:Generator_RowClassName="tblloginRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
