@@ -6,20 +6,22 @@ using System.Threading.Tasks;
 
 namespace POS_SYSTEM
 {
-    class MilkTea
+    class Product
     {
-        public string MilkteaName { get; set; }
+        public string Type { get; set; }
+        public string ProductName { get; set; }
         public string Size { get; set; }
         public string SugarLevel { get; set; }
-        public string Sinkers  { get; set; }
-        public double Quantity { get; set; }
+        public string Addons  { get; set; }
+        public int Quantity { get; set; }
         public double SizePrice { get; set; }
         public double SinkerPrice { get; set; }
-        public double  MilkteaPrice { get; set; }
+        public double ProductPrice { get; set; }
+        public string Notes { get; set; }
         public double ComputePrice()
         {
-            MilkteaPrice =  ((SizePrice + SinkerPrice) * Quantity );
-            return MilkteaPrice;
+            ProductPrice =  ((SizePrice + SinkerPrice) * Quantity );
+            return ProductPrice;
         }
     }
 }

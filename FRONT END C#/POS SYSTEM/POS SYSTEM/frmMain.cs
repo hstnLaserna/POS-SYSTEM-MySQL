@@ -25,14 +25,14 @@ namespace POS_SYSTEM
         string position = frmLogin.position.ToUpperInvariant();
         int loginid = frmLogin.loginid;
         int salesinvoice;
+        MySqlCommand command;
         DataTable dataTable;
         MySqlDataAdapter mySqlDataAdapter;
         MySqlDataReader reader;
-        MySqlCommand command;
 
 
-        string MilkTeaName;
-        MilkTea mt = new MilkTea();
+        string selectedFlavor, selectedProductType;
+        Product mt = new Product();
         int order;
 
         public frmMain()
@@ -45,6 +45,26 @@ namespace POS_SYSTEM
             initializeButtons();
             initializeLabels();
             newTransaction();
+
+
+            using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
+            {
+                connection.Open();
+                try
+                {
+                    string query = "UPDATE " + DatabaseConnection.UsersTable + " SET log_attempts = 0 WHERE loginid = @LoginID;";
+                    command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@LoginID", loginid);
+                    reader = command.ExecuteReader();
+                    reader.Close();
+                    command.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                connection.Close();
+            }
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -305,24 +325,27 @@ namespace POS_SYSTEM
         private void buttonMT_Click(object sender, EventArgs e)
         {
             int selectedIndex = Convert.ToInt32(((Button)sender).Tag);
-            MilkTeaName = mtFlavors[selectedIndex];
-            frmAddProduct frmMilkTea = new frmAddProduct(MilkTeaName, mtPrice1[selectedIndex], mtPrice2[selectedIndex], mtPrice3[selectedIndex]);
+            selectedFlavor = mtFlavors[selectedIndex];
+            selectedProductType = "Milktea";
+            frmAddProduct frmMilkTea = new frmAddProduct(selectedProductType, selectedFlavor, mtPrice1[selectedIndex], mtPrice2[selectedIndex], mtPrice3[selectedIndex]);
             frmMilkTea.ShowDialog();
             updateDisplay();
         }
         private void buttonMS_Click(object sender, EventArgs e)
         {
             int selectedIndex = Convert.ToInt32(((Button)sender).Tag);
-            MilkTeaName = msFlavors[selectedIndex];
-            frmAddProduct frmMilkTea = new frmAddProduct(MilkTeaName, msPrice1[selectedIndex], msPrice2[selectedIndex], msPrice3[selectedIndex]);
+            selectedFlavor = msFlavors[selectedIndex];
+            selectedProductType = "Milkshake";
+            frmAddProduct frmMilkTea = new frmAddProduct(selectedProductType, selectedFlavor, msPrice1[selectedIndex], msPrice2[selectedIndex], msPrice3[selectedIndex]);
             frmMilkTea.ShowDialog();
             updateDisplay();
         }
         private void buttonFR_Click(object sender, EventArgs e)
         {
             int selectedIndex = Convert.ToInt32(((Button)sender).Tag);
-            MilkTeaName = frFlavors[selectedIndex];
-            frmAddProduct frmMilkTea = new frmAddProduct(MilkTeaName, frPrice1[selectedIndex], frPrice2[selectedIndex], frPrice3[selectedIndex]);
+            selectedFlavor = frFlavors[selectedIndex];
+            selectedProductType = "Frappe";
+            frmAddProduct frmMilkTea = new frmAddProduct(selectedProductType, selectedFlavor, frPrice1[selectedIndex], frPrice2[selectedIndex], frPrice3[selectedIndex]);
             frmMilkTea.ShowDialog();
             updateDisplay();
         }

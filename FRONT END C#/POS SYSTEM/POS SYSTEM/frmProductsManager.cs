@@ -140,63 +140,40 @@ namespace POS_SYSTEM
                                 command.Dispose();
 
                                 MessageBox.Show(activatedProducts.ToString());
+                                string queryUpdate ="";
 
-                                if (activatedProducts <= 14)
+                                if (activatedProducts >= 0 && activatedProducts <= 14)
                                 {
-                                    {
-                                        string queryUpdate = "CALL updateProduct(@ProductName, @Price1, @Price2, @Price3, @ProductType, @isAvailable, @SelectedID);";
-                                        command = new MySqlCommand(queryUpdate, connection);
-                                        command.Parameters.AddWithValue("@Productname", txtProductName.Text);
-                                        command.Parameters.AddWithValue("@Price1", txtPrice1.Text);
-                                        command.Parameters.AddWithValue("@Price2", txtPrice2.Text);
-                                        command.Parameters.AddWithValue("@Price3", txtPrice3.Text);
-                                        command.Parameters.AddWithValue("@ProductType", listProductType.SelectedItem.ToString());
-                                        command.Parameters.AddWithValue("@isAvailable", isEnabled);
-                                        command.Parameters.AddWithValue("@SelectedID", selectedID);
-                                        reader = command.ExecuteReader();
-                                        reader.Close();
-                                        command.Dispose();
-                                        msg = "Product " + txtProductName.Text + " updated!";
+                                    queryUpdate = "CALL updateProduct(@ProductName, @Price1, @Price2, @Price3, @ProductType, @isAvailable, @SelectedID);";
 
-                                        if (activatedProducts == 15)
-                                        {
-                                            MessageBox.Show("Maximum available products for " + listProductType.SelectedItem.ToString() + " reached!");
-                                        }
-                                        else { }
-                                    }
                                     if (activatedProducts == 14 && chkEnabled.Checked == true)
                                     {
-                                        MessageBox.Show("Maximum available products for " + listProductType.SelectedItem.ToString() + " reached!");
-                                    }
-                                }
-                                else if (activatedProducts <= 15 && chkEnabled.Checked == false)
-                                {
-                                    {
-                                        string queryUpdate = "CALL updateProduct(@ProductName, @Price1, @Price2, @Price3, @ProductType, @isAvailable, @SelectedID);";
-                                        command = new MySqlCommand(queryUpdate, connection);
-                                        command.Parameters.AddWithValue("@Productname", txtProductName.Text);
-                                        command.Parameters.AddWithValue("@Price1", txtPrice1.Text);
-                                        command.Parameters.AddWithValue("@Price2", txtPrice2.Text);
-                                        command.Parameters.AddWithValue("@Price3", txtPrice3.Text);
-                                        command.Parameters.AddWithValue("@ProductType", listProductType.SelectedItem.ToString());
-                                        command.Parameters.AddWithValue("@isAvailable", isEnabled);
-                                        command.Parameters.AddWithValue("@SelectedID", selectedID);
-                                        reader = command.ExecuteReader();
-                                        reader.Close();
-                                        command.Dispose();
-                                        msg = "Product " + txtProductName.Text + " updated!";
-
-                                        if (activatedProducts == 15)
-                                        {
-                                            MessageBox.Show("Limit Exceeded. Available products for each Product Type must not exceed 15!");
-                                        }
-                                        else { }
+                                        MessageBox.Show("Maximum (15) available flavors for product: \n" + listProductType.SelectedItem.ToString() + "\n has been reached!", "Maxed Available Products", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Limit Exceeded. Available products for each Product Type must not exceed 15!");
+                                    // Still update records. But isEnabled will be hard to 0
+                                    queryUpdate = "CALL updateProduct(@ProductName, @Price1, @Price2, @Price3, @ProductType, 0, @SelectedID);";
+                                    if (chkEnabled.Checked == true)
+                                    {
+                                        MessageBox.Show("Limit Exceeded. \n Available flavors for each product must not exceed 15!", "Maxed Available Products", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                    }
                                 }
+
+
+                                command = new MySqlCommand(queryUpdate, connection);
+                                command.Parameters.AddWithValue("@Productname", txtProductName.Text);
+                                command.Parameters.AddWithValue("@Price1", txtPrice1.Text);
+                                command.Parameters.AddWithValue("@Price2", txtPrice2.Text);
+                                command.Parameters.AddWithValue("@Price3", txtPrice3.Text);
+                                command.Parameters.AddWithValue("@ProductType", listProductType.SelectedItem.ToString());
+                                command.Parameters.AddWithValue("@isAvailable", isEnabled);
+                                command.Parameters.AddWithValue("@SelectedID", selectedID);
+                                reader = command.ExecuteReader();
+                                reader.Close();
+                                command.Dispose();
+                                msg = "Product: '" + txtProductName.Text + "' updated!";
                             }
                             catch (Exception ex)
                             {

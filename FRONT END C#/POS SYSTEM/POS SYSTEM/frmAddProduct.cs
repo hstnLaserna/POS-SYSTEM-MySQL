@@ -5,34 +5,111 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+
 
 namespace POS_SYSTEM
 {
     public partial class frmAddProduct : Form
     {
-        MilkTea Milktea = new MilkTea();
+        Product Product = new Product();
         Transact Transact = new Transact();
         CheckBox chk;
         RadioButton rb;
         double sinkers;
         double Price1, Price2, Price3;
-        double quantity = 0;
+        private List<CheckBox> productCheckBox;
+        private List<string> addons;
+        private List<double> price;
+        int quantity = 0;
         public static string hist;
+        
+        MySqlCommand command;
+        DataTable dataTable;
+        MySqlDataAdapter mySqlDataAdapter;
 
-
-        public frmAddProduct(string MilkTeaName, double price1, double price2, double price3)
+        public frmAddProduct(string ProductType, string ProductName, double price1, double price2, double price3)
         {
             InitializeComponent();
-            Milktea.MilkteaName = MilkTeaName;
+            Product.ProductName = ProductName;
+            Product.Type = ProductType;
             Price1 = price1;
             Price2 = price2;
             Price3 = price3;
-            lblProductName.Text = Milktea.MilkteaName;
-            numQuantity.Text = quantity.ToString();
+            lblProductName.Text = Product.ProductName;
             rbtn100P.Checked = true;
+            
+            dataTable = new DataTable();
+            
+            addons = new List<string>(dataTable.Rows.Count);
+            price = new List<double>(dataTable.Rows.Count);
+
+            using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
+            {
+                connection.Open();
+                try
+                {
+                    mySqlDataAdapter = new MySqlDataAdapter();
+                    string query = "SELECT name, price FROM tbladdons WHERE forProductType = @selectedProductType AND isAvailable = 1;";
+                    command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@selectedProductType", Product.Type);
+                    mySqlDataAdapter.SelectCommand = command;
+
+
+                    mySqlDataAdapter.Fill(dataTable);
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        addons.Add((string)row["name"]);
+                        price.Add(Convert.ToDouble(row["price"]));
+                    }
+
+                    //foreach (string xi in addons)
+                    //{
+                    //    MessageBox.Show(addons[j]);
+                    //    j++;
+                    //}
+                    string heh = "";
+                    foreach (object o in addons)
+                    {
+                        heh = heh + o + "\n";
+                    }
+                    MessageBox.Show(heh);
+                    dataTable.Clear();
+                    command.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                connection.Close();
+            }
+
+            initializeCheckBoxes();
+        }
+
+        private void initializeCheckBoxes()
+        {
+            productCheckBox = new List<CheckBox>();
+            productCheckBox.Add(chkAddon1);
+            productCheckBox.Add(chkAddon2);
+            productCheckBox.Add(chkAddon3);
+            productCheckBox.Add(chkAddon4);
+            productCheckBox.Add(chkAddon5);
+            productCheckBox.Add(chkAddon6);
+            for (int i = 0; i < productCheckBox.Count; i++)
+            {
+                productCheckBox[i].Visible = false;
+            }
+
+            for (int i = 0; i < addons.Count; i++)
+            {
+                productCheckBox[i].Tag = i;
+                productCheckBox[i].Text = addons[i];
+                productCheckBox[i].Visible = true;
+            }
         }
 
         private void frmMilkTea_Load(object sender, EventArgs e)
@@ -60,18 +137,56 @@ namespace POS_SYSTEM
             this.Close();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnPlus_Click(object sender, EventArgs e)
         {
-            Milktea.Quantity = Convert.ToDouble(numQuantity.Value);
-            Milktea.ComputePrice();
-            TransactionHistory.priceTotal.Add(Milktea.MilkteaPrice);
-            Transact.Total = TransactionHistory.priceTotal.Sum();
-            Transact.isVATable(Transact.Total);
-            hist = "Milktea: " + Milktea.MilkteaName + "\r\n" + "Size: " + Milktea.Size + "\r\n" + "Sugar Level: " + Milktea.SugarLevel + "\r\n" + "Add-ons: " + Milktea.Sinkers + "\r\n" + "Price: " + Milktea.MilkteaPrice.ToString() + "\r\n";
-            TransactionHistory.History.Add(hist);
-            this.Close();
+            if (quantity < 999)
+            {
+                quantity++;
+            }
+            else { }
+            txtQuantity.Text = quantity.ToString();
         }
 
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            if (quantity > 1)
+            {
+                quantity--;
+            }
+            else { }
+            txtQuantity.Text = quantity.ToString();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(" " + quantity);
+            if (quantity == 0)
+            {
+                MessageBox.Show("Quantity must not be 0!");
+                txtQuantity.SelectAll();
+            }
+            else
+            {
+                Product.Quantity = quantity;
+                Product.Notes = txtNotes.Text;
+                Product.ComputePrice();
+                TransactionHistory.priceTotal.Add(Product.ProductPrice);
+                Transact.Total = TransactionHistory.priceTotal.Sum();
+                Transact.isVATable(Transact.Total);
+                if (Product.Notes != "")
+                {
+                    hist = Product.Type + ": " + Product.ProductName + "\r\n" + "Size: " + Product.Size + "\r\n" + "Sugar Level: " + Product.SugarLevel + "\r\n" + "Add-ons: " + Product.Addons + "\r\n" + "Quantity: " + Product.Quantity + "\r\n" + "Price: " + Product.ProductPrice.ToString() + "\r\n" + "Added Note:\r\n" + Product.Notes + "\r\n";
+                }
+                else
+                {
+                    hist = Product.Type + ": " + Product.ProductName + "\r\n" + "Size: " + Product.Size + "\r\n" + "Sugar Level: " + Product.SugarLevel + "\r\n" + "Add-ons: " + Product.Addons + "\r\n" + "Quantity: " + Product.Quantity + "\r\n" + "Price: " + Product.ProductPrice.ToString() + "\r\n";
+                }
+                TransactionHistory.History.Add(hist);
+                this.Close();
+            }
+        }
+
+        // ----------------------------- METHODS ----------------------------- 
 
 
         private void getSizePrice(object sender, EventArgs e)
@@ -79,22 +194,22 @@ namespace POS_SYSTEM
             rb = ((RadioButton)sender);
             if (rb.Name == "radSize1")
             {
-                Milktea.SizePrice = Price1;
+                Product.SizePrice = Price1;
             }
             else if (rb.Name == "radSize2")
             {
-                Milktea.SizePrice = Price2;
+                Product.SizePrice = Price2;
             }
             else if (rb.Name == "radSize3")
             {
-                Milktea.SizePrice = Price3;
+                Product.SizePrice = Price3;
             }
             else { }
-            Milktea.Size = rb.Text;
+            Product.Size = rb.Text;
         }
         private void getSugarLevel(object sender, EventArgs e)
         {
-            Milktea.SugarLevel = ((RadioButton)sender).Text;
+            Product.SugarLevel = ((RadioButton)sender).Text;
         }
 
         private double getSinkersPrice(object sender)
@@ -131,14 +246,14 @@ namespace POS_SYSTEM
             chk = sender as CheckBox;
             if (chk.Checked == true)
             {
-                Milktea.Sinkers += chk.Text + " ";
-                Milktea.SinkerPrice += getSinkersPrice(sender);
+                Product.Addons += chk.Text + " ";
+                Product.SinkerPrice += price[Convert.ToInt32(((CheckBox)sender).Tag)];
                 sinkers = 0;
             }
             else if (chk.Checked == false)
             {
-                Milktea.Sinkers = Milktea.Sinkers.Replace(chk.Text, "");
-                Milktea.SinkerPrice -= getSinkersPrice(sender);
+                Product.Addons = Product.Addons.Replace(chk.Text, "");
+                Product.SinkerPrice -= price[Convert.ToInt32(((CheckBox)sender).Tag)];
                 sinkers = 0;
             }
         }
@@ -173,6 +288,15 @@ namespace POS_SYSTEM
         private void formResize()
         {
             lblProductName.Location = new System.Drawing.Point(ClientSize.Width / 2 - (lblProductName.Size.Width / 2), lblProductName.Location.Y);
+
+            if (Product.Type.ToLower() != "milktea")
+            {
+                panelSugarLevel.Visible = false;
+                panelNote.Location = new Point(panelNote.Location.X, panelNote.Location.Y - panelSugarLevel.Height - 10);
+                btnAdd.Location = new Point(btnAdd.Location.X, btnAdd.Location.Y - panelSugarLevel.Height - 10);
+                this.Size = new System.Drawing.Size(ClientSize.Width, ClientSize.Height - panelSugarLevel.Height);
+            }
+            else { }
             //tabControl1.Size = new System.Drawing.Size(ClientSize.Width * 3 / 4, ClientSize.Height - 5);
             /*grpVendoUI.Size = new System.Drawing.Size(ClientSize.Width * 4 / 5, 850);
             grpVendoUI.Location = new System.Drawing.Point(ClientSize.Width / 2 - ((grpVendoUI.Size.Width) / 2), ClientSize.Height / 2 - ((grpVendoUI.Size.Height) / 2));
@@ -188,5 +312,41 @@ namespace POS_SYSTEM
               */
         }  
         #endregion
+
+        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = e.KeyChar != (char)Keys.Back && !char.IsDigit(e.KeyChar);
+        }
+
+        private void txtQuantity_Leave(object sender, EventArgs e)
+        {
+            if (((TextBox)sender).Text == "")
+            {
+                ((TextBox)sender).Text = "0";
+                quantity = Convert.ToInt32(((TextBox)sender).Text);
+            }
+            else
+            {
+                try
+                {
+                    quantity = Convert.ToInt32(((TextBox)sender).Text);
+                }
+                catch
+                { }
+            }
+        }
+
+        private void txtNotes_Leave(object sender, EventArgs e)
+        {
+            ((TextBox)sender).Text = Regex.Replace(((TextBox)sender).Text.Trim(), @"\s+", " ");
+        }
+
+        private void txtNotes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = e.KeyChar != (char)Keys.Back && !char.IsLetter(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+
+        }
+
+
     }
 }
