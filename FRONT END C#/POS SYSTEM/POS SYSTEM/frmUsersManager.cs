@@ -112,8 +112,6 @@ namespace POS_SYSTEM
                     {
                         using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
                         {
-                            string samp = "wtf";
-                            MessageBox.Show(txtUsername.Text + "\n" + samp + "     " + selectedID);
                             connection.Open();
                             try
                             {
@@ -129,24 +127,6 @@ namespace POS_SYSTEM
                                 command.Parameters.AddWithValue("@Enabled", isEnabled);
                                 command.Parameters.AddWithValue("@selectedid", selectedID);
                                 reader = command.ExecuteReader();
-
-
-                                while (reader.Read())
-                                {
-                                    samp = reader["tempopw"].ToString();
-                                }
-
-                                MessageBox.Show(txtUsername.Text + "\n" + samp + "     " + selectedID
-                                    + "\n" + txtUsername.Text
-                                    + "\n" + txtPassword.Text
-                                    + "\n" + txtFirstname.Text
-                                    + "\n" + txtLastname.Text
-                                    + "\n" + position
-                                    + "\n" + txtAnswer1.Text
-                                    + "\n" + txtAnswer2.Text
-                                    + "\n" + isEnabled
-                                    + "\n" + selectedID
-                                    );
 
                                 reader.Close();
                                 command.Dispose();
@@ -246,7 +226,7 @@ namespace POS_SYSTEM
                 connection.Open();
                 try
                 {
-                    mySqlDataAdapter = new MySqlDataAdapter("SELECT loginid 'UserID', username 'Username', firstname 'First Name', lastname 'Last Name', position 'Position', answer1 'Security 1', answer2 'Security 2', isEnabled 'Enabled', tempopw 'Tempo Pass' FROM " + DatabaseConnection.UsersTable + " WHERE POSITION = 'admin' or POSITION = 'cashier';", connection);
+                    mySqlDataAdapter = new MySqlDataAdapter("SELECT loginid 'UserID', username 'Username', firstname 'First Name', lastname 'Last Name', position 'Position', answer1 'Security 1', answer2 'Security 2', isEnabled, tempopw 'Tempo Pass' FROM " + DatabaseConnection.UsersTable + " WHERE POSITION = 'admin' or POSITION = 'cashier';", connection);
                     DataSet DS = new DataSet();
                     mySqlDataAdapter.Fill(DS);
                     dgvUsers.DataSource = DS.Tables[0];
@@ -258,6 +238,18 @@ namespace POS_SYSTEM
 
                 connection.Close();
             }
+
+
+            dgvUsers.Columns.RemoveAt(7);
+            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+            chk.HeaderText = "User Enabled";
+            chk.Name = "isEnabled";
+            chk.DataPropertyName = "isEnabled";
+            dgvUsers.Columns.Insert(7, chk);
+            dgvUsers.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvUsers.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+
+            dgvUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void formResize()

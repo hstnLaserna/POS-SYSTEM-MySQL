@@ -32,11 +32,12 @@ namespace POS_SYSTEM
                 connection.Open();
                 try
                 {
-                    string query = @"select * from tblsales where date(transdate) between '" + from + "' and '" + to + "';";
+                    string query = @"SELECT * FROM " + DatabaseConnection.SalesTable + " WHERE date(transdate) BETWEEN'" + from + "' AND'" + to + "';";
                     mySqlDataAdapter = new MySqlDataAdapter(query, connection);
                     DataTable dt = new DataTable();
                     mySqlDataAdapter.Fill(dt);
                     dgvTransactionHistory.DataSource = dt;
+                    dgvTransactionHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 }
                 catch (Exception ex)
                 {
@@ -70,7 +71,7 @@ namespace POS_SYSTEM
                 connection.Open();
                 try
                 {
-                    string query = "select sum(total) AS 'Total', day(transdate) as 'Days' from tblsales group by Days; ";
+                    string query = "SELECT sum(total) AS 'Total', day(transdate) AS 'Days' FROM " + DatabaseConnection.SalesTable + " GROUP BY Days; ";
                     command = new MySqlCommand(query, connection);
                     reader = command.ExecuteReader();
                     dtData.Load(reader);

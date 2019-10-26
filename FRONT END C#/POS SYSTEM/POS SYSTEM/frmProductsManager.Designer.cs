@@ -36,9 +36,12 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.chkEnabled = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblStatus = new System.Windows.Forms.Label();
+            this.chkFrappe = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.chkMilkshake = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.chkMilktea = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPrice1 = new System.Windows.Forms.TextBox();
             this.txtPrice2 = new System.Windows.Forms.TextBox();
@@ -49,6 +52,8 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btnAddonsManager = new System.Windows.Forms.Button();
+            this.txtQuery = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
@@ -93,6 +98,8 @@
             this.txtPrice3.Name = "txtPrice3";
             this.txtPrice3.Size = new System.Drawing.Size(263, 30);
             this.txtPrice3.TabIndex = 4;
+            this.txtPrice3.Tag = "price";
+            this.txtPrice3.Text = "0.00";
             this.txtPrice3.Click += new System.EventHandler(this.TextBoxes_Enter);
             this.txtPrice3.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
             this.txtPrice3.Enter += new System.EventHandler(this.TextBoxes_Enter);
@@ -103,10 +110,11 @@
             // 
             this.txtProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductName.Location = new System.Drawing.Point(228, 86);
-            this.txtProductName.MaxLength = 20;
+            this.txtProductName.MaxLength = 50;
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(263, 30);
             this.txtProductName.TabIndex = 1;
+            this.txtProductName.Tag = "name";
             this.txtProductName.Click += new System.EventHandler(this.TextBoxes_Enter);
             this.txtProductName.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
             this.txtProductName.Enter += new System.EventHandler(this.TextBoxes_Enter);
@@ -144,9 +152,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblStatus);
+            this.groupBox1.Controls.Add(this.chkFrappe);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.chkMilkshake);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.chkMilktea);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtPrice1);
             this.groupBox1.Controls.Add(this.txtPrice2);
@@ -164,18 +175,24 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(1342, 70);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(521, 478);
+            this.groupBox1.Size = new System.Drawing.Size(521, 587);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Product Details";
             // 
-            // lblStatus
+            // chkFrappe
             // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(142, 437);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(0, 25);
-            this.lblStatus.TabIndex = 10;
+            this.chkFrappe.AutoSize = true;
+            this.chkFrappe.Checked = true;
+            this.chkFrappe.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkFrappe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkFrappe.Location = new System.Drawing.Point(228, 531);
+            this.chkFrappe.Name = "chkFrappe";
+            this.chkFrappe.Size = new System.Drawing.Size(96, 29);
+            this.chkFrappe.TabIndex = 15;
+            this.chkFrappe.Text = "Frappe";
+            this.chkFrappe.UseVisualStyleBackColor = true;
+            this.chkFrappe.CheckStateChanged += new System.EventHandler(this.chkProducts_CheckStateChanged);
             // 
             // label2
             // 
@@ -187,6 +204,20 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "(L) Price:";
             // 
+            // chkMilkshake
+            // 
+            this.chkMilkshake.AutoSize = true;
+            this.chkMilkshake.Checked = true;
+            this.chkMilkshake.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkMilkshake.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkMilkshake.Location = new System.Drawing.Point(228, 496);
+            this.chkMilkshake.Name = "chkMilkshake";
+            this.chkMilkshake.Size = new System.Drawing.Size(122, 29);
+            this.chkMilkshake.TabIndex = 14;
+            this.chkMilkshake.Text = "Milkshake";
+            this.chkMilkshake.UseVisualStyleBackColor = true;
+            this.chkMilkshake.CheckStateChanged += new System.EventHandler(this.chkProducts_CheckStateChanged);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -196,6 +227,30 @@
             this.label1.Size = new System.Drawing.Size(98, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "(M) Price:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(56, 462);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(154, 25);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Display Product:";
+            // 
+            // chkMilktea
+            // 
+            this.chkMilktea.AutoSize = true;
+            this.chkMilktea.Checked = true;
+            this.chkMilktea.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkMilktea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkMilktea.Location = new System.Drawing.Point(228, 461);
+            this.chkMilktea.Name = "chkMilktea";
+            this.chkMilktea.Size = new System.Drawing.Size(96, 29);
+            this.chkMilktea.TabIndex = 13;
+            this.chkMilktea.Text = "Milktea";
+            this.chkMilktea.UseVisualStyleBackColor = true;
+            this.chkMilktea.CheckStateChanged += new System.EventHandler(this.chkProducts_CheckStateChanged);
             // 
             // label5
             // 
@@ -215,7 +270,10 @@
             this.txtPrice1.Name = "txtPrice1";
             this.txtPrice1.Size = new System.Drawing.Size(263, 30);
             this.txtPrice1.TabIndex = 2;
+            this.txtPrice1.Tag = "price";
+            this.txtPrice1.Text = "0.00";
             this.txtPrice1.Click += new System.EventHandler(this.TextBoxes_Enter);
+            this.txtPrice1.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
             this.txtPrice1.Enter += new System.EventHandler(this.TextBoxes_Enter);
             this.txtPrice1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextPrice_KeyPress);
             this.txtPrice1.Leave += new System.EventHandler(this.TextBoxPrice_Leave);
@@ -228,7 +286,10 @@
             this.txtPrice2.Name = "txtPrice2";
             this.txtPrice2.Size = new System.Drawing.Size(263, 30);
             this.txtPrice2.TabIndex = 3;
+            this.txtPrice2.Tag = "price";
+            this.txtPrice2.Text = "0.00";
             this.txtPrice2.Click += new System.EventHandler(this.TextBoxes_Enter);
+            this.txtPrice2.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
             this.txtPrice2.Enter += new System.EventHandler(this.TextBoxes_Enter);
             this.txtPrice2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextPrice_KeyPress);
             this.txtPrice2.Leave += new System.EventHandler(this.TextBoxPrice_Leave);
@@ -237,11 +298,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(29, 307);
+            this.label6.Location = new System.Drawing.Point(16, 307);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(181, 25);
+            this.label6.Size = new System.Drawing.Size(194, 25);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Product is Enabled:";
+            this.label6.Text = "Product is  Available:";
             // 
             // listProductType
             // 
@@ -255,7 +316,6 @@
             this.listProductType.Name = "listProductType";
             this.listProductType.Size = new System.Drawing.Size(263, 79);
             this.listProductType.TabIndex = 5;
-            this.listProductType.SelectedValueChanged += new System.EventHandler(this.listProductType_SelectedValueChanged);
             // 
             // btnClear
             // 
@@ -307,7 +367,7 @@
             this.dgvProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvProducts.RowTemplate.Height = 24;
             this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProducts.Size = new System.Drawing.Size(1303, 942);
+            this.dgvProducts.Size = new System.Drawing.Size(1206, 942);
             this.dgvProducts.TabIndex = 0;
             this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellClick);
             this.dgvProducts.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvProducts_RowPostPaint);
@@ -318,7 +378,7 @@
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.Black;
-            this.btnBack.Location = new System.Drawing.Point(1798, 1011);
+            this.btnBack.Location = new System.Drawing.Point(1798, 1061);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(131, 28);
@@ -327,12 +387,39 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnAddonsManager
+            // 
+            this.btnAddonsManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnAddonsManager.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddonsManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAddonsManager.ForeColor = System.Drawing.Color.Black;
+            this.btnAddonsManager.Location = new System.Drawing.Point(1342, 680);
+            this.btnAddonsManager.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddonsManager.Name = "btnAddonsManager";
+            this.btnAddonsManager.Size = new System.Drawing.Size(521, 60);
+            this.btnAddonsManager.TabIndex = 11;
+            this.btnAddonsManager.Text = "Manage Addons";
+            this.btnAddonsManager.UseVisualStyleBackColor = false;
+            this.btnAddonsManager.Click += new System.EventHandler(this.btnAddonsManager_Click);
+            // 
+            // txtQuery
+            // 
+            this.txtQuery.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuery.Location = new System.Drawing.Point(1245, 932);
+            this.txtQuery.MaxLength = 999999;
+            this.txtQuery.Name = "txtQuery";
+            this.txtQuery.Size = new System.Drawing.Size(685, 30);
+            this.txtQuery.TabIndex = 16;
+            this.txtQuery.Tag = "price";
+            // 
             // frmProductsManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(1942, 1102);
+            this.Controls.Add(this.txtQuery);
+            this.Controls.Add(this.btnAddonsManager);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dgvProducts);
             this.Controls.Add(this.groupBox1);
@@ -373,7 +460,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPrice1;
         private System.Windows.Forms.TextBox txtPrice2;
-        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Button btnAddonsManager;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox chkMilktea;
+        private System.Windows.Forms.CheckBox chkMilkshake;
+        private System.Windows.Forms.CheckBox chkFrappe;
+        private System.Windows.Forms.TextBox txtQuery;
 
     }
 }

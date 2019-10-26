@@ -18,7 +18,6 @@ namespace POS_SYSTEM
         MySqlCommand command;
         int isEnabled = 1;
         int selectedID = 0;
-        string msg;
 
         private MySqlDataAdapter mySqlDataAdapter;
 
@@ -45,7 +44,12 @@ namespace POS_SYSTEM
 
         public void TextBoxes_TextChanged(object sender, EventArgs e)
         {
-            if ((txtProductName.TextLength > 0) && ((txtPrice1.TextLength > 0) || (txtPrice2.TextLength > 0) || (txtPrice3.TextLength > 0)))
+            if (((TextBox)sender).Text == "" && ((TextBox)sender).Tag.ToString() == "price")
+            {
+                ((TextBox)sender).Text = "0.00";
+            }
+            else { }
+            if ((txtProductName.TextLength > 0) && ((Convert.ToDouble(txtPrice1.Text) > 0) || (Convert.ToDouble(txtPrice2.Text) > 0) || (Convert.ToDouble(txtPrice3.Text) > 0)))
             {
                 btnUpdate.Enabled = true;
             }
@@ -71,12 +75,10 @@ namespace POS_SYSTEM
             if (chkEnabled.Checked == true)
             {
                 isEnabled = 1;
-                chkEnabled.Text = "Yes";
             }
             else
             {
                 isEnabled = 0;
-                chkEnabled.Text = "No";
             }
         }
 
@@ -101,10 +103,12 @@ namespace POS_SYSTEM
             if (txtID.Text == "")
             {
                 btnUpdate.Text = "SAVE";
+                listProductType.Enabled = true;
             }
             else
             {
                 btnUpdate.Text = "UPDATE";
+                listProductType.Enabled = false;
             }
         }
 
@@ -127,7 +131,7 @@ namespace POS_SYSTEM
                             connection.Open();
                             try
                             {
-                                string query = "SELECT COUNT(*) as activatedProducts from tblproducts where producttype = @ProductType AND isavailable = 1;";
+                                string query = "SELECT COUNT(*) as activatedProducts FROM " + DatabaseConnection.ProductsTable + " WHERE producttype = @ProductType AND isavailable = 1;";
                                 command = new MySqlCommand(query, connection);
                                 command.Parameters.AddWithValue("@ProductType", listProductType.SelectedItem.ToString());
                                 reader = command.ExecuteReader();
@@ -139,7 +143,6 @@ namespace POS_SYSTEM
                                 reader.Close();
                                 command.Dispose();
 
-                                MessageBox.Show(activatedProducts.ToString());
                                 string queryUpdate ="";
 
                                 if (activatedProducts >= 0 && activatedProducts <= 14)
@@ -154,9 +157,10 @@ namespace POS_SYSTEM
                                 else
                                 {
                                     // Still update records. But isEnabled will be hard to 0
-                                    queryUpdate = "CALL updateProduct(@ProductName, @Price1, @Price2, @Price3, @ProductType, 0, @SelectedID);";
+                                    queryUpdate = "CALL updateProduct(@ProductName, @Price1, @Price2, @Price3, @ProductType, @isAvailable, @SelectedID);";
                                     if (chkEnabled.Checked == true)
                                     {
+                                        queryUpdate = "CALL updateProduct(@ProductName, @Price1, @Price2, @Price3, @ProductType, 0, @SelectedID);";
                                         MessageBox.Show("Limit Exceeded. \n Available flavors for each product must not exceed 15!", "Maxed Available Products", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                                     }
                                 }
@@ -173,19 +177,16 @@ namespace POS_SYSTEM
                                 reader = command.ExecuteReader();
                                 reader.Close();
                                 command.Dispose();
-                                msg = "Product: '" + txtProductName.Text + "' updated!";
                             }
                             catch (Exception ex)
                             {
-                                MessageBox.Show(ex.ToString());
-
                                 if (ex.HResult != -2147467259)
                                 {
                                     MessageBox.Show(ex.ToString());
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Unable to update. \nThe product name: " + txtProductName.Text.ToUpper() + " already exists. \n Error #: -2147467259 xxx");
+                                    MessageBox.Show("Unable to update. \nThe product name: " + txtProductName.Text.ToUpper() + " already exists. \n Error #: -2147467259", "Duplicte Name Detected!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
                             connection.Close();
@@ -206,80 +207,64 @@ namespace POS_SYSTEM
             {
                 if (txtProductName.TextLength >= 4)
                 {
-                    var nameExists = dgvProducts.Rows.Cast<DataGridViewRow>()
-                                 .Where(row => !row.IsNewRow)
-                                 .Select(row => row.Cells[1].Value.ToString())
-                                 .Any(x => this.txtProductName.Text == x);
-
-                    if (!nameExists)
+                    using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
                     {
-                        using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
+                        int activatedProducts = 0;
+                        connection.Open();
+                        try
                         {
-                            int activatedProducts = 0;
-                            connection.Open();
-                            try
+                            string query = "SELECT COUNT(*) as activatedProducts FROM " + DatabaseConnection.ProductsTable + " WHERE producttype = @ProductType AND isavailable = 1;";
+                            command = new MySqlCommand(query, connection);
+                            command.Parameters.AddWithValue("@ProductType", listProductType.SelectedItem.ToString());
+                            reader = command.ExecuteReader();
+                            while (reader.Read())
                             {
-                                string query = "SELECT COUNT(*) as activatedProducts from tblproducts where producttype = @ProductType AND isavailable = 1;";
-                                command = new MySqlCommand(query, connection);
-                                command.Parameters.AddWithValue("@ProductType", listProductType.SelectedItem.ToString());
-                                reader = command.ExecuteReader();
-                                while (reader.Read())
-                                {
-                                    activatedProducts = Convert.ToInt32(reader["activatedProducts"]);
-                                }
-
-                                reader.Close();
-                                command.Dispose();
-
-                                MessageBox.Show(activatedProducts.ToString());
-
-                                if (activatedProducts == 15)
-                                {
-                                    isEnabled = 0;
-                                    MessageBox.Show("Maximum available products for " + listProductType.SelectedItem.ToString() + " reached! \nAvailability set to NO");
-                                }
-                                else
-                                { }
-
-
-                                string queryUpdate = "CALL addProduct(@ProductName, @Price1, @Price2, @Price3, @ProductType, @isAvailable);";
-                                command = new MySqlCommand(queryUpdate, connection);
-                                command.Parameters.AddWithValue("@Productname", txtProductName.Text);
-                                command.Parameters.AddWithValue("@Price1", txtPrice1.Text);
-                                command.Parameters.AddWithValue("@Price2", txtPrice2.Text);
-                                command.Parameters.AddWithValue("@Price3", txtPrice3.Text);
-                                command.Parameters.AddWithValue("@ProductType", listProductType.SelectedItem.ToString());
-                                command.Parameters.AddWithValue("@isAvailable", isEnabled);
-                                reader = command.ExecuteReader();
-                                reader.Close();
-                                command.Dispose();
-                                msg = "Product " + txtProductName.Text + " added!";
-
+                                activatedProducts = Convert.ToInt32(reader["activatedProducts"]);
                             }
-                            catch (Exception ex)
+
+                            reader.Close();
+                            command.Dispose();
+
+
+                            if (activatedProducts == 15)
                             {
-                                if (ex.HResult != -2147467259)
-                                {
-                                    MessageBox.Show(ex.ToString());
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Unable to create. The product name already exists. \n Error Number: -2147467259");
-                                }
+                                isEnabled = 0;
+                                MessageBox.Show("Maximum available products for " + listProductType.SelectedItem.ToString() + " reached! \nAvailability set to NO");
                             }
-                            connection.Close();
-                            initializeDisplay();
+                            else
+                            { }
+
+
+                            string queryUpdate = "CALL addProduct(@ProductName, @Price1, @Price2, @Price3, @ProductType, @isAvailable);";
+                            command = new MySqlCommand(queryUpdate, connection);
+                            command.Parameters.AddWithValue("@Productname", txtProductName.Text);
+                            command.Parameters.AddWithValue("@Price1", txtPrice1.Text);
+                            command.Parameters.AddWithValue("@Price2", txtPrice2.Text);
+                            command.Parameters.AddWithValue("@Price3", txtPrice3.Text);
+                            command.Parameters.AddWithValue("@ProductType", listProductType.SelectedItem.ToString());
+                            command.Parameters.AddWithValue("@isAvailable", isEnabled);
+                            reader = command.ExecuteReader();
+                            reader.Close();
+                            command.Dispose();
+
                         }
-                    }
-                    else
-                    {
-                        msg = "Unable to create. The Product name already exists!";
-                        MessageBox.Show("Unable to create. The Product name already exists");
+                        catch (Exception ex)
+                        {
+                            if (ex.HResult != -2147467259)
+                            {
+                                MessageBox.Show(ex.ToString());
+                            }
+                            else
+                            {
+                                MessageBox.Show("Unable to update. \nThe product name: " + txtProductName.Text.ToUpper() + " already exists. \n Error #: -2147467259", "Duplicte Name Detected!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        connection.Close();
+                        initializeDisplay();
                     }
                 }
                 else
                 {
-                    msg = "Product name must be 4 or more characters!";
                     MessageBox.Show("Product must be 4 or more characters");
                 }
             }
@@ -358,7 +343,6 @@ namespace POS_SYSTEM
             txtPrice1.ResetText();
             txtPrice2.ResetText();
             txtPrice3.ResetText();
-            lblStatus.Text = msg;
             listProductType.SelectedIndex = 0;
             chkEnabled.Checked = true;
             selectedID = 0;
@@ -372,10 +356,24 @@ namespace POS_SYSTEM
                 connection.Open();
                 try
                 {
-                    mySqlDataAdapter = new MySqlDataAdapter("SELECT  productid 'ProductID', name 'Product', price1 'Price (S)', price2 'Price (M)', price3 'Price (L)', productType 'Product Type', isAvailable 'Product Available', DATE(dateadded) 'Date Added' FROM " + DatabaseConnection.ProductsTable + ";", connection);
+                    string querystring = "SELECT  productID 'ID', name 'Product', price1 'Price (S)', price2 'Price (M)', price3 'Price (L)', productType 'Product Type', isAvailable, DATE(dateadded) 'Date Added' FROM " + DatabaseConnection.ProductsTable + " WHERE " + displayedProducts();
+                    mySqlDataAdapter = new MySqlDataAdapter(querystring, connection);
                     DataSet DS = new DataSet();
                     mySqlDataAdapter.Fill(DS);
                     dgvProducts.DataSource = DS.Tables[0];
+
+                    dgvProducts.Columns.RemoveAt(6);
+                    DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+                    chk.HeaderText = "Product Available";
+                    chk.Name = "isAvailable";
+                    chk.DataPropertyName = "isAvailable";
+                    dgvProducts.Columns.Insert(6, chk);
+                    
+                    dgvProducts.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvProducts.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvProducts.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvProducts.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dgvProducts.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 }
                 catch (Exception ex)
                 {
@@ -384,35 +382,15 @@ namespace POS_SYSTEM
 
                 connection.Close();
             }
-            //foreach (DataGridViewRow row in dgvProducts.Rows)
-            //{
 
-            //    switch (row.Cells[5].Value.ToString().ToLower())
-            //    {
-            //        case "milktea":
-            //            row.DefaultCellStyle.BackColor = Color.Red;
-            //            break;
-            //        case "milkshake":
-            //            row.DefaultCellStyle.BackColor = Color.Blue;
-            //            break;
-            //        case "frappe":
-            //            row.DefaultCellStyle.BackColor = Color.Yellow;
-            //            break;
-            //        default:
-            //            break;
-            //    }
-            //}
+            dgvProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void formResize()
         {
             btnBack.Location = new System.Drawing.Point(this.ClientRectangle.Width - btnBack.Width - 10, this.ClientRectangle.Height - btnBack.Height - 10);
             groupBox1.Location = new System.Drawing.Point(this.ClientRectangle.Width - groupBox1.Width - 10, dgvProducts.Location.Y);
-        }
-
-        private void listProductType_SelectedValueChanged(object sender, EventArgs e)
-        {
-            lblStatus.Text = listProductType.SelectedItem.ToString();
+            btnAddonsManager.Location = new System.Drawing.Point(groupBox1.Location.X, groupBox1.Location.Y + groupBox1.Height + 10);
         }
 
         private void TextBoxPrice_Leave(object sender, EventArgs e)
@@ -421,6 +399,60 @@ namespace POS_SYSTEM
             {
                 ((TextBox)sender).Text = "0.00";
             }
+        }
+
+        private void btnAddonsManager_Click(object sender, EventArgs e)
+        {
+            frmAddonsManager frmAddonsManager = new frmAddonsManager();
+            frmAddonsManager.ShowDialog();
+        }
+
+        private void chkProducts_CheckStateChanged(object sender, EventArgs e)
+        {
+            openDB();
+        }
+
+        private string displayedProducts()
+        {
+            string displayedProduct;
+            bool A = chkMilktea.Checked;
+            bool B = chkMilkshake.Checked;
+            bool C = chkFrappe.Checked;
+
+            if( A && B && C)
+            {
+                displayedProduct = "productType = 'milktea' OR productType = 'milkshake' OR productType = 'FRAPPE'";
+            }
+            else if (A && B)
+            {
+                displayedProduct = "productType = 'milktea' OR productType = 'milkshake'";
+            }
+            else if (A && C)
+            {
+                displayedProduct = "productType = 'milktea' OR productType = 'FRAPPE'";
+            }
+            else if (B && C)
+            {
+                displayedProduct = "productType = 'milkshake' OR productType = 'FRAPPE'";
+            }
+            else if (A)
+            {
+                displayedProduct = "productType = 'milktea'";
+            }
+            else if (B)
+            {
+                displayedProduct = "productType = 'milkshake'";
+            }
+            else if (C)
+            {
+                displayedProduct = "productType = 'FRAPPE'";
+            }
+            else
+            {
+                displayedProduct = "productType = ''";
+            }
+
+            return displayedProduct;
         }
 
     }

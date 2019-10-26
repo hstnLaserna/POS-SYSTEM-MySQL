@@ -402,7 +402,7 @@
             // 
             this.lblProductName.AutoSize = true;
             this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductName.Location = new System.Drawing.Point(117, 21);
+            this.lblProductName.Location = new System.Drawing.Point(218, 21);
             this.lblProductName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(228, 29);
@@ -422,7 +422,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(591, 21);
+            this.btnBack.Location = new System.Drawing.Point(655, 10);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(40, 40);

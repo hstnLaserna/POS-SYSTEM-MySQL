@@ -151,22 +151,9 @@ namespace POS_SYSTEM
 
         private void initializeButtons()
         {
-            milkteaButtons = new List<Button>();
-            milkteaButtons.Add(btnMT1);
-            milkteaButtons.Add(btnMT2);
-            milkteaButtons.Add(btnMT3);
-            milkteaButtons.Add(btnMT4);
-            milkteaButtons.Add(btnMT5);
-            milkteaButtons.Add(btnMT6);
-            milkteaButtons.Add(btnMT7);
-            milkteaButtons.Add(btnMT8);
-            milkteaButtons.Add(btnMT9);
-            milkteaButtons.Add(btnMT10);
-            milkteaButtons.Add(btnMT11);
-            milkteaButtons.Add(btnMT12);
-            milkteaButtons.Add(btnMT13);
-            milkteaButtons.Add(btnMT14);
-            milkteaButtons.Add(btnMT15);
+            milkteaButtons = new List<Button>() {   btnMT1, btnMT2, btnMT3, btnMT4, btnMT5,
+                                                    btnMT6, btnMT7, btnMT8, btnMT9, btnMT10,
+                                                    btnMT11, btnMT12, btnMT13, btnMT14, btnMT15 };
             for (int i = 0; i < milkteaButtons.Count; i++)
             {
                 milkteaButtons[i].Visible = false;
@@ -178,23 +165,9 @@ namespace POS_SYSTEM
                 milkteaButtons[i].Visible = true;
             }
 
-            milkshakeButtons = new List<Button>();
-            milkshakeButtons.Add(btnMS1);
-            milkshakeButtons.Add(btnMS2);
-            milkshakeButtons.Add(btnMS3);
-            milkshakeButtons.Add(btnMS4);
-            milkshakeButtons.Add(btnMS5);
-            milkshakeButtons.Add(btnMS6);
-            milkshakeButtons.Add(btnMS7);
-            milkshakeButtons.Add(btnMS8);
-            milkshakeButtons.Add(btnMS9);
-            milkshakeButtons.Add(btnMS10);
-            milkshakeButtons.Add(btnMS11);
-            milkshakeButtons.Add(btnMS12);
-            milkshakeButtons.Add(btnMS13);
-            milkshakeButtons.Add(btnMS14);
-            milkshakeButtons.Add(btnMS15);
-
+            milkshakeButtons = new List<Button>() {   btnMS1, btnMS2, btnMS3, btnMS4, btnMS5,
+                                                    btnMS6, btnMS7, btnMS8, btnMS9, btnMS10,
+                                                    btnMS11, btnMS12, btnMS13, btnMS14, btnMS15 };
 
             for (int i = 0; i < milkshakeButtons.Count; i++)
             {
@@ -207,23 +180,9 @@ namespace POS_SYSTEM
                 milkshakeButtons[i].Visible = true;
             }
 
-            frappeButtons = new List<Button>();
-            frappeButtons.Add(btnFR1);
-            frappeButtons.Add(btnFR2);
-            frappeButtons.Add(btnFR3);
-            frappeButtons.Add(btnFR4);
-            frappeButtons.Add(btnFR5);
-            frappeButtons.Add(btnFR6);
-            frappeButtons.Add(btnFR7);
-            frappeButtons.Add(btnFR8);
-            frappeButtons.Add(btnFR9);
-            frappeButtons.Add(btnFR10);
-            frappeButtons.Add(btnFR11);
-            frappeButtons.Add(btnFR12);
-            frappeButtons.Add(btnFR13);
-            frappeButtons.Add(btnFR14);
-            frappeButtons.Add(btnFR15);
-
+            frappeButtons = new List<Button>() {    btnFR1, btnFR2, btnFR3, btnFR4, btnFR5,
+                                                    btnFR6, btnFR7, btnFR8, btnFR9, btnFR10,
+                                                    btnFR11, btnFR12, btnFR13, btnFR14, btnFR15 };
 
             for (int i = 0; i < frappeButtons.Count; i++)
             {
@@ -240,22 +199,9 @@ namespace POS_SYSTEM
 
         private void initializeLabels()
         {
-            milkteaLabels = new List<Label>();
-            milkteaLabels.Add(lblMT1);
-            milkteaLabels.Add(lblMT2);
-            milkteaLabels.Add(lblMT3);
-            milkteaLabels.Add(lblMT4);
-            milkteaLabels.Add(lblMT5);
-            milkteaLabels.Add(lblMT6);
-            milkteaLabels.Add(lblMT7);
-            milkteaLabels.Add(lblMT8);
-            milkteaLabels.Add(lblMT9);
-            milkteaLabels.Add(lblMT10);
-            milkteaLabels.Add(lblMT11);
-            milkteaLabels.Add(lblMT12);
-            milkteaLabels.Add(lblMT13);
-            milkteaLabels.Add(lblMT14);
-            milkteaLabels.Add(lblMT15);
+            milkteaLabels = new List<Label>() { lblMT1, lblMT2, lblMT3, lblMT4, lblMT5,
+                                                lblMT6, lblMT7, lblMT8, lblMT9, lblMT10,
+                                                lblMT11, lblMT12, lblMT13, lblMT14, lblMT15 };
             for (int j = 0; j < milkteaLabels.Count; j++)
             {
                 milkteaLabels[j].Visible = false;
@@ -267,22 +213,21 @@ namespace POS_SYSTEM
                 milkteaLabels[j].Visible = true;
             }
 
-            milkshakeLabels = new List<Label>();
-            milkshakeLabels.Add(lblMS1);
-            milkshakeLabels.Add(lblMS2);
-            milkshakeLabels.Add(lblMS3);
-            milkshakeLabels.Add(lblMS4);
-            milkshakeLabels.Add(lblMS5);
-            milkshakeLabels.Add(lblMS6);
-            milkshakeLabels.Add(lblMS7);
-            milkshakeLabels.Add(lblMS8);
-            milkshakeLabels.Add(lblMS9);
-            milkshakeLabels.Add(lblMS10);
-            milkshakeLabels.Add(lblMS11);
-            milkshakeLabels.Add(lblMS12);
-            milkshakeLabels.Add(lblMS13);
-            milkshakeLabels.Add(lblMS14);
-            milkshakeLabels.Add(lblMS15);
+            milkshakeLabels = new List<Label>() {   lblMS1, lblMS2, lblMS3, lblMS4, lblMS5,
+                                                    lblMS6, lblMS7, lblMS8, lblMS9, lblMS10,
+                                                    lblMS11, lblMS12, lblMS13, lblMS14, lblMS15 };
+
+
+
+            //milkshakeLabels = new List<Label>();
+
+            //string heh = "";
+            //for (int i = 0; i <= milkshakeLabels.Count; i++)
+            //{
+            //    heh = "lblMS" + (i + 1);
+            //    Label lbl_text = this.Controls.Find(heh, true).FirstOrDefault() as Label;
+            //    milkshakeLabels.Add(lbl_text);
+            //}
 
             for (int j = 0; j < milkshakeLabels.Count; j++)
             {
@@ -295,22 +240,10 @@ namespace POS_SYSTEM
                 milkshakeLabels[j].Visible = true;
             }
 
-            frappeLabels = new List<Label>();
-            frappeLabels.Add(lblFR1);
-            frappeLabels.Add(lblFR2);
-            frappeLabels.Add(lblFR3);
-            frappeLabels.Add(lblFR4);
-            frappeLabels.Add(lblFR5);
-            frappeLabels.Add(lblFR6);
-            frappeLabels.Add(lblFR7);
-            frappeLabels.Add(lblFR8);
-            frappeLabels.Add(lblFR9);
-            frappeLabels.Add(lblFR10);
-            frappeLabels.Add(lblFR11);
-            frappeLabels.Add(lblFR12);
-            frappeLabels.Add(lblFR13);
-            frappeLabels.Add(lblFR14);
-            frappeLabels.Add(lblFR15);
+            frappeLabels = new List<Label>() {  lblFR1, lblFR2, lblFR3, lblFR4, lblFR5,
+                                                lblFR6, lblFR7, lblFR8, lblFR9, lblFR10,
+                                                lblFR11, lblFR12, lblFR13, lblFR14, lblFR15 };
+
             for (int j = 0; j < frappeLabels.Count; j++)
             {
                 frappeLabels[j].Visible = false;
@@ -327,8 +260,8 @@ namespace POS_SYSTEM
             int selectedIndex = Convert.ToInt32(((Button)sender).Tag);
             selectedFlavor = mtFlavors[selectedIndex];
             selectedProductType = "Milktea";
-            frmAddProduct frmMilkTea = new frmAddProduct(selectedProductType, selectedFlavor, mtPrice1[selectedIndex], mtPrice2[selectedIndex], mtPrice3[selectedIndex]);
-            frmMilkTea.ShowDialog();
+            frmAddProduct frmAddProduct = new frmAddProduct(selectedProductType, selectedFlavor, mtPrice1[selectedIndex], mtPrice2[selectedIndex], mtPrice3[selectedIndex]);
+            frmAddProduct.ShowDialog();
             updateDisplay();
         }
         private void buttonMS_Click(object sender, EventArgs e)
@@ -359,8 +292,8 @@ namespace POS_SYSTEM
         private void btnLogout_Click(object sender, EventArgs e)
         {
             frmLogin frmLogin = new frmLogin();
-            //this.Close();
-            Application.Exit();
+            this.Close();
+            //Application.Exit();
             frmLogin.Show();
         }
 
@@ -445,7 +378,9 @@ namespace POS_SYSTEM
 
         private void txtCash_Enter(object sender, EventArgs e)
         {
+            tabControl.Enabled = false;
             txtCash.SelectAll();
+
         }
 
 
@@ -574,7 +509,7 @@ namespace POS_SYSTEM
                 connection.Open();
                 try
                 {
-                    string query = "SELECT MAX(sino) as si FROM tblsales;";
+                    string query = "SELECT MAX(sino) as si FROM " + DatabaseConnection.SalesTable + ";";
                     command = new MySqlCommand(query, connection);
                     reader = command.ExecuteReader();
 
@@ -636,6 +571,7 @@ namespace POS_SYSTEM
                 {
                     double cashin = Double.Parse(txtCash.Text);
                     txtCash.Text = cashin.ToString("F");
+                    tabControl.Enabled = true;
                 }
                 catch
                 {
@@ -871,7 +807,9 @@ namespace POS_SYSTEM
 
         private void btnTransact_Click(object sender, EventArgs e)
         {
+
             saveTransaction();
+            //printDialog1.ShowDialog();
             newTransaction();
             updateDisplay();
 
@@ -879,7 +817,7 @@ namespace POS_SYSTEM
 
         private void txtCash_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = e.KeyChar != (char)Keys.Back && !char.IsDigit(e.KeyChar);
+            e.Handled = e.KeyChar != (char)Keys.Back && !char.IsDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar);
         }
 
         private void txtRemove_Enter(object sender, EventArgs e)
@@ -920,6 +858,11 @@ namespace POS_SYSTEM
         private void txtCustomer_Leave(object sender, EventArgs e)
         {
             ((TextBox)sender).Text = Regex.Replace(((TextBox)sender).Text.Trim(), @"\s+", " ");
+        }
+
+        private void txtCash_Click(object sender, EventArgs e)
+        {
+            txtCash.SelectAll();
         }
 
     }

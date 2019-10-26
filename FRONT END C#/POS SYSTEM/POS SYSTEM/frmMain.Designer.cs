@@ -136,6 +136,10 @@
             this.txtRemove = new System.Windows.Forms.TextBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtChange = new System.Windows.Forms.Label();
+            this.txtVATAmount = new System.Windows.Forms.Label();
+            this.txtVATable = new System.Windows.Forms.Label();
+            this.txtTotalAmtDue = new System.Windows.Forms.Label();
             this.lblSINumber = new System.Windows.Forms.Label();
             this.lblCustomer = new System.Windows.Forms.Label();
             this.txtCustomer = new System.Windows.Forms.TextBox();
@@ -152,10 +156,9 @@
             this.lblAmtDue = new System.Windows.Forms.Label();
             this.txtCash = new System.Windows.Forms.TextBox();
             this.txtDisplay = new System.Windows.Forms.TextBox();
-            this.txtTotalAmtDue = new System.Windows.Forms.Label();
-            this.txtVATable = new System.Windows.Forms.Label();
-            this.txtVATAmount = new System.Windows.Forms.Label();
-            this.txtChange = new System.Windows.Forms.Label();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -166,8 +169,9 @@
             // lblUser
             // 
             this.lblUser.AutoSize = true;
+            this.lblUser.BackColor = System.Drawing.Color.OldLace;
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.ForeColor = System.Drawing.Color.White;
+            this.lblUser.ForeColor = System.Drawing.Color.Black;
             this.lblUser.Location = new System.Drawing.Point(13, 17);
             this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUser.Name = "lblUser";
@@ -179,8 +183,9 @@
             // lblPosition
             // 
             this.lblPosition.AutoSize = true;
+            this.lblPosition.BackColor = System.Drawing.Color.OldLace;
             this.lblPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.ForeColor = System.Drawing.Color.White;
+            this.lblPosition.ForeColor = System.Drawing.Color.Black;
             this.lblPosition.Location = new System.Drawing.Point(13, 33);
             this.lblPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPosition.Name = "lblPosition";
@@ -191,7 +196,7 @@
             // 
             // btnTransactionHistory
             // 
-            this.btnTransactionHistory.BackColor = System.Drawing.Color.Sienna;
+            this.btnTransactionHistory.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnTransactionHistory.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTransactionHistory.BackgroundImage")));
             this.btnTransactionHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnTransactionHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -208,7 +213,7 @@
             // 
             // btnUsersManager
             // 
-            this.btnUsersManager.BackColor = System.Drawing.Color.Sienna;
+            this.btnUsersManager.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnUsersManager.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUsersManager.BackgroundImage")));
             this.btnUsersManager.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnUsersManager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -225,7 +230,7 @@
             // 
             // btnProductsManager
             // 
-            this.btnProductsManager.BackColor = System.Drawing.Color.Sienna;
+            this.btnProductsManager.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnProductsManager.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProductsManager.BackgroundImage")));
             this.btnProductsManager.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnProductsManager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -242,10 +247,10 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.IndianRed;
+            this.btnLogout.BackColor = System.Drawing.Color.Tomato;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.Location = new System.Drawing.Point(1388, 948);
+            this.btnLogout.Location = new System.Drawing.Point(1389, 948);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(131, 28);
@@ -256,10 +261,10 @@
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.BackColor = System.Drawing.Color.IndianRed;
+            this.btnChangePassword.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangePassword.Location = new System.Drawing.Point(1388, 912);
+            this.btnChangePassword.Location = new System.Drawing.Point(1390, 903);
             this.btnChangePassword.Margin = new System.Windows.Forms.Padding(4);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(131, 28);
@@ -284,7 +289,7 @@
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
-            this.tabPage1.BackColor = System.Drawing.Color.Tan;
+            this.tabPage1.BackColor = System.Drawing.Color.OldLace;
             this.tabPage1.Controls.Add(this.btnMT14);
             this.tabPage1.Controls.Add(this.lblMT15);
             this.tabPage1.Controls.Add(this.lblMT14);
@@ -326,7 +331,7 @@
             // 
             // btnMT14
             // 
-            this.btnMT14.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMT14.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMT14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT14.BackgroundImage")));
             this.btnMT14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -360,7 +365,7 @@
             // 
             // btnMT15
             // 
-            this.btnMT15.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMT15.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMT15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT15.BackgroundImage")));
             this.btnMT15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -376,7 +381,7 @@
             // 
             // btnMT12
             // 
-            this.btnMT12.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMT12.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMT12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT12.BackgroundImage")));
             this.btnMT12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -419,7 +424,7 @@
             // 
             // btnMT13
             // 
-            this.btnMT13.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMT13.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMT13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT13.BackgroundImage")));
             this.btnMT13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -435,7 +440,7 @@
             // 
             // btnMT11
             // 
-            this.btnMT11.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMT11.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMT11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT11.BackgroundImage")));
             this.btnMT11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -451,7 +456,7 @@
             // 
             // btnMT9
             // 
-            this.btnMT9.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMT9.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMT9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT9.BackgroundImage")));
             this.btnMT9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -485,7 +490,7 @@
             // 
             // btnMT10
             // 
-            this.btnMT10.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMT10.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMT10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT10.BackgroundImage")));
             this.btnMT10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -501,7 +506,7 @@
             // 
             // btnMT7
             // 
-            this.btnMT7.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMT7.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMT7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT7.BackgroundImage")));
             this.btnMT7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -544,7 +549,7 @@
             // 
             // btnMT8
             // 
-            this.btnMT8.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMT8.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMT8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT8.BackgroundImage")));
             this.btnMT8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -560,7 +565,7 @@
             // 
             // btnMT6
             // 
-            this.btnMT6.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMT6.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMT6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT6.BackgroundImage")));
             this.btnMT6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -576,7 +581,7 @@
             // 
             // btnMT4
             // 
-            this.btnMT4.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMT4.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMT4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT4.BackgroundImage")));
             this.btnMT4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -610,7 +615,7 @@
             // 
             // btnMT5
             // 
-            this.btnMT5.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMT5.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMT5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT5.BackgroundImage")));
             this.btnMT5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -626,7 +631,7 @@
             // 
             // btnMT2
             // 
-            this.btnMT2.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMT2.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMT2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT2.BackgroundImage")));
             this.btnMT2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -669,7 +674,7 @@
             // 
             // btnMT3
             // 
-            this.btnMT3.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMT3.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMT3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT3.BackgroundImage")));
             this.btnMT3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -685,7 +690,7 @@
             // 
             // btnMT1
             // 
-            this.btnMT1.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMT1.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMT1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT1.BackgroundImage")));
             this.btnMT1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -703,18 +708,18 @@
             // 
             this.lblProducts1.AutoSize = true;
             this.lblProducts1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblProducts1.Font = new System.Drawing.Font("Microsoft Sans Serif", 47.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProducts1.ForeColor = System.Drawing.Color.OliveDrab;
-            this.lblProducts1.Location = new System.Drawing.Point(243, 4);
+            this.lblProducts1.Font = new System.Drawing.Font("HamburgerHeaven", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProducts1.ForeColor = System.Drawing.Color.Black;
+            this.lblProducts1.Location = new System.Drawing.Point(354, 3);
             this.lblProducts1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProducts1.Name = "lblProducts1";
-            this.lblProducts1.Size = new System.Drawing.Size(387, 91);
+            this.lblProducts1.Size = new System.Drawing.Size(281, 95);
             this.lblProducts1.TabIndex = 23;
             this.lblProducts1.Text = "MILKTEA";
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.Tan;
+            this.tabPage2.BackColor = System.Drawing.Color.OldLace;
             this.tabPage2.Controls.Add(this.btnMS14);
             this.tabPage2.Controls.Add(this.lblMS15);
             this.tabPage2.Controls.Add(this.lblMS14);
@@ -756,7 +761,7 @@
             // 
             // btnMS14
             // 
-            this.btnMS14.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMS14.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMS14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS14.BackgroundImage")));
             this.btnMS14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -790,7 +795,7 @@
             // 
             // btnMS15
             // 
-            this.btnMS15.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMS15.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMS15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS15.BackgroundImage")));
             this.btnMS15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -806,7 +811,7 @@
             // 
             // btnMS12
             // 
-            this.btnMS12.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMS12.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMS12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS12.BackgroundImage")));
             this.btnMS12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -849,7 +854,7 @@
             // 
             // btnMS13
             // 
-            this.btnMS13.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMS13.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMS13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS13.BackgroundImage")));
             this.btnMS13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -865,7 +870,7 @@
             // 
             // btnMS11
             // 
-            this.btnMS11.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMS11.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMS11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS11.BackgroundImage")));
             this.btnMS11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -881,7 +886,7 @@
             // 
             // btnMS4
             // 
-            this.btnMS4.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMS4.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMS4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS4.BackgroundImage")));
             this.btnMS4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -915,7 +920,7 @@
             // 
             // btnMS5
             // 
-            this.btnMS5.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMS5.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMS5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS5.BackgroundImage")));
             this.btnMS5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -931,7 +936,7 @@
             // 
             // btnMS9
             // 
-            this.btnMS9.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMS9.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMS9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS9.BackgroundImage")));
             this.btnMS9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -965,7 +970,7 @@
             // 
             // btnMS10
             // 
-            this.btnMS10.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMS10.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMS10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS10.BackgroundImage")));
             this.btnMS10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -981,7 +986,7 @@
             // 
             // btnMS7
             // 
-            this.btnMS7.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMS7.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMS7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS7.BackgroundImage")));
             this.btnMS7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1025,7 +1030,7 @@
             // 
             // btnMS8
             // 
-            this.btnMS8.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMS8.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMS8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS8.BackgroundImage")));
             this.btnMS8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1041,7 +1046,7 @@
             // 
             // btnMS6
             // 
-            this.btnMS6.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMS6.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMS6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS6.BackgroundImage")));
             this.btnMS6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1084,7 +1089,7 @@
             // 
             // btnMS3
             // 
-            this.btnMS3.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMS3.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMS3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS3.BackgroundImage")));
             this.btnMS3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1100,7 +1105,7 @@
             // 
             // btnMS2
             // 
-            this.btnMS2.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMS2.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMS2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS2.BackgroundImage")));
             this.btnMS2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1116,7 +1121,7 @@
             // 
             // btnMS1
             // 
-            this.btnMS1.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnMS1.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnMS1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS1.BackgroundImage")));
             this.btnMS1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1134,18 +1139,18 @@
             // 
             this.lblProducts2.AutoSize = true;
             this.lblProducts2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblProducts2.Font = new System.Drawing.Font("Microsoft Sans Serif", 47.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProducts2.ForeColor = System.Drawing.Color.OliveDrab;
-            this.lblProducts2.Location = new System.Drawing.Point(156, 4);
+            this.lblProducts2.Font = new System.Drawing.Font("HamburgerHeaven", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProducts2.ForeColor = System.Drawing.Color.Black;
+            this.lblProducts2.Location = new System.Drawing.Point(316, -1);
             this.lblProducts2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProducts2.Name = "lblProducts2";
-            this.lblProducts2.Size = new System.Drawing.Size(504, 91);
+            this.lblProducts2.Size = new System.Drawing.Size(364, 95);
             this.lblProducts2.TabIndex = 24;
             this.lblProducts2.Text = "MILKSHAKE";
             // 
             // tabPage3
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.Tan;
+            this.tabPage3.BackColor = System.Drawing.Color.OldLace;
             this.tabPage3.Controls.Add(this.btnFR14);
             this.tabPage3.Controls.Add(this.lblFR15);
             this.tabPage3.Controls.Add(this.lblFR14);
@@ -1187,7 +1192,7 @@
             // 
             // btnFR14
             // 
-            this.btnFR14.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnFR14.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnFR14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR14.BackgroundImage")));
             this.btnFR14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1221,7 +1226,7 @@
             // 
             // btnFR15
             // 
-            this.btnFR15.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnFR15.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnFR15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR15.BackgroundImage")));
             this.btnFR15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1237,7 +1242,7 @@
             // 
             // btnFR12
             // 
-            this.btnFR12.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnFR12.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnFR12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR12.BackgroundImage")));
             this.btnFR12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1280,7 +1285,7 @@
             // 
             // btnFR13
             // 
-            this.btnFR13.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnFR13.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnFR13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR13.BackgroundImage")));
             this.btnFR13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1296,7 +1301,7 @@
             // 
             // btnFR11
             // 
-            this.btnFR11.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnFR11.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnFR11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR11.BackgroundImage")));
             this.btnFR11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1312,7 +1317,7 @@
             // 
             // btnFR4
             // 
-            this.btnFR4.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnFR4.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnFR4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR4.BackgroundImage")));
             this.btnFR4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1346,7 +1351,7 @@
             // 
             // btnFR5
             // 
-            this.btnFR5.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnFR5.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnFR5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR5.BackgroundImage")));
             this.btnFR5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1362,7 +1367,7 @@
             // 
             // btnFR9
             // 
-            this.btnFR9.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnFR9.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnFR9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR9.BackgroundImage")));
             this.btnFR9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1396,7 +1401,7 @@
             // 
             // btnFR10
             // 
-            this.btnFR10.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnFR10.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnFR10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR10.BackgroundImage")));
             this.btnFR10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1412,7 +1417,7 @@
             // 
             // btnFR7
             // 
-            this.btnFR7.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnFR7.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnFR7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR7.BackgroundImage")));
             this.btnFR7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1456,7 +1461,7 @@
             // 
             // btnFR8
             // 
-            this.btnFR8.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnFR8.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnFR8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR8.BackgroundImage")));
             this.btnFR8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1472,7 +1477,7 @@
             // 
             // btnFR6
             // 
-            this.btnFR6.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnFR6.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnFR6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR6.BackgroundImage")));
             this.btnFR6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1515,7 +1520,7 @@
             // 
             // btnFR3
             // 
-            this.btnFR3.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnFR3.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnFR3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR3.BackgroundImage")));
             this.btnFR3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1531,7 +1536,7 @@
             // 
             // btnFR2
             // 
-            this.btnFR2.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnFR2.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnFR2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR2.BackgroundImage")));
             this.btnFR2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1547,7 +1552,7 @@
             // 
             // btnFR1
             // 
-            this.btnFR1.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnFR1.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnFR1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR1.BackgroundImage")));
             this.btnFR1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1565,23 +1570,23 @@
             // 
             this.lblProducts3.AutoSize = true;
             this.lblProducts3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblProducts3.Font = new System.Drawing.Font("Microsoft Sans Serif", 47.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProducts3.ForeColor = System.Drawing.Color.OliveDrab;
-            this.lblProducts3.Location = new System.Drawing.Point(338, 7);
+            this.lblProducts3.Font = new System.Drawing.Font("HamburgerHeaven", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProducts3.ForeColor = System.Drawing.Color.Black;
+            this.lblProducts3.Location = new System.Drawing.Point(389, 15);
             this.lblProducts3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProducts3.Name = "lblProducts3";
-            this.lblProducts3.Size = new System.Drawing.Size(364, 91);
+            this.lblProducts3.Size = new System.Drawing.Size(252, 95);
             this.lblProducts3.TabIndex = 24;
             this.lblProducts3.Text = "FRAPPE";
             // 
             // txtRemove
             // 
-            this.txtRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRemove.ForeColor = System.Drawing.Color.Gray;
+            this.txtRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRemove.ForeColor = System.Drawing.Color.DimGray;
             this.txtRemove.Location = new System.Drawing.Point(1143, 691);
             this.txtRemove.Margin = new System.Windows.Forms.Padding(4);
             this.txtRemove.Name = "txtRemove";
-            this.txtRemove.Size = new System.Drawing.Size(239, 22);
+            this.txtRemove.Size = new System.Drawing.Size(239, 24);
             this.txtRemove.TabIndex = 30;
             this.txtRemove.Text = "Type the Order #";
             this.txtRemove.Enter += new System.EventHandler(this.txtRemove_Enter);
@@ -1590,18 +1595,21 @@
             // 
             // btnRemove
             // 
+            this.btnRemove.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.Location = new System.Drawing.Point(1031, 689);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(100, 28);
             this.btnRemove.TabIndex = 29;
             this.btnRemove.Text = "REMOVE";
-            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.OldLace;
             this.panel1.Controls.Add(this.txtChange);
             this.panel1.Controls.Add(this.txtVATAmount);
             this.panel1.Controls.Add(this.txtVATable);
@@ -1627,6 +1635,54 @@
             this.panel1.Size = new System.Drawing.Size(350, 257);
             this.panel1.TabIndex = 70;
             // 
+            // txtChange
+            // 
+            this.txtChange.BackColor = System.Drawing.Color.Cornsilk;
+            this.txtChange.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtChange.Font = new System.Drawing.Font("Maiandra GD", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChange.Location = new System.Drawing.Point(171, 184);
+            this.txtChange.Name = "txtChange";
+            this.txtChange.Size = new System.Drawing.Size(176, 25);
+            this.txtChange.TabIndex = 79;
+            this.txtChange.Text = "0.00";
+            this.txtChange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtVATAmount
+            // 
+            this.txtVATAmount.BackColor = System.Drawing.Color.Cornsilk;
+            this.txtVATAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVATAmount.Font = new System.Drawing.Font("Maiandra GD", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVATAmount.Location = new System.Drawing.Point(171, 118);
+            this.txtVATAmount.Name = "txtVATAmount";
+            this.txtVATAmount.Size = new System.Drawing.Size(176, 25);
+            this.txtVATAmount.TabIndex = 78;
+            this.txtVATAmount.Text = "0.00";
+            this.txtVATAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtVATable
+            // 
+            this.txtVATable.BackColor = System.Drawing.Color.Cornsilk;
+            this.txtVATable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVATable.Font = new System.Drawing.Font("Maiandra GD", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVATable.Location = new System.Drawing.Point(171, 85);
+            this.txtVATable.Name = "txtVATable";
+            this.txtVATable.Size = new System.Drawing.Size(176, 25);
+            this.txtVATable.TabIndex = 77;
+            this.txtVATable.Text = "0.00";
+            this.txtVATable.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtTotalAmtDue
+            // 
+            this.txtTotalAmtDue.BackColor = System.Drawing.Color.Cornsilk;
+            this.txtTotalAmtDue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTotalAmtDue.Font = new System.Drawing.Font("Maiandra GD", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalAmtDue.Location = new System.Drawing.Point(171, 52);
+            this.txtTotalAmtDue.Name = "txtTotalAmtDue";
+            this.txtTotalAmtDue.Size = new System.Drawing.Size(176, 25);
+            this.txtTotalAmtDue.TabIndex = 71;
+            this.txtTotalAmtDue.Text = "0.00";
+            this.txtTotalAmtDue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // lblSINumber
             // 
             this.lblSINumber.AutoSize = true;
@@ -1644,7 +1700,7 @@
             this.lblCustomer.AutoSize = true;
             this.lblCustomer.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomer.ForeColor = System.Drawing.Color.Black;
-            this.lblCustomer.Location = new System.Drawing.Point(36, 27);
+            this.lblCustomer.Location = new System.Drawing.Point(14, 21);
             this.lblCustomer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new System.Drawing.Size(119, 16);
@@ -1747,14 +1803,15 @@
             // 
             // btnTransact
             // 
-            this.btnTransact.BackColor = System.Drawing.Color.White;
+            this.btnTransact.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btnTransact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnTransact.Enabled = false;
+            this.btnTransact.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTransact.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransact.Location = new System.Drawing.Point(245, 218);
+            this.btnTransact.Location = new System.Drawing.Point(194, 213);
             this.btnTransact.Margin = new System.Windows.Forms.Padding(4);
             this.btnTransact.Name = "btnTransact";
-            this.btnTransact.Size = new System.Drawing.Size(103, 33);
+            this.btnTransact.Size = new System.Drawing.Size(131, 33);
             this.btnTransact.TabIndex = 56;
             this.btnTransact.Text = "TRANSACT";
             this.btnTransact.UseVisualStyleBackColor = false;
@@ -1810,6 +1867,7 @@
             this.txtCash.TabIndex = 51;
             this.txtCash.Text = "0.00";
             this.txtCash.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCash.Click += new System.EventHandler(this.txtCash_Click);
             this.txtCash.Enter += new System.EventHandler(this.txtCash_Enter);
             this.txtCash.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
             this.txtCash.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCash_KeyPress);
@@ -1817,7 +1875,7 @@
             // 
             // txtDisplay
             // 
-            this.txtDisplay.BackColor = System.Drawing.Color.White;
+            this.txtDisplay.BackColor = System.Drawing.Color.OldLace;
             this.txtDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDisplay.Location = new System.Drawing.Point(1032, 90);
@@ -1830,61 +1888,33 @@
             this.txtDisplay.TabIndex = 69;
             this.txtDisplay.TabStop = false;
             // 
-            // txtTotalAmtDue
+            // printDialog1
             // 
-            this.txtTotalAmtDue.BackColor = System.Drawing.Color.Cornsilk;
-            this.txtTotalAmtDue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotalAmtDue.Font = new System.Drawing.Font("Maiandra GD", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalAmtDue.Location = new System.Drawing.Point(171, 52);
-            this.txtTotalAmtDue.Name = "txtTotalAmtDue";
-            this.txtTotalAmtDue.Size = new System.Drawing.Size(176, 25);
-            this.txtTotalAmtDue.TabIndex = 71;
-            this.txtTotalAmtDue.Text = "0.00";
-            this.txtTotalAmtDue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.printDialog1.UseEXDialog = true;
             // 
-            // txtVATable
+            // label2
             // 
-            this.txtVATable.BackColor = System.Drawing.Color.Cornsilk;
-            this.txtVATable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtVATable.Font = new System.Drawing.Font("Maiandra GD", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVATable.Location = new System.Drawing.Point(171, 85);
-            this.txtVATable.Name = "txtVATable";
-            this.txtVATable.Size = new System.Drawing.Size(176, 25);
-            this.txtVATable.TabIndex = 77;
-            this.txtVATable.Text = "0.00";
-            this.txtVATable.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtVATAmount
-            // 
-            this.txtVATAmount.BackColor = System.Drawing.Color.Cornsilk;
-            this.txtVATAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtVATAmount.Font = new System.Drawing.Font("Maiandra GD", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVATAmount.Location = new System.Drawing.Point(171, 118);
-            this.txtVATAmount.Name = "txtVATAmount";
-            this.txtVATAmount.Size = new System.Drawing.Size(176, 25);
-            this.txtVATAmount.TabIndex = 78;
-            this.txtVATAmount.Text = "0.00";
-            this.txtVATAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtChange
-            // 
-            this.txtChange.BackColor = System.Drawing.Color.Cornsilk;
-            this.txtChange.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtChange.Font = new System.Drawing.Font("Maiandra GD", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChange.Location = new System.Drawing.Point(171, 184);
-            this.txtChange.Name = "txtChange";
-            this.txtChange.Size = new System.Drawing.Size(176, 25);
-            this.txtChange.TabIndex = 79;
-            this.txtChange.Text = "0.00";
-            this.txtChange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.OldLace;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(1102, 57);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(225, 29);
+            this.label2.TabIndex = 57;
+            this.label2.Text = "ORDER HISTORY";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1532, 989);
             this.ControlBox = false;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtRemove);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnRemove);
@@ -2051,6 +2081,9 @@
         private System.Windows.Forms.Label txtVATable;
         private System.Windows.Forms.Label txtVATAmount;
         private System.Windows.Forms.Label txtChange;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Label label2;
 
     }
 }

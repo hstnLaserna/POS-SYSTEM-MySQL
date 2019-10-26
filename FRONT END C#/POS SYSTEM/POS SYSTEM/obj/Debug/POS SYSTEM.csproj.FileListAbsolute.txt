@@ -56,3 +56,4 @@ C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#
 C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Debug\POS_SYSTEM.Properties.Resources.resources
 C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Debug\POS SYSTEM.csproj.GenerateResource.Cache
 C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Debug\POS_SYSTEM.frmAddProduct.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Debug\POS_SYSTEM.frmAddonsManager.resources

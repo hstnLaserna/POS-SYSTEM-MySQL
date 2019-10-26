@@ -19,7 +19,6 @@ namespace POS_SYSTEM
         Transact Transact = new Transact();
         CheckBox chk;
         RadioButton rb;
-        double sinkers;
         double Price1, Price2, Price3;
         private List<CheckBox> productCheckBox;
         private List<string> addons;
@@ -40,65 +39,11 @@ namespace POS_SYSTEM
             Price2 = price2;
             Price3 = price3;
             lblProductName.Text = Product.ProductName;
-            rbtn100P.Checked = true;
-            
-            dataTable = new DataTable();
-            
-            addons = new List<string>(dataTable.Rows.Count);
-            price = new List<double>(dataTable.Rows.Count);
-
-            using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
-            {
-                connection.Open();
-                try
-                {
-                    mySqlDataAdapter = new MySqlDataAdapter();
-                    string query = "SELECT name, price FROM tbladdons WHERE forProductType = @selectedProductType AND isAvailable = 1;";
-                    command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@selectedProductType", Product.Type);
-                    mySqlDataAdapter.SelectCommand = command;
-
-
-                    mySqlDataAdapter.Fill(dataTable);
-                    foreach (DataRow row in dataTable.Rows)
-                    {
-                        addons.Add((string)row["name"]);
-                        price.Add(Convert.ToDouble(row["price"]));
-                    }
-
-                    //foreach (string xi in addons)
-                    //{
-                    //    MessageBox.Show(addons[j]);
-                    //    j++;
-                    //}
-                    string heh = "";
-                    foreach (object o in addons)
-                    {
-                        heh = heh + o + "\n";
-                    }
-                    MessageBox.Show(heh);
-                    dataTable.Clear();
-                    command.Dispose();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-                connection.Close();
-            }
-
-            initializeCheckBoxes();
         }
 
         private void initializeCheckBoxes()
         {
-            productCheckBox = new List<CheckBox>();
-            productCheckBox.Add(chkAddon1);
-            productCheckBox.Add(chkAddon2);
-            productCheckBox.Add(chkAddon3);
-            productCheckBox.Add(chkAddon4);
-            productCheckBox.Add(chkAddon5);
-            productCheckBox.Add(chkAddon6);
+            productCheckBox = new List<CheckBox>() { chkAddon1, chkAddon2, chkAddon3, chkAddon4, chkAddon5, chkAddon6};
             for (int i = 0; i < productCheckBox.Count; i++)
             {
                 productCheckBox[i].Visible = false;
@@ -114,6 +59,51 @@ namespace POS_SYSTEM
 
         private void frmMilkTea_Load(object sender, EventArgs e)
         {
+
+            rbtn100P.Checked = true;
+
+            dataTable = new DataTable();
+
+            addons = new List<string>(dataTable.Rows.Count);
+            price = new List<double>(dataTable.Rows.Count);
+
+            using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
+            {
+                connection.Open();
+                try
+                {
+                    mySqlDataAdapter = new MySqlDataAdapter();
+                    string query = "SELECT name, price FROM " + DatabaseConnection.AddonsTable + " WHERE forProductType = @selectedProductType AND isAvailable = 1;";
+                    command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@selectedProductType", Product.Type);
+                    mySqlDataAdapter.SelectCommand = command;
+
+
+                    mySqlDataAdapter.Fill(dataTable);
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        addons.Add((string)row["name"]);
+                        price.Add(Convert.ToDouble(row["price"]));
+                    }
+
+                    //string heh = "";
+                    //foreach (object o in addons)
+                    //{
+                    //    heh = heh + o + "\n";
+                    //}
+                    //MessageBox.Show(heh);
+                    dataTable.Clear();
+                    command.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                connection.Close();
+            }
+
+            initializeCheckBoxes();
+
             if (Price1 > 0)
             {
                 radSize1.Enabled = true;
@@ -159,7 +149,6 @@ namespace POS_SYSTEM
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(" " + quantity);
             if (quantity == 0)
             {
                 MessageBox.Show("Quantity must not be 0!");
@@ -186,8 +175,8 @@ namespace POS_SYSTEM
             }
         }
 
-        // ----------------------------- METHODS ----------------------------- 
 
+        // ----------------------------- METHODS ----------------------------- 
 
         private void getSizePrice(object sender, EventArgs e)
         {
@@ -207,40 +196,12 @@ namespace POS_SYSTEM
             else { }
             Product.Size = rb.Text;
         }
+
         private void getSugarLevel(object sender, EventArgs e)
         {
             Product.SugarLevel = ((RadioButton)sender).Text;
         }
 
-        private double getSinkersPrice(object sender)
-        {
-            chk = sender as CheckBox;
-            if (chk.Text == "Pearl")
-            {
-                sinkers = 10;
-            }
-            else if (chk.Text == "Coffee Jelly")
-            {
-                sinkers = 10;
-            }
-            else if (chk.Text == "Coconut Jelly")
-            {
-                sinkers = 15;
-            }
-            else if (chk.Text == "Pudding")
-            {
-                sinkers = 20;
-            }
-            else if (chk.Text == "Aloe")
-            {
-                sinkers = 15;
-            }
-            else if (chk.Text == "Red Bean")
-            {
-                sinkers = 20;
-            }
-            return sinkers;
-        }
         private void getSinkers(object sender, EventArgs e)
         {
             chk = sender as CheckBox;
@@ -248,16 +209,47 @@ namespace POS_SYSTEM
             {
                 Product.Addons += chk.Text + " ";
                 Product.SinkerPrice += price[Convert.ToInt32(((CheckBox)sender).Tag)];
-                sinkers = 0;
             }
             else if (chk.Checked == false)
             {
                 Product.Addons = Product.Addons.Replace(chk.Text, "");
                 Product.SinkerPrice -= price[Convert.ToInt32(((CheckBox)sender).Tag)];
-                sinkers = 0;
             }
         }
 
+        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = e.KeyChar != (char)Keys.Back && !char.IsDigit(e.KeyChar);
+        }
+
+        private void txtQuantity_Leave(object sender, EventArgs e)
+        {
+            if (((TextBox)sender).Text == "")
+            {
+                ((TextBox)sender).Text = "0";
+                quantity = Convert.ToInt32(((TextBox)sender).Text);
+            }
+            else
+            {
+                try
+                {
+                    quantity = Convert.ToInt32(((TextBox)sender).Text);
+                }
+                catch
+                { }
+            }
+        }
+
+        private void txtNotes_Leave(object sender, EventArgs e)
+        {
+            ((TextBox)sender).Text = Regex.Replace(((TextBox)sender).Text.Trim(), @"\s+", " ");
+        }
+
+        private void txtNotes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = e.KeyChar != (char)Keys.Back && !char.IsLetter(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+
+        }
         #region Misc Methods
 
         // ----------------- Form Move Implementation  (Drag Form Body) ------------------
@@ -312,41 +304,5 @@ namespace POS_SYSTEM
               */
         }  
         #endregion
-
-        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = e.KeyChar != (char)Keys.Back && !char.IsDigit(e.KeyChar);
-        }
-
-        private void txtQuantity_Leave(object sender, EventArgs e)
-        {
-            if (((TextBox)sender).Text == "")
-            {
-                ((TextBox)sender).Text = "0";
-                quantity = Convert.ToInt32(((TextBox)sender).Text);
-            }
-            else
-            {
-                try
-                {
-                    quantity = Convert.ToInt32(((TextBox)sender).Text);
-                }
-                catch
-                { }
-            }
-        }
-
-        private void txtNotes_Leave(object sender, EventArgs e)
-        {
-            ((TextBox)sender).Text = Regex.Replace(((TextBox)sender).Text.Trim(), @"\s+", " ");
-        }
-
-        private void txtNotes_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = e.KeyChar != (char)Keys.Back && !char.IsLetter(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-
-        }
-
-
     }
 }
