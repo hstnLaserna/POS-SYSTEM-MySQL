@@ -402,6 +402,7 @@
             this.Name = "frmUsersManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmUsersManager";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmUsersManager_Load);
             this.groupBox1.ResumeLayout(false);

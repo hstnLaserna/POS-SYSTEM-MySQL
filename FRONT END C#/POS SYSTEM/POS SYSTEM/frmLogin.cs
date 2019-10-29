@@ -121,7 +121,7 @@ namespace POS_SYSTEM
         {
             unamez = this.txtUsername.Text;
             frmForgotPassword frmForgotPassword = new frmForgotPassword();
-            this.Hide();
+            //this.Hide();
             frmForgotPassword.ShowDialog();
             this.Show();
         }
@@ -155,6 +155,13 @@ namespace POS_SYSTEM
         private void text_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = e.KeyChar != (char)Keys.Back && !char.IsLetter(e.KeyChar) && !char.IsDigit(e.KeyChar);
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            panel1.Location = new Point(ClientSize.Width);
+            panel1.Location = new System.Drawing.Point(ClientSize.Width / 2 - (panel1.Size.Width / 2), ClientSize.Height / 2 - (panel1.Size.Height / 2));
+
         }
     }
 }

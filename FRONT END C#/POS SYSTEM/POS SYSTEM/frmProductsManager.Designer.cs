@@ -411,6 +411,7 @@
             this.txtQuery.Size = new System.Drawing.Size(685, 30);
             this.txtQuery.TabIndex = 16;
             this.txtQuery.Tag = "price";
+            this.txtQuery.Visible = false;
             // 
             // frmProductsManager
             // 
@@ -428,6 +429,7 @@
             this.Name = "frmProductsManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmProductsManager";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmProductsManager_Load);
             this.groupBox1.ResumeLayout(false);

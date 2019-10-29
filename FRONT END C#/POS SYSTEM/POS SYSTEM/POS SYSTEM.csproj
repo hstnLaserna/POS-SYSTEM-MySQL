@@ -190,6 +190,27 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HTlogob.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frappe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iced-tea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iced-tea %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

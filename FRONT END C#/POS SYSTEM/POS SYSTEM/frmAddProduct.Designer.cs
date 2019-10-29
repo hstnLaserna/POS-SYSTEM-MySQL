@@ -483,6 +483,7 @@
             this.Name = "frmAddProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMilkTea";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmMilkTea_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.form_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.form_MouseMove);

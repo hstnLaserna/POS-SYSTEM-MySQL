@@ -47,7 +47,7 @@
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.Black;
             this.btnBack.Location = new System.Drawing.Point(375, 278);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(144, 58);
             this.btnBack.TabIndex = 5;
@@ -63,7 +63,7 @@
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.Black;
             this.btnSubmit.Location = new System.Drawing.Point(191, 278);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(144, 58);
             this.btnSubmit.TabIndex = 4;
@@ -100,7 +100,7 @@
             // txtAnswer1
             // 
             this.txtAnswer1.Location = new System.Drawing.Point(321, 177);
-            this.txtAnswer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAnswer1.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnswer1.MaxLength = 20;
             this.txtAnswer1.Name = "txtAnswer1";
             this.txtAnswer1.Size = new System.Drawing.Size(215, 22);
@@ -112,7 +112,7 @@
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(321, 135);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.MaxLength = 20;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(215, 22);
@@ -137,7 +137,7 @@
             // txtAnswer2
             // 
             this.txtAnswer2.Location = new System.Drawing.Point(321, 217);
-            this.txtAnswer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAnswer2.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnswer2.MaxLength = 20;
             this.txtAnswer2.Name = "txtAnswer2";
             this.txtAnswer2.Size = new System.Drawing.Size(215, 22);
@@ -179,6 +179,7 @@
             this.Name = "frmForgotPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmForgotPassword";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

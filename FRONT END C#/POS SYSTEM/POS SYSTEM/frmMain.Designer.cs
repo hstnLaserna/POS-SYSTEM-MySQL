@@ -156,9 +156,8 @@
             this.lblAmtDue = new System.Windows.Forms.Label();
             this.txtCash = new System.Windows.Forms.TextBox();
             this.txtDisplay = new System.Windows.Forms.TextBox();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.label2 = new System.Windows.Forms.Label();
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
+            this.printPreview = new System.Windows.Forms.PrintPreviewDialog();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -196,12 +195,12 @@
             // 
             // btnTransactionHistory
             // 
-            this.btnTransactionHistory.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.btnTransactionHistory.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTransactionHistory.BackgroundImage")));
+            this.btnTransactionHistory.BackColor = System.Drawing.Color.OldLace;
             this.btnTransactionHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnTransactionHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTransactionHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransactionHistory.ForeColor = System.Drawing.Color.Black;
+            this.btnTransactionHistory.Image = global::POS_SYSTEM.Properties.Resources.graph;
             this.btnTransactionHistory.Location = new System.Drawing.Point(1404, 91);
             this.btnTransactionHistory.Margin = new System.Windows.Forms.Padding(4);
             this.btnTransactionHistory.Name = "btnTransactionHistory";
@@ -213,12 +212,12 @@
             // 
             // btnUsersManager
             // 
-            this.btnUsersManager.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.btnUsersManager.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUsersManager.BackgroundImage")));
+            this.btnUsersManager.BackColor = System.Drawing.Color.OldLace;
             this.btnUsersManager.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnUsersManager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsersManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsersManager.ForeColor = System.Drawing.Color.Black;
+            this.btnUsersManager.Image = global::POS_SYSTEM.Properties.Resources.user__4_;
             this.btnUsersManager.Location = new System.Drawing.Point(1404, 195);
             this.btnUsersManager.Margin = new System.Windows.Forms.Padding(4);
             this.btnUsersManager.Name = "btnUsersManager";
@@ -230,12 +229,12 @@
             // 
             // btnProductsManager
             // 
-            this.btnProductsManager.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.btnProductsManager.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProductsManager.BackgroundImage")));
+            this.btnProductsManager.BackColor = System.Drawing.Color.OldLace;
             this.btnProductsManager.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnProductsManager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductsManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductsManager.ForeColor = System.Drawing.Color.Black;
+            this.btnProductsManager.Image = global::POS_SYSTEM.Properties.Resources.order__1_;
             this.btnProductsManager.Location = new System.Drawing.Point(1405, 300);
             this.btnProductsManager.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductsManager.Name = "btnProductsManager";
@@ -331,7 +330,7 @@
             // 
             // btnMT14
             // 
-            this.btnMT14.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMT14.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnMT14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT14.BackgroundImage")));
             this.btnMT14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -365,7 +364,7 @@
             // 
             // btnMT15
             // 
-            this.btnMT15.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMT15.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnMT15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT15.BackgroundImage")));
             this.btnMT15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -381,7 +380,7 @@
             // 
             // btnMT12
             // 
-            this.btnMT12.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMT12.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnMT12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT12.BackgroundImage")));
             this.btnMT12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -424,7 +423,7 @@
             // 
             // btnMT13
             // 
-            this.btnMT13.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMT13.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnMT13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT13.BackgroundImage")));
             this.btnMT13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -440,7 +439,7 @@
             // 
             // btnMT11
             // 
-            this.btnMT11.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMT11.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnMT11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT11.BackgroundImage")));
             this.btnMT11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -456,7 +455,7 @@
             // 
             // btnMT9
             // 
-            this.btnMT9.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMT9.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnMT9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT9.BackgroundImage")));
             this.btnMT9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -490,7 +489,7 @@
             // 
             // btnMT10
             // 
-            this.btnMT10.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMT10.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnMT10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT10.BackgroundImage")));
             this.btnMT10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -506,7 +505,7 @@
             // 
             // btnMT7
             // 
-            this.btnMT7.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMT7.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnMT7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT7.BackgroundImage")));
             this.btnMT7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -549,7 +548,7 @@
             // 
             // btnMT8
             // 
-            this.btnMT8.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMT8.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnMT8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT8.BackgroundImage")));
             this.btnMT8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -565,7 +564,7 @@
             // 
             // btnMT6
             // 
-            this.btnMT6.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMT6.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnMT6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT6.BackgroundImage")));
             this.btnMT6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -581,7 +580,7 @@
             // 
             // btnMT4
             // 
-            this.btnMT4.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMT4.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnMT4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT4.BackgroundImage")));
             this.btnMT4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -615,7 +614,7 @@
             // 
             // btnMT5
             // 
-            this.btnMT5.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMT5.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnMT5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT5.BackgroundImage")));
             this.btnMT5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -631,7 +630,7 @@
             // 
             // btnMT2
             // 
-            this.btnMT2.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMT2.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnMT2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT2.BackgroundImage")));
             this.btnMT2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -674,7 +673,7 @@
             // 
             // btnMT3
             // 
-            this.btnMT3.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMT3.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnMT3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT3.BackgroundImage")));
             this.btnMT3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -690,7 +689,7 @@
             // 
             // btnMT1
             // 
-            this.btnMT1.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMT1.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnMT1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT1.BackgroundImage")));
             this.btnMT1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -761,7 +760,7 @@
             // 
             // btnMS14
             // 
-            this.btnMS14.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMS14.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.btnMS14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS14.BackgroundImage")));
             this.btnMS14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -795,7 +794,7 @@
             // 
             // btnMS15
             // 
-            this.btnMS15.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMS15.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.btnMS15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS15.BackgroundImage")));
             this.btnMS15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -811,7 +810,7 @@
             // 
             // btnMS12
             // 
-            this.btnMS12.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMS12.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.btnMS12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS12.BackgroundImage")));
             this.btnMS12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -854,7 +853,7 @@
             // 
             // btnMS13
             // 
-            this.btnMS13.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMS13.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.btnMS13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS13.BackgroundImage")));
             this.btnMS13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -870,7 +869,7 @@
             // 
             // btnMS11
             // 
-            this.btnMS11.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMS11.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.btnMS11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS11.BackgroundImage")));
             this.btnMS11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -886,7 +885,7 @@
             // 
             // btnMS4
             // 
-            this.btnMS4.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMS4.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.btnMS4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS4.BackgroundImage")));
             this.btnMS4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -920,7 +919,7 @@
             // 
             // btnMS5
             // 
-            this.btnMS5.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMS5.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.btnMS5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS5.BackgroundImage")));
             this.btnMS5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -936,7 +935,7 @@
             // 
             // btnMS9
             // 
-            this.btnMS9.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMS9.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.btnMS9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS9.BackgroundImage")));
             this.btnMS9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -970,7 +969,7 @@
             // 
             // btnMS10
             // 
-            this.btnMS10.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMS10.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.btnMS10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS10.BackgroundImage")));
             this.btnMS10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -986,7 +985,7 @@
             // 
             // btnMS7
             // 
-            this.btnMS7.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMS7.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.btnMS7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS7.BackgroundImage")));
             this.btnMS7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1030,7 +1029,7 @@
             // 
             // btnMS8
             // 
-            this.btnMS8.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMS8.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.btnMS8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS8.BackgroundImage")));
             this.btnMS8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1046,7 +1045,7 @@
             // 
             // btnMS6
             // 
-            this.btnMS6.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMS6.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.btnMS6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS6.BackgroundImage")));
             this.btnMS6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1089,7 +1088,7 @@
             // 
             // btnMS3
             // 
-            this.btnMS3.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMS3.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.btnMS3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS3.BackgroundImage")));
             this.btnMS3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1105,7 +1104,7 @@
             // 
             // btnMS2
             // 
-            this.btnMS2.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMS2.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.btnMS2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS2.BackgroundImage")));
             this.btnMS2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1121,7 +1120,7 @@
             // 
             // btnMS1
             // 
-            this.btnMS1.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnMS1.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.btnMS1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS1.BackgroundImage")));
             this.btnMS1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1192,7 +1191,7 @@
             // 
             // btnFR14
             // 
-            this.btnFR14.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnFR14.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnFR14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR14.BackgroundImage")));
             this.btnFR14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1226,7 +1225,7 @@
             // 
             // btnFR15
             // 
-            this.btnFR15.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnFR15.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnFR15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR15.BackgroundImage")));
             this.btnFR15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1242,7 +1241,7 @@
             // 
             // btnFR12
             // 
-            this.btnFR12.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnFR12.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnFR12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR12.BackgroundImage")));
             this.btnFR12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1285,7 +1284,7 @@
             // 
             // btnFR13
             // 
-            this.btnFR13.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnFR13.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnFR13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR13.BackgroundImage")));
             this.btnFR13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1301,7 +1300,7 @@
             // 
             // btnFR11
             // 
-            this.btnFR11.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnFR11.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnFR11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR11.BackgroundImage")));
             this.btnFR11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1317,7 +1316,7 @@
             // 
             // btnFR4
             // 
-            this.btnFR4.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnFR4.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnFR4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR4.BackgroundImage")));
             this.btnFR4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1351,7 +1350,7 @@
             // 
             // btnFR5
             // 
-            this.btnFR5.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnFR5.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnFR5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR5.BackgroundImage")));
             this.btnFR5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1367,7 +1366,7 @@
             // 
             // btnFR9
             // 
-            this.btnFR9.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnFR9.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnFR9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR9.BackgroundImage")));
             this.btnFR9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1401,7 +1400,7 @@
             // 
             // btnFR10
             // 
-            this.btnFR10.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnFR10.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnFR10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR10.BackgroundImage")));
             this.btnFR10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1417,7 +1416,7 @@
             // 
             // btnFR7
             // 
-            this.btnFR7.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnFR7.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnFR7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR7.BackgroundImage")));
             this.btnFR7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1461,7 +1460,7 @@
             // 
             // btnFR8
             // 
-            this.btnFR8.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnFR8.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnFR8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR8.BackgroundImage")));
             this.btnFR8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1477,7 +1476,7 @@
             // 
             // btnFR6
             // 
-            this.btnFR6.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnFR6.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnFR6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR6.BackgroundImage")));
             this.btnFR6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1520,7 +1519,7 @@
             // 
             // btnFR3
             // 
-            this.btnFR3.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnFR3.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnFR3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR3.BackgroundImage")));
             this.btnFR3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1536,7 +1535,7 @@
             // 
             // btnFR2
             // 
-            this.btnFR2.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnFR2.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnFR2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR2.BackgroundImage")));
             this.btnFR2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1552,7 +1551,7 @@
             // 
             // btnFR1
             // 
-            this.btnFR1.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnFR1.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnFR1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR1.BackgroundImage")));
             this.btnFR1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFR1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1808,7 +1807,7 @@
             this.btnTransact.Enabled = false;
             this.btnTransact.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTransact.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransact.Location = new System.Drawing.Point(194, 213);
+            this.btnTransact.Location = new System.Drawing.Point(215, 213);
             this.btnTransact.Margin = new System.Windows.Forms.Padding(4);
             this.btnTransact.Name = "btnTransact";
             this.btnTransact.Size = new System.Drawing.Size(131, 33);
@@ -1888,23 +1887,19 @@
             this.txtDisplay.TabIndex = 69;
             this.txtDisplay.TabStop = false;
             // 
-            // printDialog1
+            // printDocument
             // 
-            this.printDialog1.UseEXDialog = true;
+            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
             // 
-            // label2
+            // printPreview
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.OldLace;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(1102, 57);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(225, 29);
-            this.label2.TabIndex = 57;
-            this.label2.Text = "ORDER HISTORY";
+            this.printPreview.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreview.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreview.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreview.Enabled = true;
+            this.printPreview.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreview.Icon")));
+            this.printPreview.Name = "printPreview";
+            this.printPreview.Visible = false;
             // 
             // frmMain
             // 
@@ -1914,7 +1909,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1532, 989);
             this.ControlBox = false;
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtRemove);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnRemove);
@@ -2081,9 +2075,8 @@
         private System.Windows.Forms.Label txtVATable;
         private System.Windows.Forms.Label txtVATAmount;
         private System.Windows.Forms.Label txtChange;
-        private System.Windows.Forms.PrintDialog printDialog1;
-        private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.Label label2;
+        private System.Drawing.Printing.PrintDocument printDocument;
+        private System.Windows.Forms.PrintPreviewDialog printPreview;
 
     }
 }

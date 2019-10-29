@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Drawing.Printing;
 
 namespace POS_SYSTEM
 {
@@ -25,6 +26,7 @@ namespace POS_SYSTEM
         string position = frmLogin.position.ToUpperInvariant();
         int loginid = frmLogin.loginid;
         int salesinvoice;
+        int purchasedHeight, paperHeight;
         MySqlCommand command;
         DataTable dataTable;
         MySqlDataAdapter mySqlDataAdapter;
@@ -809,10 +811,11 @@ namespace POS_SYSTEM
         {
 
             saveTransaction();
+            print();
             //printDialog1.ShowDialog();
             newTransaction();
             updateDisplay();
-
+           
         }
 
         private void txtCash_KeyPress(object sender, KeyPressEventArgs e)
@@ -863,6 +866,81 @@ namespace POS_SYSTEM
         private void txtCash_Click(object sender, EventArgs e)
         {
             txtCash.SelectAll();
+        }
+
+        public void print()
+        {
+            PrinterSettings ps = new PrinterSettings();
+            //Font font = new Font("Courier New", 15);
+            //PaperSize psize = new PaperSize("Custom", 40, 60);
+            //ps.DefaultPageSettings.PaperSize = psize;   
+                                        //printDocument.PrinterSettings = ps;
+                                        //printDocument.DefaultPageSettings.PaperSize = new PaperSize("")
+            printPreview.Document = printDocument;
+            //printPreview.Document.DefaultPageSettings.PaperSize = psize;
+            printPreview.ShowDialog();
+
+
+
+            //pdoc.PrintPage += new PrintPageEventHandler(pdoc_PrintPage);
+
+            //DialogResult result = pd.ShowDialog();
+            //if (result == DialogResult.OK)
+            //{
+            //    PrintPreviewDialog pp = new PrintPreviewDialog();
+            //    pp.Document = pdoc;
+            //    result = pp.ShowDialog();
+            //    if (result == DialogResult.OK)
+            //    {
+            //        pdoc.Print();
+            //    }
+            //}
+        }
+        private void printDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Graphics graphics = e.Graphics;
+            Font f1 = new Font("Arial", 10, FontStyle.Regular, GraphicsUnit.Pixel);
+            Font f2 = new Font("Arial", 10, FontStyle.Bold, GraphicsUnit.Pixel);
+            Font f3 = new Font("Arial", 10, FontStyle.Italic, GraphicsUnit.Pixel);
+            Bitmap bmp = Properties.Resources.HTlogob;
+            Image img = bmp;
+            //if left use this > e.Graphics.DrawString("Purchased : ", f1, Brushes.Black, new RectangleF(329, 90, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Near });
+            // if center use this>  e.Graphics.DrawString("Happy Thirsday", f2, Brushes.Black, new RectangleF(0, 10, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+
+            //e.Graphics.DrawString(img, img.Size); TransactionHistory.History.Count();
+            e.Graphics.DrawImage(img, new Rectangle(383, 3, 85, 30));
+            //e.Graphics.DrawString("Happy Thirstday", f2, Brushes.Black, new RectangleF(0, 10, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString(" ", f3, Brushes.Black, new RectangleF(0, 20, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString("1423 JP Laurel St", f1, Brushes.Black, new RectangleF(0, 30, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString("Brgy 639 zone 065 San Miguel Manila", f1, Brushes.Black, new RectangleF(0, 40, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString("Contact Number: (+63)917 920 3638", f1, Brushes.Black, new RectangleF(0, 50, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString("SI # " + salesinvoice, f1, Brushes.Black, new RectangleF(0, 60, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString("-------------------------------------------------------", f2, Brushes.Black, new RectangleF(0, 70, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+
+            if (txtCustomer.Text != "")
+            {
+                e.Graphics.DrawString("  Customer Name : " + txtCustomer.Text, f1, Brushes.Black, new RectangleF(0, 80, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            }
+            else { }
+            
+            e.Graphics.DrawString("PURCHASED", f2, Brushes.Black, new RectangleF(0, 90, e.PageBounds.Width, 100), new StringFormat() { Alignment = StringAlignment.Center });
+            //e.Graphics.DrawString(txtDisplay.Text, f1, Brushes.Black, new RectangleF(329, 90, e.PageBounds.Width, 100), new StringFormat() { Alignment = StringAlignment.Near });
+            purchasedHeight = 85 * (TransactionHistory.History.Count() + 1);
+            e.Graphics.DrawString(txtDisplay.Text, f1, Brushes.Black, new RectangleF(0, 100, e.PageBounds.Width, purchasedHeight), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString("-------------------------------------------------------", f2, Brushes.Black, new RectangleF(0, purchasedHeight + 100, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString("Total :" + txtTotalAmtDue.Text, f1, Brushes.Black, new RectangleF(0, purchasedHeight + 110, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString("VATable :" + txtVATable.Text, f1, Brushes.Black, new RectangleF(0, purchasedHeight + 120, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString("VATAmount :" + txtVATAmount.Text, f1, Brushes.Black, new RectangleF(0, purchasedHeight + 130, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString("Cash :" + txtCash.Text, f1, Brushes.Black, new RectangleF(0, purchasedHeight + 140, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString("Change :" + txtChange.Text, f1, Brushes.Black, new RectangleF(0, purchasedHeight + 150, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString("Processed By:" + loginid, f1, Brushes.Black, new RectangleF(0, purchasedHeight + 160, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString("Date Time:" + DateTime.Now, f1, Brushes.Black, new RectangleF(0, purchasedHeight + 170, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString("-------------------------------------------------------", f2, Brushes.Black, new RectangleF(0, purchasedHeight + 180, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString("SURVEY", f2, Brushes.Black, new RectangleF(0, purchasedHeight + 190, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString("-------------------------------------------------------", f2, Brushes.Black, new RectangleF(0, purchasedHeight + 200, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString("SERVICE ✰  ✰  ✰  ✰  ✰", f1, Brushes.Black, new RectangleF(0, purchasedHeight + 210, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            e.Graphics.DrawString("PRODUCT ✰  ✰  ✰  ✰  ✰", f1, Brushes.Black, new RectangleF(0, purchasedHeight + 220, e.PageBounds.Width, 25), new StringFormat() { Alignment = StringAlignment.Center });
+            paperHeight = purchasedHeight + 240;
         }
 
     }
