@@ -23,7 +23,7 @@ namespace POS_SYSTEM
         public frmForgotPassword()
         {
             InitializeComponent();
-            this.txtUsername.Text = frmLogin.unamez;
+            this.txtUsername.Text = frmLogin.uname;
         }
 
 
@@ -60,6 +60,7 @@ namespace POS_SYSTEM
                         txtAnswer1.ResetText();
                         txtAnswer2.ResetText();
                         uname = "";
+                        frmLogin.uname = this.txtUsername.Text;
                         this.Close();
                     }
                     else
@@ -77,12 +78,11 @@ namespace POS_SYSTEM
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             openDB();
-            frmLogin.unamez = this.txtUsername.Text;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            frmLogin.unamez = this.txtUsername.Text;
+            frmLogin.uname = this.txtUsername.Text;
             this.Close();
         }
 
@@ -107,5 +107,34 @@ namespace POS_SYSTEM
             }
         }
 
+
+
+
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Alt | Keys.R))
+            {
+                openDB();
+                return true;
+            }
+
+
+            // CLOSING
+
+            if (keyData == (Keys.Escape))
+            {
+                this.Close();
+                return true;
+            }
+            if (keyData == (Keys.Alt | Keys.F12))
+            {
+                Application.Exit();
+                return true;
+            }
+
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }

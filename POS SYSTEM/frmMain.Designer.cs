@@ -1788,6 +1788,7 @@
             // lblCash
             // 
             this.lblCash.AutoSize = true;
+            this.lblCash.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblCash.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCash.ForeColor = System.Drawing.Color.Black;
             this.lblCash.Location = new System.Drawing.Point(112, 151);

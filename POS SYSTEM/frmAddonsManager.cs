@@ -18,7 +18,6 @@ namespace POS_SYSTEM
         MySqlCommand command;
         int isEnabled = 1;
         int selectedID = 0;
-        string msg;
 
         private MySqlDataAdapter mySqlDataAdapter;
 
@@ -146,7 +145,6 @@ namespace POS_SYSTEM
                                 reader.Close();
                                 command.Dispose();
 
-                                MessageBox.Show(activatedAddOns.ToString());
                                 string queryUpdate = "";
 
                                 if (activatedAddOns >= 0 && activatedAddOns < 6)
@@ -178,7 +176,6 @@ namespace POS_SYSTEM
                                 reader = command.ExecuteReader();
                                 reader.Close();
                                 command.Dispose();
-                                msg = "Addon: '" + txtAddonName.Text + "' updated!";
                             }
                             catch (Exception ex)
                             {
@@ -236,8 +233,6 @@ namespace POS_SYSTEM
                                 reader.Close();
                                 command.Dispose();
 
-                                MessageBox.Show(activatedAddOns.ToString());
-
                                 if (activatedAddOns == 6)
                                 {
                                     isEnabled = 0;
@@ -256,7 +251,6 @@ namespace POS_SYSTEM
                                 reader = command.ExecuteReader();
                                 reader.Close();
                                 command.Dispose();
-                                msg = "Addon " + txtAddonName.Text + " added!";
 
                             }
                             catch (Exception ex)
@@ -267,7 +261,7 @@ namespace POS_SYSTEM
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Unable to create. The product name already exists. \n Error Number: -2147467259");
+                                    MessageBox.Show("Unable to create. The addon name already exists. \n Error Number: -2147467259");
                                 }
                             }
                             connection.Close();
@@ -276,14 +270,12 @@ namespace POS_SYSTEM
                     }
                     else
                     {
-                        msg = "Unable to create. The Product name already exists!";
-                        MessageBox.Show("Unable to create. The Product name already exists");
+                        MessageBox.Show("Unable to create. The addon name already exists");
                     }
                 }
                 else
                 {
-                    msg = "Product name must be 4 or more characters!";
-                    MessageBox.Show("Product must be 4 or more characters");
+                    MessageBox.Show("Addon must be 4 or more characters");
                 }
             }
         }
@@ -357,7 +349,6 @@ namespace POS_SYSTEM
             txtID.ResetText();
             txtAddonName.ResetText();
             txtPrice1.ResetText();
-            lblStatus.Text = msg;
             listProductType.SelectedIndex = 0;
             chkEnabled.Checked = true;
             selectedID = 0;
@@ -406,7 +397,6 @@ namespace POS_SYSTEM
 
         private void listProductType_SelectedValueChanged(object sender, EventArgs e)
         {
-            lblStatus.Text = listProductType.SelectedItem.ToString();
         }
 
         private void TextBoxPrice_Leave(object sender, EventArgs e)

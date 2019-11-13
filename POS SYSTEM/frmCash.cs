@@ -94,6 +94,25 @@ namespace POS_SYSTEM
             }
 
 
+            if (keyData == (Keys.Add))
+            {
+                btnAdd.Enabled = false;
+                btnSubtract.Enabled = true;
+                addOperation = true;
+                lblCash.BackColor = System.Drawing.Color.FromArgb(192, 255, 192);
+                return true;
+            }
+
+            if (keyData == (Keys.Subtract))
+            {
+                btnAdd.Enabled = true;
+                btnSubtract.Enabled = false;
+                addOperation = false;
+                lblCash.BackColor = System.Drawing.Color.FromArgb(255, 192, 192);
+                return true;
+            }
+
+
             if (keyData == (Keys.Escape))
             {
                 this.Close();

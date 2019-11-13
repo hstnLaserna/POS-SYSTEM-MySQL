@@ -22,12 +22,12 @@ namespace POS_SYSTEM
         public static string position = "";
         public static int loginid;
         private int isEnabled;
-        public static string unamez = "";
+        public static string uname = "";
         
         public frmLogin()
         {
             InitializeComponent();
-            txtUsername.Text = frmLogin.unamez;
+            txtUsername.Text = frmLogin.uname;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace POS_SYSTEM
 
         private void logIn()
         {
-            unamez = txtUsername.Text;
+            uname = txtUsername.Text;
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
             {
                 connection.Open();
@@ -120,9 +120,8 @@ namespace POS_SYSTEM
 
         private void lblForgotPassword_Click(object sender, EventArgs e)
         {
-            unamez = this.txtUsername.Text;
+            uname = this.txtUsername.Text;
             frmForgotPassword frmForgotPassword = new frmForgotPassword();
-            //this.Hide();
             frmForgotPassword.ShowDialog();
             this.Show();
         }
@@ -161,6 +160,30 @@ namespace POS_SYSTEM
             panel1.Location = new Point(ClientSize.Width);
             panel1.Location = new System.Drawing.Point(ClientSize.Width / 2 - (panel1.Size.Width / 2), ClientSize.Height / 2 - (panel1.Size.Height / 2));
 
+        }
+
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Alt | Keys.F))
+            {
+                uname = this.txtUsername.Text;
+                frmForgotPassword frmForgotPassword = new frmForgotPassword();
+                frmForgotPassword.ShowDialog();
+                this.Show();
+                return true;
+            }
+
+
+            // CLOSING
+            if (keyData == (Keys.Alt | Keys.F12))
+            {
+                Application.Exit();
+                return true;
+            }
+
+
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

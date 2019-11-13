@@ -23,7 +23,7 @@ namespace POS_SYSTEM
         public frmChangePassword()
         {
             InitializeComponent();
-            txtUsername.Text = frmLogin.unamez;
+            txtUsername.Text = frmLogin.uname;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -141,5 +141,36 @@ namespace POS_SYSTEM
             }
         }
 
+
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Alt | Keys.U))
+            {
+                if(btnSubmit.Enabled)
+                {
+                    submitPassword();
+                }
+                return true;
+            }
+
+
+            // CLOSING
+
+            if (keyData == (Keys.Escape))
+            {
+                MessageBox.Show("Password has not been changed", "Change Password", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Close();
+                return true;
+            }
+            if (keyData == (Keys.Alt | Keys.F12))
+            {
+                Application.Exit();
+                return true;
+            }
+
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }
