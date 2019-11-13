@@ -1,0 +1,51 @@
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\bin\Release\POS SYSTEM.exe.config
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\bin\Release\POS SYSTEM.exe
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\bin\Release\POS SYSTEM.pdb
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\bin\Release\MySql.Data.EntityFramework.dll
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\bin\Release\MySQL.Data.EntityFrameworkCore.Design.dll
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\bin\Release\MySQL.Data.EntityFrameworkCore.dll
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\bin\Release\Renci.SshNet.dll
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\bin\Release\MySql.Data.EntityFramework.xml
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\bin\Release\MySQL.Data.EntityFrameworkCore.xml
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\bin\Release\MySQL.Data.EntityFrameworkCore.Design.xml
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Release\POS SYSTEM.csproj.POS SYSTEM.exe.config
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Release\POS_SYSTEM.frmAddonsManager.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Release\POS_SYSTEM.frmAddProduct.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Release\POS_SYSTEM.frmProductsManager.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Release\POS_SYSTEM.frmTransactionHistory.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Release\POS_SYSTEM.frmUsersManager.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Release\POS_SYSTEM.frmChangePassword.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Release\POS_SYSTEM.frmForgotPassword.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Release\POS_SYSTEM.frmLogin.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Release\POS_SYSTEM.frmMain.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Release\POS_SYSTEM.Properties.Resources.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Release\POS SYSTEM.csproj.GenerateResource.Cache
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Release\POS SYSTEM.exe
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Release\POS SYSTEM.pdb
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS-SYSTEM-MySQL\FRONT END C#\POS SYSTEM\POS SYSTEM\obj\Release\POS SYSTEM.csprojResolveAssemblyReference.cache
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\bin\Release\POS SYSTEM.exe.config
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\obj\Release\POS SYSTEM.exe
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\obj\Release\POS SYSTEM.pdb
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\bin\Release\POS SYSTEM.exe
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\bin\Release\POS SYSTEM.pdb
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\bin\Release\MySql.Data.EntityFramework.dll
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\bin\Release\MySQL.Data.EntityFrameworkCore.Design.dll
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\bin\Release\MySQL.Data.EntityFrameworkCore.dll
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\bin\Release\Renci.SshNet.dll
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\bin\Release\MySql.Data.EntityFramework.xml
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\bin\Release\MySQL.Data.EntityFrameworkCore.xml
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\bin\Release\MySQL.Data.EntityFrameworkCore.Design.xml
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\obj\Release\POS SYSTEM.csprojResolveAssemblyReference.cache
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\obj\Release\POS SYSTEM.csproj.POS SYSTEM.exe.config
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\obj\Release\POS_SYSTEM.frmAddonsManager.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\obj\Release\POS_SYSTEM.frmAddProduct.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\obj\Release\POS_SYSTEM.frmProductsManager.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\obj\Release\POS_SYSTEM.frmTransactionHistory.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\obj\Release\POS_SYSTEM.frmUsersManager.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\obj\Release\POS_SYSTEM.frmChangePassword.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\obj\Release\POS_SYSTEM.frmForgotPassword.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\obj\Release\POS_SYSTEM.frmLogin.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\obj\Release\POS_SYSTEM.frmMain.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\obj\Release\POS_SYSTEM.Properties.Resources.resources
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\obj\Release\POS SYSTEM.csproj.GenerateResource.Cache
+C:\Users\Hustino\Documents\GitHub\POS-SYSTEM-MySQL\POS SYSTEM\obj\Release\POS_SYSTEM.frmCash.resources
