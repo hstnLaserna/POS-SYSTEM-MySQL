@@ -171,7 +171,7 @@
             // 
             this.txtPrice1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice1.Location = new System.Drawing.Point(228, 121);
-            this.txtPrice1.MaxLength = 13;
+            this.txtPrice1.MaxLength = 10;
             this.txtPrice1.Name = "txtPrice1";
             this.txtPrice1.Size = new System.Drawing.Size(263, 30);
             this.txtPrice1.TabIndex = 2;

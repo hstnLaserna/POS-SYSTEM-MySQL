@@ -34,9 +34,7 @@ namespace POS_SYSTEM
                 connection.Open();
                 try
                 {
-                    string query = "UPDATE " + DatabaseConnection.UsersTable + " SET tempopw=(SELECT substring(MD5(RAND()), -4)) WHERE username=@Uname;" +
-                        "UPDATE " + DatabaseConnection.UsersTable + " SET password=MD5(tempopw), isEnabled = 1, log_attempts = 0 WHERE username=@Uname;" +
-                        "SELECT tempopw, PassWord, username FROM " + DatabaseConnection.UsersTable + " WHERE username = @Uname AND answer1 = @Answer1 OR answer2 = @Answer2; ";
+                    string query = "SELECT tempopw, username FROM " + DatabaseConnection.UsersTable + " WHERE username = @Uname AND answer1 = @Answer1 OR answer2 = @Answer2; ";
                     command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Uname", txtUsername.Text);
                     command.Parameters.AddWithValue("@Answer1", txtAnswer1.Text);
@@ -45,7 +43,6 @@ namespace POS_SYSTEM
 
                     while (reader.Read())
                     {
-                        password = reader["tempopw"].ToString();
                         uname = reader["username"].ToString();
                     }
                     reader.Close();
@@ -55,6 +52,25 @@ namespace POS_SYSTEM
 
                     if (uname != "")
                     {
+
+
+                        string query2 = "UPDATE " + DatabaseConnection.UsersTable + " SET tempopw=(SELECT substring(MD5(RAND()), -4)) WHERE username=@Uname;" +
+                            "UPDATE " + DatabaseConnection.UsersTable + " SET password=MD5(tempopw), isEnabled = 1, log_attempts = 0 WHERE username=@Uname;" +
+                            "SELECT tempopw FROM " + DatabaseConnection.UsersTable + " WHERE username = @Uname" ;
+                        command = new MySqlCommand(query2, connection);
+                        command.Parameters.AddWithValue("@Uname", uname);
+                        reader = command.ExecuteReader();
+
+
+                        while (reader.Read())
+                        {
+                            password = reader["tempopw"].ToString();
+                        }
+
+                        reader.Close();
+                        command.Dispose();
+
+
                         MessageBox.Show("Your temporary password is : " + password, "Reset password successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtUsername.ResetText();
                         txtAnswer1.ResetText();

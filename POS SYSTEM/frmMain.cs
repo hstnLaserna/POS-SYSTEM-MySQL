@@ -51,7 +51,6 @@ namespace POS_SYSTEM
             initializeLabels();
             newTransaction();
 
-
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
             {
                 connection.Open();
@@ -332,7 +331,7 @@ namespace POS_SYSTEM
             }
             catch
             {
-                MessageBox.Show("Please input an existing order");
+                MessageBox.Show("Please select an existing order");
             }
         }
 
@@ -507,6 +506,10 @@ namespace POS_SYSTEM
                 orders += TransactionHistory.History[order] + "\r\n\n";
             }
 
+            foreach (DataGridViewColumn column in dgvOrders.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             dgvOrders.DataSource = table;
             dgvOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -819,6 +822,8 @@ namespace POS_SYSTEM
             //    }
             //}
         }
+
+
         private void printDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             Graphics graphics = e.Graphics;
@@ -952,7 +957,14 @@ namespace POS_SYSTEM
             }
             if (keyData == (Keys.Delete))
             {
-                removeOrder();
+                try
+                {
+                    removeOrder();
+                }
+                catch
+                {
+                    MessageBox.Show("Please select an existing order");
+                }
                 return true;
             }
             if (keyData == (Keys.ControlKey | Keys.Alt | Keys.Enter))
@@ -979,6 +991,7 @@ namespace POS_SYSTEM
 
             return base.ProcessCmdKey(ref msg, keyData);
         }
+
 
     }
 }

@@ -93,7 +93,7 @@
             // 
             this.txtPrice3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice3.Location = new System.Drawing.Point(228, 191);
-            this.txtPrice3.MaxLength = 13;
+            this.txtPrice3.MaxLength = 10;
             this.txtPrice3.Name = "txtPrice3";
             this.txtPrice3.Size = new System.Drawing.Size(263, 30);
             this.txtPrice3.TabIndex = 4;
@@ -265,7 +265,7 @@
             // 
             this.txtPrice1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice1.Location = new System.Drawing.Point(228, 121);
-            this.txtPrice1.MaxLength = 13;
+            this.txtPrice1.MaxLength = 10;
             this.txtPrice1.Name = "txtPrice1";
             this.txtPrice1.Size = new System.Drawing.Size(263, 30);
             this.txtPrice1.TabIndex = 2;
@@ -281,7 +281,7 @@
             // 
             this.txtPrice2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice2.Location = new System.Drawing.Point(228, 156);
-            this.txtPrice2.MaxLength = 13;
+            this.txtPrice2.MaxLength = 10;
             this.txtPrice2.Name = "txtPrice2";
             this.txtPrice2.Size = new System.Drawing.Size(263, 30);
             this.txtPrice2.TabIndex = 3;
