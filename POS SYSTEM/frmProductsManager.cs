@@ -208,6 +208,9 @@ namespace POS_SYSTEM
                     MessageBox.Show("Product must be 4 or more characters");
                 }
             }
+
+
+
             else
             {
                 if (txtProductName.TextLength >= 4)

@@ -1,0 +1,26 @@
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\Happy Thirstday - POS.csprojResolveAssemblyReference.cache
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.frmAddonsManager.resources
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.frmAddProduct.resources
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.frmCash.resources
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.frmProductsManager.resources
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.frmTransactionHistory.resources
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.frmUsersManager.resources
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.frmChangePassword.resources
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.frmForgotPassword.resources
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.frmLogin.resources
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.frmMain.resources
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\Happy Thirstday - POS.csproj.GenerateResource.Cache
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\bin\Release\POS_SYSTEM.exe.config
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\bin\Release\POS_SYSTEM.exe
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\bin\Release\POS_SYSTEM.pdb
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\bin\Release\MySql.Data.EntityFramework.dll
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\bin\Release\MySQL.Data.EntityFrameworkCore.Design.dll
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\bin\Release\MySQL.Data.EntityFrameworkCore.dll
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\bin\Release\Renci.SshNet.dll
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\bin\Release\MySql.Data.EntityFramework.xml
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\bin\Release\MySQL.Data.EntityFrameworkCore.xml
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\bin\Release\MySQL.Data.EntityFrameworkCore.Design.xml
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\Happy Thirstday - POS.csproj.POS_SYSTEM.exe.config
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.Properties.Resources.resources
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.exe
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.pdb

@@ -78,6 +78,7 @@ namespace POS_SYSTEM
                 {
                     string query = "SELECT sum(total) AS 'Total', " + groupBy + "(transdate) AS '" + groupBy + "' FROM " + DatabaseConnection.SalesTable + " WHERE date(transdate) BETWEEN '" + fetchFrom + "' AND '" + fetchTo + "' GROUP BY " + groupBy + "; ";
                     command = new MySqlCommand(query, connection);
+                    //textBox1.Text = query;
                     reader = command.ExecuteReader();
                     dtData.Load(reader);
                     reader.Close();

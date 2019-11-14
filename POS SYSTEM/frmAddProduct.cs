@@ -59,8 +59,10 @@ namespace POS_SYSTEM
 
         private void frmAddProduct_Load(object sender, EventArgs e)
         {
-
-            rbtn100P.Checked = true;
+            if(Product.Type.ToLower() == "milktea")
+            {
+                rbtn100P.Checked = true;
+            }
 
             dataTable = new DataTable();
 
@@ -360,5 +362,83 @@ namespace POS_SYSTEM
             else { }
         }
         #endregion
+
+
+        private void size_MouseHover(object sender, EventArgs e)
+        {
+            if (!timer1.Enabled)
+            {
+                ToolTip tip = new ToolTip();
+                double hoveredPrice = 0;
+                rb = ((RadioButton)sender);
+
+
+                switch (rb.Name)
+                {
+                    case "radSize1":
+                        hoveredPrice = Price1;
+                        break;
+                    case "radSize2":
+                        hoveredPrice = Price2;
+                        break;
+                    case "radSize3":
+                        hoveredPrice = Price3;
+                        break;
+                    default:
+                        break;
+                }
+
+                tip.ToolTipTitle = "Price: ";
+                Point p = rb.Location;
+                tip.Show(string.Format("{0:#,##0.00}", hoveredPrice), this, Cursor.Position.X - this.Location.X + 30, Cursor.Position.Y - this.Location.Y, 1000);
+                timer1.Enabled = true;
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;
+        }
+
+        private void addonHover(object sender, EventArgs e)
+        {
+            if (!timer1.Enabled)
+            {
+                ToolTip tip = new ToolTip();
+                double hoveredPrice = 0;
+                chk = ((CheckBox)sender);
+
+                switch (Convert.ToInt32(chk.Tag))
+                {
+                    case 0:
+                        hoveredPrice = price[0];
+                        break;
+                    case 1:
+                        hoveredPrice = price[1];
+                        break;
+                    case 2:
+                        hoveredPrice = price[2];
+                        break;
+                    case 3:
+                        hoveredPrice = price[3];
+                        break;
+                    case 4:
+                        hoveredPrice = price[4];
+                        break;
+                    case 5:
+                        hoveredPrice = price[5];
+                        break;
+                    case 6:
+                        hoveredPrice = price[6];
+                        break;
+                    default:
+                        break;
+                }
+                tip.ToolTipTitle = "Price: ";
+                Point p = rb.Location;
+                tip.Show(string.Format("{0:#,##0.00}", hoveredPrice), this, Cursor.Position.X - this.Location.X + 50, Cursor.Position.Y - this.Location.Y, 1000);
+                timer1.Enabled = true;
+            }
+        }
     }
 }

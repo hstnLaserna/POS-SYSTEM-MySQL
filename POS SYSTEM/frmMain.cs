@@ -50,7 +50,6 @@ namespace POS_SYSTEM
             initializeButtons();
             initializeLabels();
             newTransaction();
-
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
             {
                 connection.Open();
@@ -73,6 +72,7 @@ namespace POS_SYSTEM
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+
             formResize();
             updateDisplay();
             if (position.ToLower() == "developer" || position.ToLower() == "admin")
@@ -85,6 +85,11 @@ namespace POS_SYSTEM
                 btnProductsManager.Visible = false;
                 btnUsersManager.Visible = false;
             }
+
+            lblDate.Text = DateTime.Now.ToLongDateString();// + " " + DateTime.Now.Day + ", " + DateTime.Now.Year; //30.5.2012
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss"); //result 22:11:45
+            lblDate.Location = new Point(btnTransactionHistory.Location.X + btnTransactionHistory.Width - lblDate.Width, lblUser.Location.Y);
+            lblTime.Location = new Point(btnTransactionHistory.Location.X + btnTransactionHistory.Width - lblTime.Width, lblPosition.Location.Y);
         }
 
         private void initializeFlavors()
@@ -226,7 +231,7 @@ namespace POS_SYSTEM
 
             for (int j = 0; j < mtFlavors.Count; j++)
             {
-                milkteaLabels[j].Text = mtFlavors[j] + "\n" + mtPrice1[j] + "  /  " + mtPrice2[j] + "  /  " + mtPrice3[j];
+                milkteaLabels[j].Text = mtFlavors[j] + "\n" + string.Format("{0:#,##0}", mtPrice1[j]) + "  /  " + string.Format("{0:#,##0}", mtPrice2[j]) + "  /  " + string.Format("{0:#,##0}", mtPrice3[j]);
                 milkteaLabels[j].Visible = true;
             }
 
@@ -256,7 +261,7 @@ namespace POS_SYSTEM
 
             for (int j = 0; j < msFlavors.Count; j++)
             {
-                milkshakeLabels[j].Text = msFlavors[j] + "\n" + msPrice1[j] + "  /  " + msPrice2[j] + "  /  " + msPrice3[j];
+                milkshakeLabels[j].Text = msFlavors[j] + "\n" + string.Format("{0:#,##0}", msPrice1[j]) + "  /  " + string.Format("{0:#,##0}", msPrice2[j]) + "  /  " + string.Format("{0:#,##0}", msPrice3[j]);
                 milkshakeLabels[j].Visible = true;
             }
 
@@ -273,7 +278,7 @@ namespace POS_SYSTEM
 
             for (int j = 0; j < frFlavors.Count; j++)
             {
-                frappeLabels[j].Text = frFlavors[j] + "\n" + frPrice1[j] + "  /  " + frPrice2[j] + "  /  " + frPrice3[j];
+                frappeLabels[j].Text = frFlavors[j] + "\n" + string.Format("{0:#,##0}", frPrice1[j]) + "  /  " + string.Format("{0:#,##0}", frPrice2[j]) + "  /  " + string.Format("{0:#,##0}", frPrice3[j]);
                 frappeLabels[j].Visible = true;
             }
         }
@@ -916,8 +921,8 @@ namespace POS_SYSTEM
         {
             lblDate.Text = DateTime.Now.ToLongDateString();// + " " + DateTime.Now.Day + ", " + DateTime.Now.Year; //30.5.2012
             lblTime.Text = DateTime.Now.ToString("HH:mm:ss"); //result 22:11:45
-            lblDate.Location = new Point(dgvOrders.Location.X + dgvOrders.Width - lblDate.Width, lblUser.Location.Y);
-            lblTime.Location = new Point(dgvOrders.Location.X + dgvOrders.Width - lblTime.Width, lblPosition.Location.Y);
+            lblDate.Location = new Point(btnTransactionHistory.Location.X + btnTransactionHistory.Width - lblDate.Width, lblUser.Location.Y);
+            lblTime.Location = new Point(btnTransactionHistory.Location.X + btnTransactionHistory.Width - lblTime.Width, lblPosition.Location.Y);
         }
 
         private void lblCash_Click(object sender, EventArgs e)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddProduct));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,6 +61,7 @@
             this.txtNotes = new System.Windows.Forms.TextBox();
             this.panelNote = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelSize.SuspendLayout();
             this.panelSugarLevel.SuspendLayout();
             this.panelQty.SuspendLayout();
@@ -104,6 +106,7 @@
             this.radSize1.Text = "Small";
             this.radSize1.UseVisualStyleBackColor = true;
             this.radSize1.CheckedChanged += new System.EventHandler(this.getSizePrice);
+            this.radSize1.MouseHover += new System.EventHandler(this.size_MouseHover);
             // 
             // radSize2
             // 
@@ -120,6 +123,7 @@
             this.radSize2.Text = "Medium";
             this.radSize2.UseVisualStyleBackColor = true;
             this.radSize2.CheckedChanged += new System.EventHandler(this.getSizePrice);
+            this.radSize2.MouseHover += new System.EventHandler(this.size_MouseHover);
             // 
             // label4
             // 
@@ -230,6 +234,7 @@
             this.radSize3.Text = "Large";
             this.radSize3.UseVisualStyleBackColor = true;
             this.radSize3.CheckedChanged += new System.EventHandler(this.getSizePrice);
+            this.radSize3.MouseHover += new System.EventHandler(this.size_MouseHover);
             // 
             // panelSugarLevel
             // 
@@ -309,7 +314,7 @@
             // chkAddon6
             // 
             this.chkAddon6.AutoSize = true;
-            this.chkAddon6.Location = new System.Drawing.Point(179, 104);
+            this.chkAddon6.Location = new System.Drawing.Point(236, 104);
             this.chkAddon6.Margin = new System.Windows.Forms.Padding(4);
             this.chkAddon6.Name = "chkAddon6";
             this.chkAddon6.Size = new System.Drawing.Size(38, 21);
@@ -317,6 +322,7 @@
             this.chkAddon6.Text = "6";
             this.chkAddon6.UseVisualStyleBackColor = true;
             this.chkAddon6.CheckStateChanged += new System.EventHandler(this.getSinkers);
+            this.chkAddon6.MouseHover += new System.EventHandler(this.addonHover);
             // 
             // chkAddon3
             // 
@@ -329,6 +335,7 @@
             this.chkAddon3.Text = "3";
             this.chkAddon3.UseVisualStyleBackColor = true;
             this.chkAddon3.CheckStateChanged += new System.EventHandler(this.getSinkers);
+            this.chkAddon3.MouseHover += new System.EventHandler(this.addonHover);
             // 
             // chkAddon2
             // 
@@ -341,11 +348,12 @@
             this.chkAddon2.Text = "2";
             this.chkAddon2.UseVisualStyleBackColor = true;
             this.chkAddon2.CheckStateChanged += new System.EventHandler(this.getSinkers);
+            this.chkAddon2.MouseHover += new System.EventHandler(this.addonHover);
             // 
             // chkAddon4
             // 
             this.chkAddon4.AutoSize = true;
-            this.chkAddon4.Location = new System.Drawing.Point(179, 47);
+            this.chkAddon4.Location = new System.Drawing.Point(236, 47);
             this.chkAddon4.Margin = new System.Windows.Forms.Padding(4);
             this.chkAddon4.Name = "chkAddon4";
             this.chkAddon4.Size = new System.Drawing.Size(38, 21);
@@ -353,6 +361,7 @@
             this.chkAddon4.Text = "4";
             this.chkAddon4.UseVisualStyleBackColor = true;
             this.chkAddon4.CheckStateChanged += new System.EventHandler(this.getSinkers);
+            this.chkAddon4.MouseHover += new System.EventHandler(this.addonHover);
             // 
             // chkAddon1
             // 
@@ -365,6 +374,7 @@
             this.chkAddon1.Text = "1";
             this.chkAddon1.UseVisualStyleBackColor = true;
             this.chkAddon1.CheckStateChanged += new System.EventHandler(this.getSinkers);
+            this.chkAddon1.MouseHover += new System.EventHandler(this.addonHover);
             // 
             // lblAddOns
             // 
@@ -380,7 +390,7 @@
             // chkAddon5
             // 
             this.chkAddon5.AutoSize = true;
-            this.chkAddon5.Location = new System.Drawing.Point(179, 76);
+            this.chkAddon5.Location = new System.Drawing.Point(236, 76);
             this.chkAddon5.Margin = new System.Windows.Forms.Padding(4);
             this.chkAddon5.Name = "chkAddon5";
             this.chkAddon5.Size = new System.Drawing.Size(38, 21);
@@ -388,6 +398,7 @@
             this.chkAddon5.Text = "5";
             this.chkAddon5.UseVisualStyleBackColor = true;
             this.chkAddon5.CheckStateChanged += new System.EventHandler(this.getSinkers);
+            this.chkAddon5.MouseHover += new System.EventHandler(this.addonHover);
             // 
             // panelAddOns
             // 
@@ -477,6 +488,12 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "NOTE:";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmAddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -549,5 +566,6 @@
         private System.Windows.Forms.TextBox txtNotes;
         private System.Windows.Forms.Panel panelNote;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Timer timer1;
     }
 }   
