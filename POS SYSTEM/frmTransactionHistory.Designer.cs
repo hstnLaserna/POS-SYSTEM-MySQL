@@ -456,7 +456,7 @@
             this.Controls.Add(this.dgvTransactionHistory);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmTransactionHistory";
-            this.Text = "frmTransactionHistory";
+            this.Text = "Transaction History";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmTransactionHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactionHistory)).EndInit();

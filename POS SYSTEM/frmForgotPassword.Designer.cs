@@ -178,7 +178,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmForgotPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmForgotPassword";
+            this.Text = "Forgot Password";
             this.ResumeLayout(false);
             this.PerformLayout();
 

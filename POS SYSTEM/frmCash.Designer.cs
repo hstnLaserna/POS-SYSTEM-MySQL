@@ -320,7 +320,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCash";
             this.Tag = "10";
-            this.Text = "frmCash";
+            this.Text = "Cash window";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

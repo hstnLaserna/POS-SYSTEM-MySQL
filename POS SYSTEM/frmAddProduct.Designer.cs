@@ -513,7 +513,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAddProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmProducts";
+            this.Text = "Add Products";
             this.Load += new System.EventHandler(this.frmAddProduct_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.form_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.form_MouseMove);
