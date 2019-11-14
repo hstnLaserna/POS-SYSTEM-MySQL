@@ -18,6 +18,7 @@ namespace POS_SYSTEM
         MySqlCommand command;
         int isEnabled = 1;
         int selectedID = 0;
+        bool selectedIsEnabled;
 
         private MySqlDataAdapter mySqlDataAdapter;
 
@@ -100,11 +101,13 @@ namespace POS_SYSTEM
             if (txtID.Text == "")
             {
                 btnUpdate.Text = "SAVE";
+                btnClear.Text = "CLEAR";
                 listProductType.Enabled = true;
             }
             else
             {
                 btnUpdate.Text = "UPDATE";
+                btnClear.Text = "DESELECT";
                 listProductType.Enabled = false;
             }
         }
@@ -153,17 +156,18 @@ namespace POS_SYSTEM
 
                                     if (activatedAddOns == 6 && chkEnabled.Checked == true)
                                     {
-                                        MessageBox.Show("Maximum (6) available AddOns for product: \n" + listProductType.SelectedItem.ToString() + "\n has been reached!", "Maxed Available Addons", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                        MessageBox.Show("Available AddOns for product: \n" + listProductType.SelectedItem.ToString()  +"\n is now at maximum (6)!", "Maxed Available Addons", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                                     }
+                                }
+                                else if (selectedIsEnabled)
+                                {
+                                    queryUpdate = "CALL updateAddOns(@ProductName, @Price1, @ForProductType, @isAvailable, @SelectedID);";
                                 }
                                 else
                                 {
                                     // Still update records. But isEnabled will be hard to 0
                                     queryUpdate = "CALL updateAddOns(@ProductName, @Price1, @ForProductType, 0, @SelectedID);";
-                                    if (chkEnabled.Checked == true)
-                                    {
-                                        MessageBox.Show("Limit Exceeded. \n Available addons for each product must not exceed 6!", "Maxed Available Addons", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                                    }
+                                    MessageBox.Show("Limit Exceeded. \n Available addons for each product must not exceed 6!", "Maxed Available Addons", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                                 }
 
 
@@ -332,10 +336,12 @@ namespace POS_SYSTEM
                 if (Convert.ToBoolean(row.Cells[4].Value) == true)
                 {
                     chkEnabled.Checked = true;
+                    selectedIsEnabled = true;
                 }
                 else
                 {
                     chkEnabled.Checked = false;
+                    selectedIsEnabled = false;
                 }
             }
         }

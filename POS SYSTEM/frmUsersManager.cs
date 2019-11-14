@@ -350,10 +350,12 @@ namespace POS_SYSTEM
             if(txtID.Text == "")
             {
                 btnUpdate.Text = "SAVE";
+                btnClear.Text = "CLEAR";
             }
             else
             {
                 btnUpdate.Text = "UPDATE";
+                btnClear.Text = "DESELECT";
             }
         }
 

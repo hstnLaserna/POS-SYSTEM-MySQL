@@ -18,6 +18,7 @@ namespace POS_SYSTEM
         MySqlCommand command;
         int isEnabled = 1;
         int selectedID = 0;
+        bool selectedIsEnabled;
 
         private MySqlDataAdapter mySqlDataAdapter;
 
@@ -44,11 +45,6 @@ namespace POS_SYSTEM
 
         public void TextBoxes_TextChanged(object sender, EventArgs e)
         {
-            if (((TextBox)sender).Text == "" && ((TextBox)sender).Tag.ToString() == "price")
-            {
-                ((TextBox)sender).Text = "0.00";
-            }
-            else { }
             if ((txtProductName.TextLength > 0) && ((Convert.ToDouble(txtPrice1.Text) > 0) || (Convert.ToDouble(txtPrice2.Text) > 0) || (Convert.ToDouble(txtPrice3.Text) > 0)))
             {
                 btnUpdate.Enabled = true;
@@ -103,11 +99,13 @@ namespace POS_SYSTEM
             if (txtID.Text == "")
             {
                 btnUpdate.Text = "SAVE";
+                btnClear.Text = "CLEAR";
                 listProductType.Enabled = true;
             }
             else
             {
                 btnUpdate.Text = "UPDATE";
+                btnClear.Text = "DESELECT";
                 listProductType.Enabled = false;
             }
         }
@@ -156,18 +154,18 @@ namespace POS_SYSTEM
 
                                     if (activatedProducts == 14 && chkEnabled.Checked == true)
                                     {
-                                        MessageBox.Show("Maximum (15) available flavors for product: \n" + listProductType.SelectedItem.ToString() + "\n has been reached!", "Maxed Available Products", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                        MessageBox.Show("Available flavors for product: \n" + listProductType.SelectedItem.ToString() + "\n is now at maximum (15)!", "Maxed Available Products", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                                     }
+                                }
+                                else if (selectedIsEnabled)
+                                {
+                                    queryUpdate = "CALL updateProduct(@ProductName, @Price1, @Price2, @Price3, @ProductType, @isAvailable, @SelectedID);";
                                 }
                                 else
                                 {
                                     // Still update records. But isEnabled will be hard to 0
-                                    queryUpdate = "CALL updateProduct(@ProductName, @Price1, @Price2, @Price3, @ProductType, @isAvailable, @SelectedID);";
-                                    if (chkEnabled.Checked == true)
-                                    {
-                                        queryUpdate = "CALL updateProduct(@ProductName, @Price1, @Price2, @Price3, @ProductType, 0, @SelectedID);";
-                                        MessageBox.Show("Limit Exceeded. \n Available flavors for each product must not exceed 15!", "Maxed Available Products", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                                    }
+                                    queryUpdate = "CALL updateProduct(@ProductName, @Price1, @Price2, @Price3, @ProductType, 0, @SelectedID);";
+                                    MessageBox.Show("Limit Exceeded. \n Available flavors for each product must not exceed 15!", "Maxed Available Products", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                                 }
 
 
@@ -332,10 +330,12 @@ namespace POS_SYSTEM
                 if (Convert.ToBoolean(row.Cells[6].Value) == true)
                 {
                     chkEnabled.Checked = true;
+                    selectedIsEnabled = true;
                 }
                 else
                 {
                     chkEnabled.Checked = false;
+                    selectedIsEnabled = false;
                 }
             }
         }

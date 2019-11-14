@@ -35,7 +35,6 @@
             this.dgvTransactionHistory = new System.Windows.Forms.DataGridView();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
-            this.btnFetch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
@@ -87,35 +86,27 @@
             // 
             // dtpFrom
             // 
+            this.dtpFrom.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFrom.Location = new System.Drawing.Point(67, 5);
+            this.dtpFrom.Location = new System.Drawing.Point(61, 16);
             this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(200, 22);
+            this.dtpFrom.Size = new System.Drawing.Size(240, 22);
             this.dtpFrom.TabIndex = 2;
             // 
             // dtpTo
             // 
+            this.dtpTo.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTo.Location = new System.Drawing.Point(308, 5);
+            this.dtpTo.Location = new System.Drawing.Point(362, 16);
             this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(200, 22);
+            this.dtpTo.Size = new System.Drawing.Size(240, 22);
             this.dtpTo.TabIndex = 3;
-            // 
-            // btnFetch
-            // 
-            this.btnFetch.Location = new System.Drawing.Point(514, 3);
-            this.btnFetch.Name = "btnFetch";
-            this.btnFetch.Size = new System.Drawing.Size(114, 141);
-            this.btnFetch.TabIndex = 7;
-            this.btnFetch.Text = "FETCH";
-            this.btnFetch.UseVisualStyleBackColor = true;
-            this.btnFetch.Click += new System.EventHandler(this.btnFetch_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(269, 7);
+            this.label1.Location = new System.Drawing.Point(320, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 20);
             this.label1.TabIndex = 5;
@@ -125,7 +116,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 7);
+            this.label2.Location = new System.Drawing.Point(3, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 20);
             this.label2.TabIndex = 6;
@@ -156,11 +147,10 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dtpFrom);
             this.panel1.Controls.Add(this.dtpTo);
-            this.panel1.Controls.Add(this.btnFetch);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(1049, 115);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(640, 153);
+            this.panel1.Size = new System.Drawing.Size(628, 166);
             this.panel1.TabIndex = 12;
             // 
             // btnYear
@@ -169,7 +159,7 @@
             this.btnYear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnYear.ForeColor = System.Drawing.Color.Black;
-            this.btnYear.Location = new System.Drawing.Point(348, 80);
+            this.btnYear.Location = new System.Drawing.Point(441, 88);
             this.btnYear.Margin = new System.Windows.Forms.Padding(4);
             this.btnYear.Name = "btnYear";
             this.btnYear.Size = new System.Drawing.Size(160, 64);
@@ -185,7 +175,7 @@
             this.btnMonth.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMonth.ForeColor = System.Drawing.Color.Black;
-            this.btnMonth.Location = new System.Drawing.Point(178, 80);
+            this.btnMonth.Location = new System.Drawing.Point(254, 88);
             this.btnMonth.Margin = new System.Windows.Forms.Padding(4);
             this.btnMonth.Name = "btnMonth";
             this.btnMonth.Size = new System.Drawing.Size(160, 64);
@@ -208,11 +198,10 @@
             // btnDay
             // 
             this.btnDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(184)))), ((int)(((byte)(60)))));
-            this.btnDay.Enabled = false;
             this.btnDay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDay.ForeColor = System.Drawing.Color.Black;
-            this.btnDay.Location = new System.Drawing.Point(7, 80);
+            this.btnDay.Location = new System.Drawing.Point(67, 88);
             this.btnDay.Margin = new System.Windows.Forms.Padding(4);
             this.btnDay.Name = "btnDay";
             this.btnDay.Size = new System.Drawing.Size(160, 64);
@@ -243,7 +232,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Sales";
             this.chartSales.Series.Add(series1);
-            this.chartSales.Size = new System.Drawing.Size(602, 348);
+            this.chartSales.Size = new System.Drawing.Size(628, 348);
             this.chartSales.TabIndex = 9;
             this.chartSales.Text = "MONTHS";
             // 
@@ -264,7 +253,7 @@
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.txtCustomer);
             this.panel2.Controls.Add(this.txtTotal);
-            this.panel2.Location = new System.Drawing.Point(1049, 274);
+            this.panel2.Location = new System.Drawing.Point(1049, 287);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(628, 269);
             this.panel2.TabIndex = 13;
@@ -475,7 +464,6 @@
         private System.Windows.Forms.DataGridView dgvTransactionHistory;
         private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.DateTimePicker dtpTo;
-        private System.Windows.Forms.Button btnFetch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBack;

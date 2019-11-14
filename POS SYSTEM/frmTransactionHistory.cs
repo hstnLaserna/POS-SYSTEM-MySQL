@@ -56,6 +56,9 @@ namespace POS_SYSTEM
             chartSales.DataSource = GetData(from, to);
             chartSales.Series["Sales"].XValueMember = groupBy;
             chartSales.Series["Sales"].YValueMembers = "Total";
+            chartSales.ChartAreas[0].AxisX.Title = "Period";
+            chartSales.ChartAreas[0].AxisY.Title = "Sales";
+            //chartSales.Series[]
             chartSales.DataBind();
         }
 
@@ -108,17 +111,12 @@ namespace POS_SYSTEM
             panel1.Location = new System.Drawing.Point(chartSales.Location.X, dgvTransactionHistory.Location.Y);
             panel1.Size = new System.Drawing.Size((ClientSize.Width * 1 / 3), panel1.Height);
             panel2.Location = new System.Drawing.Point(panel1.Location.X, panel1.Location.Y + panel1.Height + 10);
-            btnFetch.Size = new System.Drawing.Size(panel1.Width - btnFetch.Location.X - 5, panel1.Height - 8);
             btnBack.Location = new System.Drawing.Point(this.ClientRectangle.Width - btnBack.Width - 10, this.ClientRectangle.Height - btnBack.Height - 10);
         }
 
         private void btnDisplayBy_Click(object sender, EventArgs e)
         {
             groupBy = ((Button)sender).Tag.ToString();
-            btnDay.Enabled = true;
-            btnMonth.Enabled = true;
-            btnYear.Enabled = true;
-            ((Button)sender).Enabled = false;
 
             fetchTransaction();
         }
@@ -157,7 +155,6 @@ namespace POS_SYSTEM
             if (keyData == (Keys.Alt | Keys.D))
             {
                 groupBy = btnDay.Tag.ToString();
-                btnDay.Enabled = false;
                 btnMonth.Enabled = true;
                 btnYear.Enabled = true;
                 fetchTransaction();
