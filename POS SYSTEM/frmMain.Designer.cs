@@ -174,7 +174,7 @@
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.BackColor = System.Drawing.Color.OldLace;
+            this.lblUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.Black;
             this.lblUser.Location = new System.Drawing.Point(16, 20);
@@ -188,7 +188,7 @@
             // lblPosition
             // 
             this.lblPosition.AutoSize = true;
-            this.lblPosition.BackColor = System.Drawing.Color.OldLace;
+            this.lblPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.lblPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPosition.ForeColor = System.Drawing.Color.Black;
             this.lblPosition.Location = new System.Drawing.Point(16, 40);
@@ -266,7 +266,7 @@
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(140)))));
             this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePassword.Location = new System.Drawing.Point(1390, 903);
@@ -336,7 +336,7 @@
             // 
             // btnMT14
             // 
-            this.btnMT14.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnMT14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMT14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT14.BackgroundImage")));
             this.btnMT14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -353,6 +353,7 @@
             // lblMT15
             // 
             this.lblMT15.AutoSize = true;
+            this.lblMT15.BackColor = System.Drawing.Color.Transparent;
             this.lblMT15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMT15.Location = new System.Drawing.Point(887, 775);
             this.lblMT15.Name = "lblMT15";
@@ -364,6 +365,7 @@
             // lblMT14
             // 
             this.lblMT14.AutoSize = true;
+            this.lblMT14.BackColor = System.Drawing.Color.Transparent;
             this.lblMT14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMT14.Location = new System.Drawing.Point(656, 775);
             this.lblMT14.Name = "lblMT14";
@@ -374,7 +376,7 @@
             // 
             // btnMT15
             // 
-            this.btnMT15.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnMT15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMT15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT15.BackgroundImage")));
             this.btnMT15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -390,7 +392,7 @@
             // 
             // btnMT12
             // 
-            this.btnMT12.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnMT12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMT12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT12.BackgroundImage")));
             this.btnMT12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -407,6 +409,7 @@
             // lblMT13
             // 
             this.lblMT13.AutoSize = true;
+            this.lblMT13.BackColor = System.Drawing.Color.Transparent;
             this.lblMT13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMT13.Location = new System.Drawing.Point(487, 775);
             this.lblMT13.Name = "lblMT13";
@@ -418,6 +421,7 @@
             // lblMT12
             // 
             this.lblMT12.AutoSize = true;
+            this.lblMT12.BackColor = System.Drawing.Color.Transparent;
             this.lblMT12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMT12.Location = new System.Drawing.Point(256, 775);
             this.lblMT12.Name = "lblMT12";
@@ -429,6 +433,7 @@
             // lblMT11
             // 
             this.lblMT11.AutoSize = true;
+            this.lblMT11.BackColor = System.Drawing.Color.Transparent;
             this.lblMT11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMT11.Location = new System.Drawing.Point(36, 775);
             this.lblMT11.Name = "lblMT11";
@@ -439,7 +444,7 @@
             // 
             // btnMT13
             // 
-            this.btnMT13.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnMT13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMT13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT13.BackgroundImage")));
             this.btnMT13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -455,7 +460,7 @@
             // 
             // btnMT11
             // 
-            this.btnMT11.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnMT11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMT11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT11.BackgroundImage")));
             this.btnMT11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -471,7 +476,7 @@
             // 
             // btnMT9
             // 
-            this.btnMT9.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnMT9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMT9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT9.BackgroundImage")));
             this.btnMT9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -509,7 +514,7 @@
             // 
             // btnMT10
             // 
-            this.btnMT10.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnMT10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMT10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT10.BackgroundImage")));
             this.btnMT10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -525,7 +530,7 @@
             // 
             // btnMT7
             // 
-            this.btnMT7.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnMT7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMT7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT7.BackgroundImage")));
             this.btnMT7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -574,7 +579,7 @@
             // 
             // btnMT8
             // 
-            this.btnMT8.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnMT8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMT8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT8.BackgroundImage")));
             this.btnMT8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -590,7 +595,7 @@
             // 
             // btnMT6
             // 
-            this.btnMT6.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnMT6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMT6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT6.BackgroundImage")));
             this.btnMT6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -606,7 +611,7 @@
             // 
             // btnMT4
             // 
-            this.btnMT4.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnMT4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMT4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT4.BackgroundImage")));
             this.btnMT4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -644,7 +649,7 @@
             // 
             // btnMT5
             // 
-            this.btnMT5.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnMT5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMT5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT5.BackgroundImage")));
             this.btnMT5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -660,7 +665,7 @@
             // 
             // btnMT2
             // 
-            this.btnMT2.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnMT2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMT2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT2.BackgroundImage")));
             this.btnMT2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -709,7 +714,7 @@
             // 
             // btnMT3
             // 
-            this.btnMT3.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnMT3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMT3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT3.BackgroundImage")));
             this.btnMT3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -725,7 +730,7 @@
             // 
             // btnMT1
             // 
-            this.btnMT1.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnMT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMT1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT1.BackgroundImage")));
             this.btnMT1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMT1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -796,7 +801,7 @@
             // 
             // btnMS14
             // 
-            this.btnMS14.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnMS14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMS14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS14.BackgroundImage")));
             this.btnMS14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -834,7 +839,7 @@
             // 
             // btnMS15
             // 
-            this.btnMS15.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnMS15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMS15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS15.BackgroundImage")));
             this.btnMS15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -850,7 +855,7 @@
             // 
             // btnMS12
             // 
-            this.btnMS12.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnMS12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMS12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS12.BackgroundImage")));
             this.btnMS12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -899,7 +904,7 @@
             // 
             // btnMS13
             // 
-            this.btnMS13.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnMS13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMS13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS13.BackgroundImage")));
             this.btnMS13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -915,7 +920,7 @@
             // 
             // btnMS11
             // 
-            this.btnMS11.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnMS11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMS11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS11.BackgroundImage")));
             this.btnMS11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -931,7 +936,7 @@
             // 
             // btnMS4
             // 
-            this.btnMS4.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnMS4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMS4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS4.BackgroundImage")));
             this.btnMS4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -969,7 +974,7 @@
             // 
             // btnMS5
             // 
-            this.btnMS5.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnMS5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMS5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS5.BackgroundImage")));
             this.btnMS5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -985,7 +990,7 @@
             // 
             // btnMS9
             // 
-            this.btnMS9.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnMS9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMS9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS9.BackgroundImage")));
             this.btnMS9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1023,7 +1028,7 @@
             // 
             // btnMS10
             // 
-            this.btnMS10.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnMS10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMS10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS10.BackgroundImage")));
             this.btnMS10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1039,7 +1044,7 @@
             // 
             // btnMS7
             // 
-            this.btnMS7.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnMS7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMS7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS7.BackgroundImage")));
             this.btnMS7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1089,7 +1094,7 @@
             // 
             // btnMS8
             // 
-            this.btnMS8.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnMS8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMS8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS8.BackgroundImage")));
             this.btnMS8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1105,7 +1110,7 @@
             // 
             // btnMS6
             // 
-            this.btnMS6.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnMS6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMS6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS6.BackgroundImage")));
             this.btnMS6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1154,7 +1159,7 @@
             // 
             // btnMS3
             // 
-            this.btnMS3.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnMS3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMS3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS3.BackgroundImage")));
             this.btnMS3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1170,7 +1175,7 @@
             // 
             // btnMS2
             // 
-            this.btnMS2.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnMS2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMS2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS2.BackgroundImage")));
             this.btnMS2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1186,7 +1191,7 @@
             // 
             // btnMS1
             // 
-            this.btnMS1.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnMS1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnMS1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS1.BackgroundImage")));
             this.btnMS1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMS1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1257,10 +1262,10 @@
             // 
             // btnFR14
             // 
-            this.btnFR14.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnFR14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnFR14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR14.BackgroundImage")));
             this.btnFR14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFR14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFR14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFR14.ForeColor = System.Drawing.Color.Black;
             this.btnFR14.Location = new System.Drawing.Point(640, 485);
@@ -1295,10 +1300,10 @@
             // 
             // btnFR15
             // 
-            this.btnFR15.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnFR15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnFR15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR15.BackgroundImage")));
             this.btnFR15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFR15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFR15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFR15.ForeColor = System.Drawing.Color.Black;
             this.btnFR15.Location = new System.Drawing.Point(855, 485);
@@ -1311,10 +1316,10 @@
             // 
             // btnFR12
             // 
-            this.btnFR12.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnFR12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnFR12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR12.BackgroundImage")));
             this.btnFR12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFR12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFR12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFR12.ForeColor = System.Drawing.Color.Black;
             this.btnFR12.Location = new System.Drawing.Point(240, 485);
@@ -1360,10 +1365,10 @@
             // 
             // btnFR13
             // 
-            this.btnFR13.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnFR13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnFR13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR13.BackgroundImage")));
             this.btnFR13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFR13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFR13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFR13.ForeColor = System.Drawing.Color.Black;
             this.btnFR13.Location = new System.Drawing.Point(455, 485);
@@ -1376,10 +1381,10 @@
             // 
             // btnFR11
             // 
-            this.btnFR11.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnFR11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnFR11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR11.BackgroundImage")));
             this.btnFR11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFR11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFR11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFR11.ForeColor = System.Drawing.Color.Black;
             this.btnFR11.Location = new System.Drawing.Point(26, 485);
@@ -1392,10 +1397,10 @@
             // 
             // btnFR4
             // 
-            this.btnFR4.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnFR4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnFR4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR4.BackgroundImage")));
             this.btnFR4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFR4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFR4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFR4.ForeColor = System.Drawing.Color.Black;
             this.btnFR4.Location = new System.Drawing.Point(640, 149);
@@ -1430,10 +1435,10 @@
             // 
             // btnFR5
             // 
-            this.btnFR5.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnFR5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnFR5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR5.BackgroundImage")));
             this.btnFR5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFR5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFR5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFR5.ForeColor = System.Drawing.Color.Black;
             this.btnFR5.Location = new System.Drawing.Point(855, 149);
@@ -1446,10 +1451,10 @@
             // 
             // btnFR9
             // 
-            this.btnFR9.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnFR9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnFR9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR9.BackgroundImage")));
             this.btnFR9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFR9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFR9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFR9.ForeColor = System.Drawing.Color.Black;
             this.btnFR9.Location = new System.Drawing.Point(640, 327);
@@ -1484,10 +1489,10 @@
             // 
             // btnFR10
             // 
-            this.btnFR10.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnFR10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnFR10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR10.BackgroundImage")));
             this.btnFR10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFR10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFR10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFR10.ForeColor = System.Drawing.Color.Black;
             this.btnFR10.Location = new System.Drawing.Point(855, 327);
@@ -1500,10 +1505,10 @@
             // 
             // btnFR7
             // 
-            this.btnFR7.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnFR7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnFR7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR7.BackgroundImage")));
             this.btnFR7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFR7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFR7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFR7.ForeColor = System.Drawing.Color.Black;
             this.btnFR7.Location = new System.Drawing.Point(240, 327);
@@ -1550,10 +1555,10 @@
             // 
             // btnFR8
             // 
-            this.btnFR8.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnFR8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnFR8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR8.BackgroundImage")));
             this.btnFR8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFR8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFR8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFR8.ForeColor = System.Drawing.Color.Black;
             this.btnFR8.Location = new System.Drawing.Point(455, 327);
@@ -1566,10 +1571,10 @@
             // 
             // btnFR6
             // 
-            this.btnFR6.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnFR6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnFR6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR6.BackgroundImage")));
             this.btnFR6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFR6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFR6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFR6.ForeColor = System.Drawing.Color.Black;
             this.btnFR6.Location = new System.Drawing.Point(26, 327);
@@ -1615,10 +1620,10 @@
             // 
             // btnFR3
             // 
-            this.btnFR3.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnFR3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnFR3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR3.BackgroundImage")));
             this.btnFR3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFR3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFR3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFR3.ForeColor = System.Drawing.Color.Black;
             this.btnFR3.Location = new System.Drawing.Point(455, 149);
@@ -1631,10 +1636,10 @@
             // 
             // btnFR2
             // 
-            this.btnFR2.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnFR2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnFR2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR2.BackgroundImage")));
             this.btnFR2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFR2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFR2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFR2.ForeColor = System.Drawing.Color.Black;
             this.btnFR2.Location = new System.Drawing.Point(240, 149);
@@ -1647,10 +1652,10 @@
             // 
             // btnFR1
             // 
-            this.btnFR1.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnFR1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.btnFR1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR1.BackgroundImage")));
             this.btnFR1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFR1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFR1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFR1.ForeColor = System.Drawing.Color.Black;
             this.btnFR1.Location = new System.Drawing.Point(26, 149);
@@ -1676,7 +1681,7 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(140)))));
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.Location = new System.Drawing.Point(1002, 672);
@@ -1873,7 +1878,7 @@
             // 
             // btnTransact
             // 
-            this.btnTransact.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnTransact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(140)))));
             this.btnTransact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnTransact.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTransact.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1999,7 +2004,7 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.BackColor = System.Drawing.Color.OldLace;
+            this.lblDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.Black;
             this.lblDate.Location = new System.Drawing.Point(1320, 20);
@@ -2013,7 +2018,7 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.BackColor = System.Drawing.Color.OldLace;
+            this.lblTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.Black;
             this.lblTime.Location = new System.Drawing.Point(1327, 40);
@@ -2034,8 +2039,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(1532, 989);
             this.ControlBox = false;
             this.Controls.Add(this.lblTime);

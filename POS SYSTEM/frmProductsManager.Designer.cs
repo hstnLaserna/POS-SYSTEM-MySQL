@@ -64,7 +64,7 @@
             // 
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Adobe Gothic Std B", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(184)))), ((int)(((byte)(60)))));
+            this.lblHeader.ForeColor = System.Drawing.Color.Black;
             this.lblHeader.Location = new System.Drawing.Point(27, 25);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
@@ -75,20 +75,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(75, 227);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(64, 224);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 25);
+            this.label3.Size = new System.Drawing.Size(148, 25);
             this.label3.TabIndex = 0;
             this.label3.Text = "Product Type:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(71, 89);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(60, 86);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 25);
+            this.label4.Size = new System.Drawing.Size(152, 25);
             this.label4.TabIndex = 0;
             this.label4.Text = "Product name:";
             // 
@@ -130,7 +130,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(147, 354);
+            this.btnUpdate.Location = new System.Drawing.Point(147, 382);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(144, 60);
@@ -145,7 +145,7 @@
             this.chkEnabled.Checked = true;
             this.chkEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkEnabled.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkEnabled.Location = new System.Drawing.Point(228, 312);
+            this.chkEnabled.Location = new System.Drawing.Point(248, 342);
             this.chkEnabled.Name = "chkEnabled";
             this.chkEnabled.Size = new System.Drawing.Size(18, 17);
             this.chkEnabled.TabIndex = 6;
@@ -171,10 +171,10 @@
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtPrice3);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(1342, 70);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(521, 475);
+            this.groupBox1.Size = new System.Drawing.Size(521, 520);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Product Details";
@@ -183,7 +183,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(113, 433);
+            this.label8.Location = new System.Drawing.Point(113, 461);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(353, 24);
             this.label8.TabIndex = 10009;
@@ -192,30 +192,30 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(118, 194);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(107, 191);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 25);
+            this.label2.Size = new System.Drawing.Size(102, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "(L) Price:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(112, 159);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(101, 156);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 25);
+            this.label1.Size = new System.Drawing.Size(108, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "(M) Price:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(115, 124);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(104, 121);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 25);
+            this.label5.Size = new System.Drawing.Size(105, 25);
             this.label5.TabIndex = 0;
             this.label5.Text = "(S) Price:";
             // 
@@ -254,33 +254,34 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 307);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 337);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(194, 25);
+            this.label6.Size = new System.Drawing.Size(216, 25);
             this.label6.TabIndex = 0;
             this.label6.Text = "Product is  Available:";
             // 
             // listProductType
             // 
+            this.listProductType.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listProductType.FormattingEnabled = true;
-            this.listProductType.ItemHeight = 25;
+            this.listProductType.ItemHeight = 29;
             this.listProductType.Items.AddRange(new object[] {
             "Milktea",
             "Milkshake",
             "Frappe"});
             this.listProductType.Location = new System.Drawing.Point(228, 227);
             this.listProductType.Name = "listProductType";
-            this.listProductType.Size = new System.Drawing.Size(263, 79);
+            this.listProductType.Size = new System.Drawing.Size(263, 91);
             this.listProductType.TabIndex = 5;
             // 
             // btnClear
             // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(140)))));
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btnClear.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.Location = new System.Drawing.Point(347, 354);
+            this.btnClear.Location = new System.Drawing.Point(347, 382);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(144, 60);
@@ -292,10 +293,10 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(101, 54);
+            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Location = new System.Drawing.Point(90, 51);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(109, 25);
+            this.lblID.Size = new System.Drawing.Size(120, 25);
             this.lblID.TabIndex = 0;
             this.lblID.Text = "Product ID:";
             // 
@@ -315,10 +316,10 @@
             this.chkFrappe.AutoSize = true;
             this.chkFrappe.Checked = true;
             this.chkFrappe.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkFrappe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkFrappe.Location = new System.Drawing.Point(228, 112);
+            this.chkFrappe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkFrappe.Location = new System.Drawing.Point(248, 113);
             this.chkFrappe.Name = "chkFrappe";
-            this.chkFrappe.Size = new System.Drawing.Size(96, 29);
+            this.chkFrappe.Size = new System.Drawing.Size(102, 29);
             this.chkFrappe.TabIndex = 11;
             this.chkFrappe.Text = "Frappe";
             this.chkFrappe.UseVisualStyleBackColor = true;
@@ -329,10 +330,10 @@
             this.chkMilkshake.AutoSize = true;
             this.chkMilkshake.Checked = true;
             this.chkMilkshake.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkMilkshake.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkMilkshake.Location = new System.Drawing.Point(228, 77);
+            this.chkMilkshake.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkMilkshake.Location = new System.Drawing.Point(248, 78);
             this.chkMilkshake.Name = "chkMilkshake";
-            this.chkMilkshake.Size = new System.Drawing.Size(122, 29);
+            this.chkMilkshake.Size = new System.Drawing.Size(131, 29);
             this.chkMilkshake.TabIndex = 10;
             this.chkMilkshake.Text = "Milkshake";
             this.chkMilkshake.UseVisualStyleBackColor = true;
@@ -341,10 +342,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(56, 43);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(154, 25);
+            this.label7.Size = new System.Drawing.Size(170, 25);
             this.label7.TabIndex = 12;
             this.label7.Text = "Display Product:";
             // 
@@ -353,10 +354,10 @@
             this.chkMilktea.AutoSize = true;
             this.chkMilktea.Checked = true;
             this.chkMilktea.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkMilktea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkMilktea.Location = new System.Drawing.Point(228, 42);
+            this.chkMilktea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkMilktea.Location = new System.Drawing.Point(248, 43);
             this.chkMilktea.Name = "chkMilktea";
-            this.chkMilktea.Size = new System.Drawing.Size(96, 29);
+            this.chkMilktea.Size = new System.Drawing.Size(103, 29);
             this.chkMilktea.TabIndex = 9;
             this.chkMilktea.Text = "Milktea";
             this.chkMilktea.UseVisualStyleBackColor = true;
@@ -385,7 +386,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(184)))), ((int)(((byte)(60)))));
+            this.btnBack.BackColor = System.Drawing.Color.Tomato;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.Black;
@@ -400,11 +401,11 @@
             // 
             // btnAddonsManager
             // 
-            this.btnAddonsManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnAddonsManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(140)))));
             this.btnAddonsManager.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddonsManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btnAddonsManager.ForeColor = System.Drawing.Color.Black;
-            this.btnAddonsManager.Location = new System.Drawing.Point(1342, 552);
+            this.btnAddonsManager.Location = new System.Drawing.Point(1342, 597);
             this.btnAddonsManager.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddonsManager.Name = "btnAddonsManager";
             this.btnAddonsManager.Size = new System.Drawing.Size(521, 60);
@@ -419,8 +420,8 @@
             this.grpFilter.Controls.Add(this.chkFrappe);
             this.grpFilter.Controls.Add(this.chkMilkshake);
             this.grpFilter.Controls.Add(this.chkMilktea);
-            this.grpFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpFilter.Location = new System.Drawing.Point(1342, 619);
+            this.grpFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpFilter.Location = new System.Drawing.Point(1342, 664);
             this.grpFilter.Name = "grpFilter";
             this.grpFilter.Size = new System.Drawing.Size(521, 151);
             this.grpFilter.TabIndex = 14;
