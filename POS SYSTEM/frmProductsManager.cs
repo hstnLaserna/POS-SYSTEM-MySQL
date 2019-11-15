@@ -348,9 +348,9 @@ namespace POS_SYSTEM
             dgvProducts.ClearSelection();
             txtID.ResetText();
             txtProductName.ResetText();
-            txtPrice1.ResetText();
-            txtPrice2.ResetText();
-            txtPrice3.ResetText();
+            txtPrice1.Text = "0.00";
+            txtPrice2.Text = "0.00";
+            txtPrice3.Text = "0.00";
             listProductType.SelectedIndex = 0;
             chkEnabled.Checked = true;
             selectedID = 0;
@@ -399,6 +399,7 @@ namespace POS_SYSTEM
             btnBack.Location = new System.Drawing.Point(this.ClientRectangle.Width - btnBack.Width - 10, this.ClientRectangle.Height - btnBack.Height - 10);
             groupBox1.Location = new System.Drawing.Point(this.ClientRectangle.Width - groupBox1.Width - 10, dgvProducts.Location.Y);
             btnAddonsManager.Location = new System.Drawing.Point(groupBox1.Location.X, groupBox1.Location.Y + groupBox1.Height + 10);
+            grpFilter.Location = new System.Drawing.Point(groupBox1.Location.X, btnAddonsManager.Location.Y + btnAddonsManager.Height + 10);
         }
 
         private void TextBoxPrice_Leave(object sender, EventArgs e)

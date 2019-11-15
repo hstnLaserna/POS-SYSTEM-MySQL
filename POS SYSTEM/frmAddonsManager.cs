@@ -368,7 +368,7 @@ namespace POS_SYSTEM
                 connection.Open();
                 try
                 {
-                    mySqlDataAdapter = new MySqlDataAdapter("SELECT addonID '#', name 'Addons', price 'Price', forProductType 'AddOn for', isAvailable FROM " + DatabaseConnection.AddonsTable + ";", connection);
+                    mySqlDataAdapter = new MySqlDataAdapter("SELECT addonID '#', name 'Addons', price 'Price', forProductType 'AddOn for', isAvailable FROM " + DatabaseConnection.AddonsTable + " WHERE " + displayedProducts() + ";", connection);
                     DataSet DS = new DataSet();
                     mySqlDataAdapter.Fill(DS);
                     dgvAddons.DataSource = DS.Tables[0];
@@ -397,8 +397,9 @@ namespace POS_SYSTEM
 
         private void formResize()
         {
-            btnBack.Location = new System.Drawing.Point(this.ClientRectangle.Width - btnBack.Width - 10, this.ClientRectangle.Height - btnBack.Height - 10);
             groupBox1.Location = new System.Drawing.Point(this.ClientRectangle.Width - groupBox1.Width - 10, dgvAddons.Location.Y);
+            grpFilter.Location = new System.Drawing.Point(groupBox1.Location.X, groupBox1.Location.Y + groupBox1.Height + 10);
+            btnBack.Location = new System.Drawing.Point(this.ClientRectangle.Width - btnBack.Width - 10, this.ClientRectangle.Height - btnBack.Height - 10);
         }
 
         private void listProductType_SelectedValueChanged(object sender, EventArgs e)
@@ -414,6 +415,49 @@ namespace POS_SYSTEM
         }
 
 
+
+        private string displayedProducts()
+        {
+            string displayedProduct;
+            bool A = chkMilktea.Checked;
+            bool B = chkMilkshake.Checked;
+            bool C = chkFrappe.Checked;
+
+            if (A && B && C)
+            {
+                displayedProduct = "forProductType = 'milktea' OR forProductType = 'milkshake' OR forProductType = 'FRAPPE'";
+            }
+            else if (A && B)
+            {
+                displayedProduct = "forProductType = 'milktea' OR forProductType = 'milkshake'";
+            }
+            else if (A && C)
+            {
+                displayedProduct = "forProductType = 'milktea' OR forProductType = 'FRAPPE'";
+            }
+            else if (B && C)
+            {
+                displayedProduct = "forProductType = 'milkshake' OR forProductType = 'FRAPPE'";
+            }
+            else if (A)
+            {
+                displayedProduct = "forProductType = 'milktea'";
+            }
+            else if (B)
+            {
+                displayedProduct = "forProductType = 'milkshake'";
+            }
+            else if (C)
+            {
+                displayedProduct = "forProductType = 'FRAPPE'";
+            }
+            else
+            {
+                displayedProduct = "forProductType = ''";
+            }
+
+            return displayedProduct;
+        }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
@@ -445,6 +489,11 @@ namespace POS_SYSTEM
             }
 
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void chkProducts_CheckStateChanged(object sender, EventArgs e)
+        {
+            openDB();
         }
 
     }

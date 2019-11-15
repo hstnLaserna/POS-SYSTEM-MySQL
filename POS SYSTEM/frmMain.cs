@@ -802,30 +802,11 @@ namespace POS_SYSTEM
         {
             paperHeight = 70 + (TransactionHistory.transactionOrders.Count() * 45) + 190;
             PrinterSettings ps = new PrinterSettings();
-            //Font font = new Font("Courier New", 15);0.11
             PaperSize psize = new PaperSize("Custom", 250, paperHeight);
             ps.DefaultPageSettings.PaperSize = psize;
-            //printDocument.PrinterSettings = ps;
-            //printDocument.DefaultPageSettings.PaperSize = new PaperSize("")
             printPreview.Document = printDocument;
             printPreview.Document.DefaultPageSettings.PaperSize = psize;
             printPreview.ShowDialog();
-
-
-
-            //pdoc.PrintPage += new PrintPageEventHandler(pdoc_PrintPage);
-
-            //DialogResult result = pd.ShowDialog();
-            //if (result == DialogResult.OK)
-            //{
-            //    PrintPreviewDialog pp = new PrintPreviewDialog();
-            //    pp.Document = pdoc;
-            //    result = pp.ShowDialog();
-            //    if (result == DialogResult.OK) 
-            //    {
-            //        pdoc.Print();
-            //    }
-            //}
         }
 
 

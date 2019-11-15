@@ -43,7 +43,7 @@ namespace POS_SYSTEM
 
         public void txtBoxes_TextChanged(object sender, EventArgs e)
         {
-            if (txtFirstname.TextLength > 0 && txtLastname.TextLength > 0 && txtUsername.TextLength >= 4 && txtPassword.TextLength > 3 && txtAnswer1.TextLength >= 4 && txtAnswer2.TextLength >= 4)
+            if (txtFirstname.TextLength > 0 && txtLastname.TextLength > 0 && txtUsername.TextLength >= 4 && txtAnswer1.TextLength >= 4 && txtAnswer2.TextLength >= 4)
             {
                 btnUpdate.Enabled = true;
             }
@@ -104,7 +104,7 @@ namespace POS_SYSTEM
         {
             if (btnUpdate.Text == "UPDATE")
             {
-                if (txtUsername.TextLength > 4 && txtPassword.TextLength > 3)
+                if (txtUsername.TextLength >= 4 && txtAnswer1.TextLength >= 4 && txtAnswer2.TextLength >= 4)
                 {
                     var exists = dgvUsers.Rows.Cast<DataGridViewRow>()
                                  .Where(row => !row.IsNewRow)
@@ -118,17 +118,33 @@ namespace POS_SYSTEM
                             connection.Open();
                             try
                             {
-                                string query = "CALL updateUser(@Username, @Password, @Firstname, @Lastname, @Position, @Answer1, @Answer2, @Enabled, @selectedid); SELECT tempopw FROM " + DatabaseConnection.UsersTable + " WHERE loginid = @selectedid";
-                                command = new MySqlCommand(query, connection);
-                                command.Parameters.AddWithValue("@Username", txtUsername.Text);
-                                command.Parameters.AddWithValue("@Password", txtPassword.Text);
-                                command.Parameters.AddWithValue("@Firstname", txtFirstname.Text.Trim());
-                                command.Parameters.AddWithValue("@Lastname", txtLastname.Text.Trim());
-                                command.Parameters.AddWithValue("@Position", position);
-                                command.Parameters.AddWithValue("@Answer1", txtAnswer1.Text.Trim());
-                                command.Parameters.AddWithValue("@Answer2", txtAnswer2.Text.Trim());
-                                command.Parameters.AddWithValue("@Enabled", isEnabled);
-                                command.Parameters.AddWithValue("@selectedid", selectedID);
+                                if(txtPassword.TextLength> 0)
+                                {
+                                    string query = "CALL updateUser(@Username, @Password, @Firstname, @Lastname, @Position, @Answer1, @Answer2, @Enabled, @selectedid); SELECT tempopw FROM " + DatabaseConnection.UsersTable + " WHERE loginid = @selectedid";
+                                    command = new MySqlCommand(query, connection);
+                                    command.Parameters.AddWithValue("@Username", txtUsername.Text);
+                                    command.Parameters.AddWithValue("@Password", txtPassword.Text);
+                                    command.Parameters.AddWithValue("@Firstname", txtFirstname.Text.Trim());
+                                    command.Parameters.AddWithValue("@Lastname", txtLastname.Text.Trim());
+                                    command.Parameters.AddWithValue("@Position", position);
+                                    command.Parameters.AddWithValue("@Answer1", txtAnswer1.Text.Trim());
+                                    command.Parameters.AddWithValue("@Answer2", txtAnswer2.Text.Trim());
+                                    command.Parameters.AddWithValue("@Enabled", isEnabled);
+                                    command.Parameters.AddWithValue("@selectedid", selectedID);
+                                }
+                                else
+                                {
+                                    string query = "CALL updateUserNoPassword(@Username, @Firstname, @Lastname, @Position, @Answer1, @Answer2, @Enabled, @selectedid); SELECT tempopw FROM " + DatabaseConnection.UsersTable + " WHERE loginid = @selectedid";
+                                    command = new MySqlCommand(query, connection);
+                                    command.Parameters.AddWithValue("@Username", txtUsername.Text);
+                                    command.Parameters.AddWithValue("@Firstname", txtFirstname.Text.Trim());
+                                    command.Parameters.AddWithValue("@Lastname", txtLastname.Text.Trim());
+                                    command.Parameters.AddWithValue("@Position", position);
+                                    command.Parameters.AddWithValue("@Answer1", txtAnswer1.Text.Trim());
+                                    command.Parameters.AddWithValue("@Answer2", txtAnswer2.Text.Trim());
+                                    command.Parameters.AddWithValue("@Enabled", isEnabled);
+                                    command.Parameters.AddWithValue("@selectedid", selectedID);
+                                }
                                 reader = command.ExecuteReader();
 
                                 reader.Close();
@@ -150,12 +166,12 @@ namespace POS_SYSTEM
                 }
                 else
                 {
-                    MessageBox.Show("Username and Password must be 4 or more characters");
+                    MessageBox.Show("Username, Security Answers 1 and 2 must be at least 4 characters.", "Invalid Text Length", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                if (txtUsername.TextLength > 4 && txtPassword.TextLength > 3)
+                if (txtUsername.TextLength >= 4 && txtAnswer1.TextLength >= 4 && txtAnswer2.TextLength >= 4)
                 {
                     var exists = dgvUsers.Rows.Cast<DataGridViewRow>()
                                  .Where(row => !row.IsNewRow)
@@ -198,7 +214,7 @@ namespace POS_SYSTEM
                 }
                 else
                 {
-                    MessageBox.Show("Username and Password must be 4 or more characters");
+                    MessageBox.Show("Username, Security Answers 1 and 2 must be at least 4 characters.", "Invalid Text Length", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

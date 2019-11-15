@@ -23,3 +23,4 @@ C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Debug\POS_SYST
 C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Debug\Happy Thirstday - POS.csproj.GenerateResource.Cache
 C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Debug\POS_SYSTEM.exe
 C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Debug\POS_SYSTEM.pdb
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Debug\Happy Thirstday - POS.csprojResolveAssemblyReference.cache

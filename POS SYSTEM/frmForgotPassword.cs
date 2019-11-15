@@ -81,7 +81,7 @@ namespace POS_SYSTEM
                     }
                     else
                     {
-                        MessageBox.Show("Answers did not match username!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Username and Answers did not match!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)

@@ -172,19 +172,19 @@ namespace POS_SYSTEM
                 Transact.isVATable(Transact.Total);
                 if (Product.Notes != "" && Product.Type.ToLower() == "milktea")
                 {
-                    hist = Product.Type + ": " + Product.ProductName + "\r\n" + "Size: " + Product.Size + "\r\n" + "Sugar Level: " + Product.SugarLevel + "\r\n" + "Add-ons: " + Product.Addons + "\r\n" + "Quantity: " + Product.Quantity + "\r\n" + "Price: " + Product.ProductPrice.ToString() + "\r\n" + "Added Note:\r\n" + Product.Notes + "\r\n";
+                    hist = Product.Type + ": " + Product.ProductName + "\r\n" + "Size: " + Product.Size + "\r\n" + "Sugar Level: " + Product.SugarLevel + "\r\n" + "Add-ons: " + Product.Addons + "\r\n" + "Quantity: " + Product.Quantity + "\r\n" + "Price: " + string.Format("{0:#,##0.00}", Product.ProductPrice) + "\r\n" + "Added Note:\r\n" + Product.Notes + "\r\n";
                 }
                 else if (Product.Notes != "" && Product.Type.ToLower() != "milktea")
                 {
-                    hist = Product.Type + ": " + Product.ProductName + "\r\n" + "Size: " + Product.Size + "\r\n" + "Add-ons: " + Product.Addons + "\r\n" + "Quantity: " + Product.Quantity + "\r\n" + "Price: " + Product.ProductPrice.ToString() + "\r\n" + "Added Note:\r\n" + Product.Notes + "\r\n";
+                    hist = Product.Type + ": " + Product.ProductName + "\r\n" + "Size: " + Product.Size + "\r\n" + "Add-ons: " + Product.Addons + "\r\n" + "Quantity: " + Product.Quantity + "\r\n" + "Price: " + string.Format("{0:#,##0.00}", Product.ProductPrice) + "\r\n" + "Added Note:\r\n" + Product.Notes + "\r\n";
                 }
                 else if (Product.Type.ToLower() == "milktea")
                 {
-                    hist = Product.Type + ": " + Product.ProductName + "\r\n" + "Size: " + Product.Size + "\r\n" + "Sugar Level: " + Product.SugarLevel + "\r\n" + "Add-ons: " + Product.Addons + "\r\n" + "Quantity: " + Product.Quantity + "\r\n" + "Price: " + Product.ProductPrice.ToString() + "\r\n";
+                    hist = Product.Type + ": " + Product.ProductName + "\r\n" + "Size: " + Product.Size + "\r\n" + "Sugar Level: " + Product.SugarLevel + "\r\n" + "Add-ons: " + Product.Addons + "\r\n" + "Quantity: " + Product.Quantity + "\r\n" + "Price: " + string.Format("{0:#,##0.00}", Product.ProductPrice) + "\r\n";
                 }
                 else
                 {
-                    hist = Product.Type + ": " + Product.ProductName + "\r\n" + "Size: " + Product.Size + "\r\n" + "Add-ons: " + Product.Addons + "\r\n" + "Quantity: " + Product.Quantity + "\r\n" + "Price: " + Product.ProductPrice.ToString() + "\r\n";
+                    hist = Product.Type + ": " + Product.ProductName + "\r\n" + "Size: " + Product.Size + "\r\n" + "Add-ons: " + Product.Addons + "\r\n" + "Quantity: " + Product.Quantity + "\r\n" + "Price: " + string.Format("{0:#,##0.00}", Product.ProductPrice) + "\r\n";
                 }
                 TransactionHistory.History.Add(hist);
                 TransactionHistory.transactionOrders.Add(Product);

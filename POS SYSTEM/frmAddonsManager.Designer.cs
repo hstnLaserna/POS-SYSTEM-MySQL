@@ -35,6 +35,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.chkEnabled = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPrice1 = new System.Windows.Forms.TextBox();
@@ -46,8 +47,14 @@
             this.dgvAddons = new System.Windows.Forms.DataGridView();
             this.btnBack = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.grpFilter = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.chkFrappe = new System.Windows.Forms.CheckBox();
+            this.chkMilkshake = new System.Windows.Forms.CheckBox();
+            this.chkMilktea = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddons)).BeginInit();
+            this.grpFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -76,11 +83,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(71, 89);
+            this.label4.Location = new System.Drawing.Point(76, 89);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 25);
+            this.label4.Size = new System.Drawing.Size(130, 25);
             this.label4.TabIndex = 0;
-            this.label4.Text = "AddOn name:";
+            this.label4.Text = "Addon name:";
             // 
             // txtAddonName
             // 
@@ -127,6 +134,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lblStatus);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtPrice1);
@@ -143,10 +151,20 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(1042, 70);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(521, 409);
+            this.groupBox1.Size = new System.Drawing.Size(521, 385);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Product Details";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(90, 351);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(343, 24);
+            this.label1.TabIndex = 10007;
+            this.label1.Text = "Clear details before creating new addon";
             // 
             // lblStatus
             // 
@@ -224,11 +242,11 @@
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(101, 54);
+            this.lblID.Location = new System.Drawing.Point(106, 54);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(105, 25);
+            this.lblID.Size = new System.Drawing.Size(100, 25);
             this.lblID.TabIndex = 0;
-            this.lblID.Text = "AddOn ID:";
+            this.lblID.Text = "Addon ID:";
             // 
             // txtID
             // 
@@ -247,6 +265,7 @@
             this.dgvAddons.AllowUserToDeleteRows = false;
             this.dgvAddons.AllowUserToResizeColumns = false;
             this.dgvAddons.AllowUserToResizeRows = false;
+            this.dgvAddons.BackgroundColor = System.Drawing.Color.AntiqueWhite;
             this.dgvAddons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAddons.Location = new System.Drawing.Point(33, 70);
             this.dgvAddons.MultiSelect = false;
@@ -255,7 +274,7 @@
             this.dgvAddons.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvAddons.RowTemplate.Height = 24;
             this.dgvAddons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAddons.Size = new System.Drawing.Size(915, 574);
+            this.dgvAddons.Size = new System.Drawing.Size(915, 625);
             this.dgvAddons.TabIndex = 0;
             this.dgvAddons.TabStop = false;
             this.dgvAddons.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAddons_CellClick);
@@ -267,7 +286,7 @@
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.Black;
-            this.btnBack.Location = new System.Drawing.Point(1432, 597);
+            this.btnBack.Location = new System.Drawing.Point(1452, 624);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(131, 47);
@@ -288,13 +307,80 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "- Addons";
             // 
+            // grpFilter
+            // 
+            this.grpFilter.Controls.Add(this.label2);
+            this.grpFilter.Controls.Add(this.chkFrappe);
+            this.grpFilter.Controls.Add(this.chkMilkshake);
+            this.grpFilter.Controls.Add(this.chkMilktea);
+            this.grpFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpFilter.Location = new System.Drawing.Point(1042, 461);
+            this.grpFilter.Name = "grpFilter";
+            this.grpFilter.Size = new System.Drawing.Size(521, 151);
+            this.grpFilter.TabIndex = 15;
+            this.grpFilter.TabStop = false;
+            this.grpFilter.Text = "Filter";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(56, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(154, 25);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Display Product:";
+            // 
+            // chkFrappe
+            // 
+            this.chkFrappe.AutoSize = true;
+            this.chkFrappe.Checked = true;
+            this.chkFrappe.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkFrappe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkFrappe.Location = new System.Drawing.Point(228, 112);
+            this.chkFrappe.Name = "chkFrappe";
+            this.chkFrappe.Size = new System.Drawing.Size(96, 29);
+            this.chkFrappe.TabIndex = 11;
+            this.chkFrappe.Text = "Frappe";
+            this.chkFrappe.UseVisualStyleBackColor = true;
+            this.chkFrappe.CheckStateChanged += new System.EventHandler(this.chkProducts_CheckStateChanged);
+            // 
+            // chkMilkshake
+            // 
+            this.chkMilkshake.AutoSize = true;
+            this.chkMilkshake.Checked = true;
+            this.chkMilkshake.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkMilkshake.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkMilkshake.Location = new System.Drawing.Point(228, 77);
+            this.chkMilkshake.Name = "chkMilkshake";
+            this.chkMilkshake.Size = new System.Drawing.Size(122, 29);
+            this.chkMilkshake.TabIndex = 10;
+            this.chkMilkshake.Text = "Milkshake";
+            this.chkMilkshake.UseVisualStyleBackColor = true;
+            this.chkMilkshake.CheckStateChanged += new System.EventHandler(this.chkProducts_CheckStateChanged);
+            // 
+            // chkMilktea
+            // 
+            this.chkMilktea.AutoSize = true;
+            this.chkMilktea.Checked = true;
+            this.chkMilktea.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkMilktea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkMilktea.Location = new System.Drawing.Point(228, 42);
+            this.chkMilktea.Name = "chkMilktea";
+            this.chkMilktea.Size = new System.Drawing.Size(96, 29);
+            this.chkMilktea.TabIndex = 9;
+            this.chkMilktea.Text = "Milktea";
+            this.chkMilktea.UseVisualStyleBackColor = true;
+            this.chkMilktea.CheckStateChanged += new System.EventHandler(this.chkProducts_CheckStateChanged);
+            // 
             // frmAddonsManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(1596, 684);
+            this.ClientSize = new System.Drawing.Size(1596, 771);
             this.ControlBox = false;
+            this.Controls.Add(this.grpFilter);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dgvAddons);
@@ -310,6 +396,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddons)).EndInit();
+            this.grpFilter.ResumeLayout(false);
+            this.grpFilter.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,6 +423,12 @@
         private System.Windows.Forms.TextBox txtPrice1;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox grpFilter;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox chkFrappe;
+        private System.Windows.Forms.CheckBox chkMilkshake;
+        private System.Windows.Forms.CheckBox chkMilktea;
 
     }
 }
