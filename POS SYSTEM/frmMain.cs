@@ -841,25 +841,27 @@ namespace POS_SYSTEM
             }
 
             purchasedHeight = 90;
-            
+
+            string miscNotes = "";
             for (int i = 0; i < TransactionHistory.transactionOrders.Count(); i++)
             {
                 e.Graphics.DrawString(string.Format("{0:#,##0}", TransactionHistory.transactionOrders[i].Quantity), f1, Brushes.Black, new RectangleF(20, purchasedHeight + 10, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Near });
                 e.Graphics.DrawString(string.Format("{0:#,##0.00}", TransactionHistory.transactionOrders[i].ProductName), f1, Brushes.Black, new RectangleF(40, purchasedHeight + 10, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Near });
                 e.Graphics.DrawString(string.Format("{0:#,##0.00}", TransactionHistory.transactionOrders[i].ProductPrice), f1, Brushes.Black, new RectangleF(-20, purchasedHeight + 10, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Far });
-                
-                
-                
-                
-                e.Graphics.DrawString(TransactionHistory.transactionOrders[i].Size, f3, Brushes.Black, new RectangleF(50, purchasedHeight + 20, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Near });
+
+
+
+                miscNotes = TransactionHistory.transactionOrders[i].Addons + " " + TransactionHistory.transactionOrders[i].Notes;
+                int multipler = (miscNotes.Length / 35) + 1;
+                e.Graphics.DrawString(TransactionHistory.transactionOrders[i].Size + " (Sugar: " + TransactionHistory.transactionOrders[i].SugarLevel + ")", f3, Brushes.Black, new RectangleF(50, purchasedHeight + 20, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Near });
                 e.Graphics.DrawString(string.Format("{0:#,##0.00}", TransactionHistory.transactionOrders[i].SizePrice), f3, Brushes.Black, new RectangleF(-40, purchasedHeight + 20, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Far });
                 //e.Graphics.DrawString("Qty:", f3, Brushes.Black, new RectangleF(60, purchasedHeight + 30, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Near });
                 //e.Graphics.DrawString(TransactionHistory.transactionOrders[i].Quantity.ToString(), f3, Brushes.Black, new RectangleF(-70, purchasedHeight + 30, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Far });
                 e.Graphics.DrawString("Addon Price:", f3, Brushes.Black, new RectangleF(50, purchasedHeight + 30, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Near });
                 e.Graphics.DrawString(string.Format("{0:#,##0.00}", TransactionHistory.transactionOrders[i].SinkerPrice), f3, Brushes.Black, new RectangleF(-40, purchasedHeight + 30, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Far });
-                e.Graphics.DrawString(TransactionHistory.transactionOrders[i].SugarLevel + " " + TransactionHistory.transactionOrders[i].Addons + " " + TransactionHistory.transactionOrders[i].Notes, f3, Brushes.Black, new RectangleF(50, purchasedHeight + 40, 160, 40), new StringFormat() { Alignment = StringAlignment.Near });
+                e.Graphics.DrawString(miscNotes, f3, Brushes.Black, new RectangleF(50, purchasedHeight + 40, 160, (20 + 10*multipler)), new StringFormat() { Alignment = StringAlignment.Near });
 
-                purchasedHeight += 45;
+                purchasedHeight += 35 + (10 * multipler);
             }
 
             //e.Graphics.DrawString(orders, f1, Brushes.Black, new RectangleF(0, 80, e.PageBounds.Width, purchasedHeight), new StringFormat() { Alignment = StringAlignment.Center });
