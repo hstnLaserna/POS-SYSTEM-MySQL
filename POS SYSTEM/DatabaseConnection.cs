@@ -10,7 +10,11 @@ namespace POS_SYSTEM
 {
     public class DatabaseConnection
     {
-        public static string connectionString = @"server=localhost;database=dbPOS;uid=root;pwd=root";
+        public static string schema = "dbPOS";
+        public static string dbuser = "happyt";
+        public static string dbpassword = "bois";
+
+        public static string connectionString = @"server=localhost;database=" + schema + ";uid=" + dbuser + ";pwd=" + dbpassword + "";
         public static string UsersTable = "tblUsers";
         public static string ProductsTable = "tblProducts";
         public static string AddonsTable = "tblAddons";

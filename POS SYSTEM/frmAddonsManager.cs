@@ -71,12 +71,10 @@ namespace POS_SYSTEM
             if (chkEnabled.Checked == true)
             {
                 isEnabled = 1;
-                chkEnabled.Text = "Yes";
             }
             else
             {
                 isEnabled = 0;
-                chkEnabled.Text = "No";
             }
         }
 
@@ -355,7 +353,7 @@ namespace POS_SYSTEM
             txtID.ResetText();
             txtAddonName.ResetText();
             txtPrice1.ResetText();
-            listProductType.SelectedIndex = 0;
+            listProductType.ClearSelected();
             chkEnabled.Checked = true;
             selectedID = 0;
             btnUpdate.Enabled = false;

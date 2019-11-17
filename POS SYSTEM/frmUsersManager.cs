@@ -326,12 +326,10 @@ namespace POS_SYSTEM
             if (chkEnabled.Checked == true)
             {
                 isEnabled = 1;
-                chkEnabled.Text = "Yes";
             }
             else
             {
                 isEnabled = 0;
-                chkEnabled.Text = "No";
             }
         }
 

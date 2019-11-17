@@ -29,113 +29,65 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.lblUser = new System.Windows.Forms.Label();
             this.lblPosition = new System.Windows.Forms.Label();
-            this.btnTransactionHistory = new System.Windows.Forms.Button();
-            this.btnUsersManager = new System.Windows.Forms.Button();
-            this.btnProductsManager = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnMT14 = new System.Windows.Forms.Button();
             this.lblMT15 = new System.Windows.Forms.Label();
             this.lblMT14 = new System.Windows.Forms.Label();
-            this.btnMT15 = new System.Windows.Forms.Button();
-            this.btnMT12 = new System.Windows.Forms.Button();
             this.lblMT13 = new System.Windows.Forms.Label();
             this.lblMT12 = new System.Windows.Forms.Label();
             this.lblMT11 = new System.Windows.Forms.Label();
-            this.btnMT13 = new System.Windows.Forms.Button();
-            this.btnMT11 = new System.Windows.Forms.Button();
-            this.btnMT9 = new System.Windows.Forms.Button();
             this.lblMT10 = new System.Windows.Forms.Label();
             this.lblMT9 = new System.Windows.Forms.Label();
-            this.btnMT10 = new System.Windows.Forms.Button();
-            this.btnMT7 = new System.Windows.Forms.Button();
             this.lblMT8 = new System.Windows.Forms.Label();
             this.lblMT7 = new System.Windows.Forms.Label();
             this.lblMT6 = new System.Windows.Forms.Label();
-            this.btnMT8 = new System.Windows.Forms.Button();
-            this.btnMT6 = new System.Windows.Forms.Button();
-            this.btnMT4 = new System.Windows.Forms.Button();
             this.lblMT5 = new System.Windows.Forms.Label();
             this.lblMT4 = new System.Windows.Forms.Label();
-            this.btnMT5 = new System.Windows.Forms.Button();
-            this.btnMT2 = new System.Windows.Forms.Button();
             this.lblMT3 = new System.Windows.Forms.Label();
             this.lblMT2 = new System.Windows.Forms.Label();
             this.lblMT1 = new System.Windows.Forms.Label();
-            this.btnMT3 = new System.Windows.Forms.Button();
-            this.btnMT1 = new System.Windows.Forms.Button();
             this.lblProducts1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnMS14 = new System.Windows.Forms.Button();
             this.lblMS15 = new System.Windows.Forms.Label();
             this.lblMS14 = new System.Windows.Forms.Label();
-            this.btnMS15 = new System.Windows.Forms.Button();
-            this.btnMS12 = new System.Windows.Forms.Button();
             this.lblMS13 = new System.Windows.Forms.Label();
             this.lblMS12 = new System.Windows.Forms.Label();
             this.lblMS11 = new System.Windows.Forms.Label();
-            this.btnMS13 = new System.Windows.Forms.Button();
-            this.btnMS11 = new System.Windows.Forms.Button();
-            this.btnMS4 = new System.Windows.Forms.Button();
             this.lblMS5 = new System.Windows.Forms.Label();
             this.lblMS4 = new System.Windows.Forms.Label();
-            this.btnMS5 = new System.Windows.Forms.Button();
-            this.btnMS9 = new System.Windows.Forms.Button();
             this.lblMS10 = new System.Windows.Forms.Label();
             this.lblMS9 = new System.Windows.Forms.Label();
-            this.btnMS10 = new System.Windows.Forms.Button();
-            this.btnMS7 = new System.Windows.Forms.Button();
             this.lblMS8 = new System.Windows.Forms.Label();
             this.lblMS7 = new System.Windows.Forms.Label();
             this.lblMS6 = new System.Windows.Forms.Label();
-            this.btnMS8 = new System.Windows.Forms.Button();
-            this.btnMS6 = new System.Windows.Forms.Button();
             this.lblMS3 = new System.Windows.Forms.Label();
             this.lblMS2 = new System.Windows.Forms.Label();
             this.lblMS1 = new System.Windows.Forms.Label();
-            this.btnMS3 = new System.Windows.Forms.Button();
-            this.btnMS2 = new System.Windows.Forms.Button();
-            this.btnMS1 = new System.Windows.Forms.Button();
             this.lblProducts2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btnFR14 = new System.Windows.Forms.Button();
             this.lblFR15 = new System.Windows.Forms.Label();
             this.lblFR14 = new System.Windows.Forms.Label();
-            this.btnFR15 = new System.Windows.Forms.Button();
-            this.btnFR12 = new System.Windows.Forms.Button();
             this.lblFR13 = new System.Windows.Forms.Label();
             this.lblFR12 = new System.Windows.Forms.Label();
             this.lblFR11 = new System.Windows.Forms.Label();
-            this.btnFR13 = new System.Windows.Forms.Button();
-            this.btnFR11 = new System.Windows.Forms.Button();
-            this.btnFR4 = new System.Windows.Forms.Button();
             this.lblFR5 = new System.Windows.Forms.Label();
             this.lblFR4 = new System.Windows.Forms.Label();
-            this.btnFR5 = new System.Windows.Forms.Button();
-            this.btnFR9 = new System.Windows.Forms.Button();
             this.lblFR10 = new System.Windows.Forms.Label();
             this.lblFR9 = new System.Windows.Forms.Label();
-            this.btnFR10 = new System.Windows.Forms.Button();
-            this.btnFR7 = new System.Windows.Forms.Button();
             this.lblFR8 = new System.Windows.Forms.Label();
             this.lblFR7 = new System.Windows.Forms.Label();
             this.lblFR6 = new System.Windows.Forms.Label();
-            this.btnFR8 = new System.Windows.Forms.Button();
-            this.btnFR6 = new System.Windows.Forms.Button();
             this.lblFR3 = new System.Windows.Forms.Label();
             this.lblFR2 = new System.Windows.Forms.Label();
             this.lblFR1 = new System.Windows.Forms.Label();
-            this.btnFR3 = new System.Windows.Forms.Button();
-            this.btnFR2 = new System.Windows.Forms.Button();
-            this.btnFR1 = new System.Windows.Forms.Button();
             this.lblProducts3 = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -163,92 +115,91 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.btnMT14 = new System.Windows.Forms.Button();
+            this.btnMT15 = new System.Windows.Forms.Button();
+            this.btnMT12 = new System.Windows.Forms.Button();
+            this.btnMT13 = new System.Windows.Forms.Button();
+            this.btnMT11 = new System.Windows.Forms.Button();
+            this.btnMT9 = new System.Windows.Forms.Button();
+            this.btnMT10 = new System.Windows.Forms.Button();
+            this.btnMT7 = new System.Windows.Forms.Button();
+            this.btnMT8 = new System.Windows.Forms.Button();
+            this.btnMT6 = new System.Windows.Forms.Button();
+            this.btnMT4 = new System.Windows.Forms.Button();
+            this.btnMT5 = new System.Windows.Forms.Button();
+            this.btnMT2 = new System.Windows.Forms.Button();
+            this.btnMT3 = new System.Windows.Forms.Button();
+            this.btnMT1 = new System.Windows.Forms.Button();
+            this.btnMS14 = new System.Windows.Forms.Button();
+            this.btnMS15 = new System.Windows.Forms.Button();
+            this.btnMS12 = new System.Windows.Forms.Button();
+            this.btnMS13 = new System.Windows.Forms.Button();
+            this.btnMS11 = new System.Windows.Forms.Button();
+            this.btnMS4 = new System.Windows.Forms.Button();
+            this.btnMS5 = new System.Windows.Forms.Button();
+            this.btnMS9 = new System.Windows.Forms.Button();
+            this.btnMS10 = new System.Windows.Forms.Button();
+            this.btnMS7 = new System.Windows.Forms.Button();
+            this.btnMS8 = new System.Windows.Forms.Button();
+            this.btnMS6 = new System.Windows.Forms.Button();
+            this.btnMS3 = new System.Windows.Forms.Button();
+            this.btnMS2 = new System.Windows.Forms.Button();
+            this.btnMS1 = new System.Windows.Forms.Button();
+            this.btnFR14 = new System.Windows.Forms.Button();
+            this.btnFR15 = new System.Windows.Forms.Button();
+            this.btnFR12 = new System.Windows.Forms.Button();
+            this.btnFR13 = new System.Windows.Forms.Button();
+            this.btnFR11 = new System.Windows.Forms.Button();
+            this.btnFR4 = new System.Windows.Forms.Button();
+            this.btnFR5 = new System.Windows.Forms.Button();
+            this.btnFR9 = new System.Windows.Forms.Button();
+            this.btnFR10 = new System.Windows.Forms.Button();
+            this.btnFR7 = new System.Windows.Forms.Button();
+            this.btnFR8 = new System.Windows.Forms.Button();
+            this.btnFR6 = new System.Windows.Forms.Button();
+            this.btnFR3 = new System.Windows.Forms.Button();
+            this.btnFR2 = new System.Windows.Forms.Button();
+            this.btnFR1 = new System.Windows.Forms.Button();
+            this.btnTransactionHistory = new System.Windows.Forms.Button();
+            this.btnUsersManager = new System.Windows.Forms.Button();
+            this.btnProductsManager = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUser
             // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.lblUser.BackColor = System.Drawing.Color.White;
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.Black;
-            this.lblUser.Location = new System.Drawing.Point(16, 20);
+            this.lblUser.Location = new System.Drawing.Point(-3, 2);
             this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(65, 24);
+            this.lblUser.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.lblUser.Size = new System.Drawing.Size(1533, 33);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "USER";
-            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblPosition
             // 
-            this.lblPosition.AutoSize = true;
-            this.lblPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.lblPosition.BackColor = System.Drawing.Color.White;
             this.lblPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPosition.ForeColor = System.Drawing.Color.Black;
-            this.lblPosition.Location = new System.Drawing.Point(16, 40);
+            this.lblPosition.Location = new System.Drawing.Point(-7, 35);
             this.lblPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(106, 24);
-            this.lblPosition.TabIndex = 1;
+            this.lblPosition.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.lblPosition.Size = new System.Drawing.Size(1537, 33);
+            this.lblPosition.TabIndex = 0;
             this.lblPosition.Text = "POSITION";
-            this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnTransactionHistory
-            // 
-            this.btnTransactionHistory.BackColor = System.Drawing.Color.OldLace;
-            this.btnTransactionHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnTransactionHistory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTransactionHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransactionHistory.ForeColor = System.Drawing.Color.Black;
-            this.btnTransactionHistory.Image = global::POS_SYSTEM.Properties.Resources.graph;
-            this.btnTransactionHistory.Location = new System.Drawing.Point(1404, 91);
-            this.btnTransactionHistory.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTransactionHistory.Name = "btnTransactionHistory";
-            this.btnTransactionHistory.Size = new System.Drawing.Size(115, 98);
-            this.btnTransactionHistory.TabIndex = 21;
-            this.btnTransactionHistory.Tag = "TransactionHistory";
-            this.btnTransactionHistory.UseVisualStyleBackColor = false;
-            this.btnTransactionHistory.Click += new System.EventHandler(this.buttonsSettings_Click);
-            // 
-            // btnUsersManager
-            // 
-            this.btnUsersManager.BackColor = System.Drawing.Color.OldLace;
-            this.btnUsersManager.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUsersManager.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUsersManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsersManager.ForeColor = System.Drawing.Color.Black;
-            this.btnUsersManager.Image = global::POS_SYSTEM.Properties.Resources.user__4_;
-            this.btnUsersManager.Location = new System.Drawing.Point(1404, 195);
-            this.btnUsersManager.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUsersManager.Name = "btnUsersManager";
-            this.btnUsersManager.Size = new System.Drawing.Size(115, 98);
-            this.btnUsersManager.TabIndex = 22;
-            this.btnUsersManager.Tag = "UsersManager";
-            this.btnUsersManager.UseVisualStyleBackColor = false;
-            this.btnUsersManager.Click += new System.EventHandler(this.buttonsSettings_Click);
-            // 
-            // btnProductsManager
-            // 
-            this.btnProductsManager.BackColor = System.Drawing.Color.OldLace;
-            this.btnProductsManager.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnProductsManager.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnProductsManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductsManager.ForeColor = System.Drawing.Color.Black;
-            this.btnProductsManager.Image = global::POS_SYSTEM.Properties.Resources.order__1_;
-            this.btnProductsManager.Location = new System.Drawing.Point(1405, 300);
-            this.btnProductsManager.Margin = new System.Windows.Forms.Padding(4);
-            this.btnProductsManager.Name = "btnProductsManager";
-            this.btnProductsManager.Size = new System.Drawing.Size(115, 98);
-            this.btnProductsManager.TabIndex = 23;
-            this.btnProductsManager.Tag = "ProductsManager";
-            this.btnProductsManager.UseVisualStyleBackColor = false;
-            this.btnProductsManager.Click += new System.EventHandler(this.buttonsSettings_Click);
+            this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnLogout
             // 
@@ -284,7 +235,7 @@
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Controls.Add(this.tabPage3);
             this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl.Location = new System.Drawing.Point(16, 64);
+            this.tabControl.Location = new System.Drawing.Point(17, 70);
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -334,22 +285,6 @@
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "MILKTEA";
             // 
-            // btnMT14
-            // 
-            this.btnMT14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMT14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT14.BackgroundImage")));
-            this.btnMT14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMT14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMT14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMT14.ForeColor = System.Drawing.Color.Black;
-            this.btnMT14.Location = new System.Drawing.Point(638, 673);
-            this.btnMT14.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMT14.Name = "btnMT14";
-            this.btnMT14.Size = new System.Drawing.Size(115, 98);
-            this.btnMT14.TabIndex = 14;
-            this.btnMT14.UseVisualStyleBackColor = false;
-            this.btnMT14.Click += new System.EventHandler(this.buttonMT_Click);
-            // 
             // lblMT15
             // 
             this.lblMT15.AutoSize = true;
@@ -373,38 +308,6 @@
             this.lblMT14.TabIndex = 54;
             this.lblMT14.Text = "mtFlavor";
             this.lblMT14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btnMT15
-            // 
-            this.btnMT15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMT15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT15.BackgroundImage")));
-            this.btnMT15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMT15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMT15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMT15.ForeColor = System.Drawing.Color.Black;
-            this.btnMT15.Location = new System.Drawing.Point(853, 673);
-            this.btnMT15.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMT15.Name = "btnMT15";
-            this.btnMT15.Size = new System.Drawing.Size(115, 98);
-            this.btnMT15.TabIndex = 15;
-            this.btnMT15.UseVisualStyleBackColor = false;
-            this.btnMT15.Click += new System.EventHandler(this.buttonMT_Click);
-            // 
-            // btnMT12
-            // 
-            this.btnMT12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMT12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT12.BackgroundImage")));
-            this.btnMT12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMT12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMT12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMT12.ForeColor = System.Drawing.Color.Black;
-            this.btnMT12.Location = new System.Drawing.Point(238, 673);
-            this.btnMT12.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMT12.Name = "btnMT12";
-            this.btnMT12.Size = new System.Drawing.Size(115, 98);
-            this.btnMT12.TabIndex = 12;
-            this.btnMT12.UseVisualStyleBackColor = false;
-            this.btnMT12.Click += new System.EventHandler(this.buttonMT_Click);
             // 
             // lblMT13
             // 
@@ -442,59 +345,11 @@
             this.lblMT11.Text = "mtFlavor";
             this.lblMT11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnMT13
-            // 
-            this.btnMT13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMT13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT13.BackgroundImage")));
-            this.btnMT13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMT13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMT13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMT13.ForeColor = System.Drawing.Color.Black;
-            this.btnMT13.Location = new System.Drawing.Point(453, 673);
-            this.btnMT13.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMT13.Name = "btnMT13";
-            this.btnMT13.Size = new System.Drawing.Size(115, 98);
-            this.btnMT13.TabIndex = 13;
-            this.btnMT13.UseVisualStyleBackColor = false;
-            this.btnMT13.Click += new System.EventHandler(this.buttonMT_Click);
-            // 
-            // btnMT11
-            // 
-            this.btnMT11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMT11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT11.BackgroundImage")));
-            this.btnMT11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMT11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMT11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMT11.ForeColor = System.Drawing.Color.Black;
-            this.btnMT11.Location = new System.Drawing.Point(24, 673);
-            this.btnMT11.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMT11.Name = "btnMT11";
-            this.btnMT11.Size = new System.Drawing.Size(115, 98);
-            this.btnMT11.TabIndex = 11;
-            this.btnMT11.UseVisualStyleBackColor = false;
-            this.btnMT11.Click += new System.EventHandler(this.buttonMT_Click);
-            // 
-            // btnMT9
-            // 
-            this.btnMT9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMT9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT9.BackgroundImage")));
-            this.btnMT9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMT9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMT9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMT9.ForeColor = System.Drawing.Color.Black;
-            this.btnMT9.Location = new System.Drawing.Point(638, 399);
-            this.btnMT9.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMT9.Name = "btnMT9";
-            this.btnMT9.Size = new System.Drawing.Size(115, 98);
-            this.btnMT9.TabIndex = 9;
-            this.btnMT9.UseVisualStyleBackColor = false;
-            this.btnMT9.Click += new System.EventHandler(this.buttonMT_Click);
-            // 
             // lblMT10
             // 
             this.lblMT10.AutoSize = true;
             this.lblMT10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMT10.Location = new System.Drawing.Point(887, 501);
+            this.lblMT10.Location = new System.Drawing.Point(874, 501);
             this.lblMT10.Name = "lblMT10";
             this.lblMT10.Size = new System.Drawing.Size(82, 20);
             this.lblMT10.TabIndex = 45;
@@ -512,43 +367,11 @@
             this.lblMT9.Text = "mtFlavor";
             this.lblMT9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnMT10
-            // 
-            this.btnMT10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMT10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT10.BackgroundImage")));
-            this.btnMT10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMT10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMT10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMT10.ForeColor = System.Drawing.Color.Black;
-            this.btnMT10.Location = new System.Drawing.Point(853, 399);
-            this.btnMT10.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMT10.Name = "btnMT10";
-            this.btnMT10.Size = new System.Drawing.Size(115, 98);
-            this.btnMT10.TabIndex = 10;
-            this.btnMT10.UseVisualStyleBackColor = false;
-            this.btnMT10.Click += new System.EventHandler(this.buttonMT_Click);
-            // 
-            // btnMT7
-            // 
-            this.btnMT7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMT7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT7.BackgroundImage")));
-            this.btnMT7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMT7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMT7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMT7.ForeColor = System.Drawing.Color.Black;
-            this.btnMT7.Location = new System.Drawing.Point(238, 399);
-            this.btnMT7.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMT7.Name = "btnMT7";
-            this.btnMT7.Size = new System.Drawing.Size(115, 98);
-            this.btnMT7.TabIndex = 7;
-            this.btnMT7.UseVisualStyleBackColor = false;
-            this.btnMT7.Click += new System.EventHandler(this.buttonMT_Click);
-            // 
             // lblMT8
             // 
             this.lblMT8.AutoSize = true;
             this.lblMT8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMT8.Location = new System.Drawing.Point(487, 501);
+            this.lblMT8.Location = new System.Drawing.Point(474, 501);
             this.lblMT8.Name = "lblMT8";
             this.lblMT8.Size = new System.Drawing.Size(82, 20);
             this.lblMT8.TabIndex = 41;
@@ -577,59 +400,11 @@
             this.lblMT6.Text = "mtFlavor";
             this.lblMT6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnMT8
-            // 
-            this.btnMT8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMT8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT8.BackgroundImage")));
-            this.btnMT8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMT8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMT8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMT8.ForeColor = System.Drawing.Color.Black;
-            this.btnMT8.Location = new System.Drawing.Point(453, 399);
-            this.btnMT8.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMT8.Name = "btnMT8";
-            this.btnMT8.Size = new System.Drawing.Size(115, 98);
-            this.btnMT8.TabIndex = 8;
-            this.btnMT8.UseVisualStyleBackColor = false;
-            this.btnMT8.Click += new System.EventHandler(this.buttonMT_Click);
-            // 
-            // btnMT6
-            // 
-            this.btnMT6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMT6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT6.BackgroundImage")));
-            this.btnMT6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMT6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMT6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMT6.ForeColor = System.Drawing.Color.Black;
-            this.btnMT6.Location = new System.Drawing.Point(24, 399);
-            this.btnMT6.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMT6.Name = "btnMT6";
-            this.btnMT6.Size = new System.Drawing.Size(115, 98);
-            this.btnMT6.TabIndex = 6;
-            this.btnMT6.UseVisualStyleBackColor = false;
-            this.btnMT6.Click += new System.EventHandler(this.buttonMT_Click);
-            // 
-            // btnMT4
-            // 
-            this.btnMT4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMT4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT4.BackgroundImage")));
-            this.btnMT4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMT4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMT4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMT4.ForeColor = System.Drawing.Color.Black;
-            this.btnMT4.Location = new System.Drawing.Point(638, 136);
-            this.btnMT4.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMT4.Name = "btnMT4";
-            this.btnMT4.Size = new System.Drawing.Size(115, 98);
-            this.btnMT4.TabIndex = 4;
-            this.btnMT4.UseVisualStyleBackColor = false;
-            this.btnMT4.Click += new System.EventHandler(this.buttonMT_Click);
-            // 
             // lblMT5
             // 
             this.lblMT5.AutoSize = true;
             this.lblMT5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMT5.Location = new System.Drawing.Point(887, 238);
+            this.lblMT5.Location = new System.Drawing.Point(874, 238);
             this.lblMT5.Name = "lblMT5";
             this.lblMT5.Size = new System.Drawing.Size(82, 20);
             this.lblMT5.TabIndex = 35;
@@ -647,43 +422,11 @@
             this.lblMT4.Text = "mtFlavor";
             this.lblMT4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnMT5
-            // 
-            this.btnMT5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMT5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT5.BackgroundImage")));
-            this.btnMT5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMT5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMT5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMT5.ForeColor = System.Drawing.Color.Black;
-            this.btnMT5.Location = new System.Drawing.Point(853, 136);
-            this.btnMT5.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMT5.Name = "btnMT5";
-            this.btnMT5.Size = new System.Drawing.Size(115, 98);
-            this.btnMT5.TabIndex = 5;
-            this.btnMT5.UseVisualStyleBackColor = false;
-            this.btnMT5.Click += new System.EventHandler(this.buttonMT_Click);
-            // 
-            // btnMT2
-            // 
-            this.btnMT2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMT2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT2.BackgroundImage")));
-            this.btnMT2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMT2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMT2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMT2.ForeColor = System.Drawing.Color.Black;
-            this.btnMT2.Location = new System.Drawing.Point(238, 136);
-            this.btnMT2.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMT2.Name = "btnMT2";
-            this.btnMT2.Size = new System.Drawing.Size(115, 98);
-            this.btnMT2.TabIndex = 2;
-            this.btnMT2.UseVisualStyleBackColor = false;
-            this.btnMT2.Click += new System.EventHandler(this.buttonMT_Click);
-            // 
             // lblMT3
             // 
             this.lblMT3.AutoSize = true;
             this.lblMT3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMT3.Location = new System.Drawing.Point(487, 238);
+            this.lblMT3.Location = new System.Drawing.Point(474, 238);
             this.lblMT3.Name = "lblMT3";
             this.lblMT3.Size = new System.Drawing.Size(82, 20);
             this.lblMT3.TabIndex = 31;
@@ -712,38 +455,6 @@
             this.lblMT1.Text = "mtFlavor";
             this.lblMT1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnMT3
-            // 
-            this.btnMT3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMT3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT3.BackgroundImage")));
-            this.btnMT3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMT3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMT3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMT3.ForeColor = System.Drawing.Color.Black;
-            this.btnMT3.Location = new System.Drawing.Point(453, 136);
-            this.btnMT3.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMT3.Name = "btnMT3";
-            this.btnMT3.Size = new System.Drawing.Size(115, 98);
-            this.btnMT3.TabIndex = 3;
-            this.btnMT3.UseVisualStyleBackColor = false;
-            this.btnMT3.Click += new System.EventHandler(this.buttonMT_Click);
-            // 
-            // btnMT1
-            // 
-            this.btnMT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMT1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT1.BackgroundImage")));
-            this.btnMT1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMT1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMT1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMT1.ForeColor = System.Drawing.Color.Black;
-            this.btnMT1.Location = new System.Drawing.Point(24, 136);
-            this.btnMT1.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMT1.Name = "btnMT1";
-            this.btnMT1.Size = new System.Drawing.Size(115, 98);
-            this.btnMT1.TabIndex = 1;
-            this.btnMT1.UseVisualStyleBackColor = false;
-            this.btnMT1.Click += new System.EventHandler(this.buttonMT_Click);
-            // 
             // lblProducts1
             // 
             this.lblProducts1.AutoSize = true;
@@ -763,34 +474,34 @@
             this.tabPage2.Controls.Add(this.btnMS14);
             this.tabPage2.Controls.Add(this.lblMS15);
             this.tabPage2.Controls.Add(this.lblMS14);
-            this.tabPage2.Controls.Add(this.btnMS15);
-            this.tabPage2.Controls.Add(this.btnMS12);
             this.tabPage2.Controls.Add(this.lblMS13);
             this.tabPage2.Controls.Add(this.lblMS12);
             this.tabPage2.Controls.Add(this.lblMS11);
-            this.tabPage2.Controls.Add(this.btnMS13);
-            this.tabPage2.Controls.Add(this.btnMS11);
-            this.tabPage2.Controls.Add(this.btnMS4);
             this.tabPage2.Controls.Add(this.lblMS5);
             this.tabPage2.Controls.Add(this.lblMS4);
-            this.tabPage2.Controls.Add(this.btnMS5);
-            this.tabPage2.Controls.Add(this.btnMS9);
             this.tabPage2.Controls.Add(this.lblMS10);
             this.tabPage2.Controls.Add(this.lblMS9);
-            this.tabPage2.Controls.Add(this.btnMS10);
-            this.tabPage2.Controls.Add(this.btnMS7);
             this.tabPage2.Controls.Add(this.lblMS8);
             this.tabPage2.Controls.Add(this.lblMS7);
             this.tabPage2.Controls.Add(this.lblMS6);
-            this.tabPage2.Controls.Add(this.btnMS8);
-            this.tabPage2.Controls.Add(this.btnMS6);
             this.tabPage2.Controls.Add(this.lblMS3);
             this.tabPage2.Controls.Add(this.lblMS2);
             this.tabPage2.Controls.Add(this.lblMS1);
+            this.tabPage2.Controls.Add(this.lblProducts2);
+            this.tabPage2.Controls.Add(this.btnMS15);
+            this.tabPage2.Controls.Add(this.btnMS12);
+            this.tabPage2.Controls.Add(this.btnMS13);
+            this.tabPage2.Controls.Add(this.btnMS11);
+            this.tabPage2.Controls.Add(this.btnMS4);
+            this.tabPage2.Controls.Add(this.btnMS5);
+            this.tabPage2.Controls.Add(this.btnMS9);
+            this.tabPage2.Controls.Add(this.btnMS10);
+            this.tabPage2.Controls.Add(this.btnMS7);
+            this.tabPage2.Controls.Add(this.btnMS8);
+            this.tabPage2.Controls.Add(this.btnMS6);
             this.tabPage2.Controls.Add(this.btnMS3);
             this.tabPage2.Controls.Add(this.btnMS2);
             this.tabPage2.Controls.Add(this.btnMS1);
-            this.tabPage2.Controls.Add(this.lblProducts2);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
@@ -798,22 +509,6 @@
             this.tabPage2.Size = new System.Drawing.Size(976, 882);
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "MILKSHAKE";
-            // 
-            // btnMS14
-            // 
-            this.btnMS14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMS14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS14.BackgroundImage")));
-            this.btnMS14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMS14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMS14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMS14.ForeColor = System.Drawing.Color.Black;
-            this.btnMS14.Location = new System.Drawing.Point(645, 440);
-            this.btnMS14.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMS14.Name = "btnMS14";
-            this.btnMS14.Size = new System.Drawing.Size(115, 98);
-            this.btnMS14.TabIndex = 14;
-            this.btnMS14.UseVisualStyleBackColor = false;
-            this.btnMS14.Click += new System.EventHandler(this.buttonMS_Click);
             // 
             // lblMS15
             // 
@@ -836,38 +531,6 @@
             this.lblMS14.TabIndex = 78;
             this.lblMS14.Text = "msFlavor";
             this.lblMS14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btnMS15
-            // 
-            this.btnMS15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMS15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS15.BackgroundImage")));
-            this.btnMS15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMS15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMS15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMS15.ForeColor = System.Drawing.Color.Black;
-            this.btnMS15.Location = new System.Drawing.Point(860, 440);
-            this.btnMS15.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMS15.Name = "btnMS15";
-            this.btnMS15.Size = new System.Drawing.Size(115, 98);
-            this.btnMS15.TabIndex = 15;
-            this.btnMS15.UseVisualStyleBackColor = false;
-            this.btnMS15.Click += new System.EventHandler(this.buttonMS_Click);
-            // 
-            // btnMS12
-            // 
-            this.btnMS12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMS12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS12.BackgroundImage")));
-            this.btnMS12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMS12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMS12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMS12.ForeColor = System.Drawing.Color.Black;
-            this.btnMS12.Location = new System.Drawing.Point(245, 440);
-            this.btnMS12.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMS12.Name = "btnMS12";
-            this.btnMS12.Size = new System.Drawing.Size(115, 98);
-            this.btnMS12.TabIndex = 12;
-            this.btnMS12.UseVisualStyleBackColor = false;
-            this.btnMS12.Click += new System.EventHandler(this.buttonMS_Click);
             // 
             // lblMS13
             // 
@@ -902,54 +565,6 @@
             this.lblMS11.Text = "msFlavor";
             this.lblMS11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnMS13
-            // 
-            this.btnMS13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMS13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS13.BackgroundImage")));
-            this.btnMS13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMS13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMS13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMS13.ForeColor = System.Drawing.Color.Black;
-            this.btnMS13.Location = new System.Drawing.Point(460, 440);
-            this.btnMS13.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMS13.Name = "btnMS13";
-            this.btnMS13.Size = new System.Drawing.Size(115, 98);
-            this.btnMS13.TabIndex = 13;
-            this.btnMS13.UseVisualStyleBackColor = false;
-            this.btnMS13.Click += new System.EventHandler(this.buttonMS_Click);
-            // 
-            // btnMS11
-            // 
-            this.btnMS11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMS11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS11.BackgroundImage")));
-            this.btnMS11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMS11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMS11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMS11.ForeColor = System.Drawing.Color.Black;
-            this.btnMS11.Location = new System.Drawing.Point(31, 440);
-            this.btnMS11.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMS11.Name = "btnMS11";
-            this.btnMS11.Size = new System.Drawing.Size(115, 98);
-            this.btnMS11.TabIndex = 11;
-            this.btnMS11.UseVisualStyleBackColor = false;
-            this.btnMS11.Click += new System.EventHandler(this.buttonMS_Click);
-            // 
-            // btnMS4
-            // 
-            this.btnMS4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMS4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS4.BackgroundImage")));
-            this.btnMS4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMS4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMS4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMS4.ForeColor = System.Drawing.Color.Black;
-            this.btnMS4.Location = new System.Drawing.Point(645, 104);
-            this.btnMS4.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMS4.Name = "btnMS4";
-            this.btnMS4.Size = new System.Drawing.Size(115, 98);
-            this.btnMS4.TabIndex = 4;
-            this.btnMS4.UseVisualStyleBackColor = false;
-            this.btnMS4.Click += new System.EventHandler(this.buttonMS_Click);
-            // 
             // lblMS5
             // 
             this.lblMS5.AutoSize = true;
@@ -972,38 +587,6 @@
             this.lblMS4.Text = "msFlavor";
             this.lblMS4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnMS5
-            // 
-            this.btnMS5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMS5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS5.BackgroundImage")));
-            this.btnMS5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMS5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMS5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMS5.ForeColor = System.Drawing.Color.Black;
-            this.btnMS5.Location = new System.Drawing.Point(860, 104);
-            this.btnMS5.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMS5.Name = "btnMS5";
-            this.btnMS5.Size = new System.Drawing.Size(115, 98);
-            this.btnMS5.TabIndex = 5;
-            this.btnMS5.UseVisualStyleBackColor = false;
-            this.btnMS5.Click += new System.EventHandler(this.buttonMS_Click);
-            // 
-            // btnMS9
-            // 
-            this.btnMS9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMS9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS9.BackgroundImage")));
-            this.btnMS9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMS9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMS9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMS9.ForeColor = System.Drawing.Color.Black;
-            this.btnMS9.Location = new System.Drawing.Point(645, 282);
-            this.btnMS9.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMS9.Name = "btnMS9";
-            this.btnMS9.Size = new System.Drawing.Size(115, 98);
-            this.btnMS9.TabIndex = 9;
-            this.btnMS9.UseVisualStyleBackColor = false;
-            this.btnMS9.Click += new System.EventHandler(this.buttonMS_Click);
-            // 
             // lblMS10
             // 
             this.lblMS10.AutoSize = true;
@@ -1025,38 +608,6 @@
             this.lblMS9.TabIndex = 64;
             this.lblMS9.Text = "msFlavor";
             this.lblMS9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btnMS10
-            // 
-            this.btnMS10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMS10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS10.BackgroundImage")));
-            this.btnMS10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMS10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMS10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMS10.ForeColor = System.Drawing.Color.Black;
-            this.btnMS10.Location = new System.Drawing.Point(860, 282);
-            this.btnMS10.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMS10.Name = "btnMS10";
-            this.btnMS10.Size = new System.Drawing.Size(115, 98);
-            this.btnMS10.TabIndex = 10;
-            this.btnMS10.UseVisualStyleBackColor = false;
-            this.btnMS10.Click += new System.EventHandler(this.buttonMS_Click);
-            // 
-            // btnMS7
-            // 
-            this.btnMS7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMS7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS7.BackgroundImage")));
-            this.btnMS7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMS7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMS7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMS7.ForeColor = System.Drawing.Color.Black;
-            this.btnMS7.Location = new System.Drawing.Point(245, 282);
-            this.btnMS7.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMS7.Name = "btnMS7";
-            this.btnMS7.Size = new System.Drawing.Size(115, 98);
-            this.btnMS7.TabIndex = 7;
-            this.btnMS7.UseVisualStyleBackColor = false;
-            this.btnMS7.Click += new System.EventHandler(this.buttonMS_Click);
             // 
             // lblMS8
             // 
@@ -1092,38 +643,6 @@
             this.lblMS6.Text = "msFlavor";
             this.lblMS6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnMS8
-            // 
-            this.btnMS8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMS8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS8.BackgroundImage")));
-            this.btnMS8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMS8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMS8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMS8.ForeColor = System.Drawing.Color.Black;
-            this.btnMS8.Location = new System.Drawing.Point(460, 282);
-            this.btnMS8.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMS8.Name = "btnMS8";
-            this.btnMS8.Size = new System.Drawing.Size(115, 98);
-            this.btnMS8.TabIndex = 8;
-            this.btnMS8.UseVisualStyleBackColor = false;
-            this.btnMS8.Click += new System.EventHandler(this.buttonMS_Click);
-            // 
-            // btnMS6
-            // 
-            this.btnMS6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMS6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS6.BackgroundImage")));
-            this.btnMS6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMS6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMS6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMS6.ForeColor = System.Drawing.Color.Black;
-            this.btnMS6.Location = new System.Drawing.Point(31, 282);
-            this.btnMS6.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMS6.Name = "btnMS6";
-            this.btnMS6.Size = new System.Drawing.Size(115, 98);
-            this.btnMS6.TabIndex = 6;
-            this.btnMS6.UseVisualStyleBackColor = false;
-            this.btnMS6.Click += new System.EventHandler(this.buttonMS_Click);
-            // 
             // lblMS3
             // 
             this.lblMS3.AutoSize = true;
@@ -1157,61 +676,13 @@
             this.lblMS1.Text = "msFlavor";
             this.lblMS1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnMS3
-            // 
-            this.btnMS3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMS3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS3.BackgroundImage")));
-            this.btnMS3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMS3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMS3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMS3.ForeColor = System.Drawing.Color.Black;
-            this.btnMS3.Location = new System.Drawing.Point(460, 99);
-            this.btnMS3.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMS3.Name = "btnMS3";
-            this.btnMS3.Size = new System.Drawing.Size(115, 98);
-            this.btnMS3.TabIndex = 3;
-            this.btnMS3.UseVisualStyleBackColor = false;
-            this.btnMS3.Click += new System.EventHandler(this.buttonMS_Click);
-            // 
-            // btnMS2
-            // 
-            this.btnMS2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMS2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS2.BackgroundImage")));
-            this.btnMS2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMS2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMS2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMS2.ForeColor = System.Drawing.Color.Black;
-            this.btnMS2.Location = new System.Drawing.Point(245, 99);
-            this.btnMS2.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMS2.Name = "btnMS2";
-            this.btnMS2.Size = new System.Drawing.Size(115, 98);
-            this.btnMS2.TabIndex = 2;
-            this.btnMS2.UseVisualStyleBackColor = false;
-            this.btnMS2.Click += new System.EventHandler(this.buttonMS_Click);
-            // 
-            // btnMS1
-            // 
-            this.btnMS1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnMS1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS1.BackgroundImage")));
-            this.btnMS1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMS1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMS1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMS1.ForeColor = System.Drawing.Color.Black;
-            this.btnMS1.Location = new System.Drawing.Point(46, 104);
-            this.btnMS1.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMS1.Name = "btnMS1";
-            this.btnMS1.Size = new System.Drawing.Size(115, 98);
-            this.btnMS1.TabIndex = 1;
-            this.btnMS1.UseVisualStyleBackColor = false;
-            this.btnMS1.Click += new System.EventHandler(this.buttonMS_Click);
-            // 
             // lblProducts2
             // 
             this.lblProducts2.AutoSize = true;
             this.lblProducts2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblProducts2.Font = new System.Drawing.Font("HamburgerHeaven", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProducts2.ForeColor = System.Drawing.Color.Black;
-            this.lblProducts2.Location = new System.Drawing.Point(316, -1);
+            this.lblProducts2.Location = new System.Drawing.Point(316, 5);
             this.lblProducts2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProducts2.Name = "lblProducts2";
             this.lblProducts2.Size = new System.Drawing.Size(364, 95);
@@ -1224,34 +695,34 @@
             this.tabPage3.Controls.Add(this.btnFR14);
             this.tabPage3.Controls.Add(this.lblFR15);
             this.tabPage3.Controls.Add(this.lblFR14);
-            this.tabPage3.Controls.Add(this.btnFR15);
-            this.tabPage3.Controls.Add(this.btnFR12);
             this.tabPage3.Controls.Add(this.lblFR13);
             this.tabPage3.Controls.Add(this.lblFR12);
             this.tabPage3.Controls.Add(this.lblFR11);
-            this.tabPage3.Controls.Add(this.btnFR13);
-            this.tabPage3.Controls.Add(this.btnFR11);
-            this.tabPage3.Controls.Add(this.btnFR4);
             this.tabPage3.Controls.Add(this.lblFR5);
             this.tabPage3.Controls.Add(this.lblFR4);
-            this.tabPage3.Controls.Add(this.btnFR5);
-            this.tabPage3.Controls.Add(this.btnFR9);
             this.tabPage3.Controls.Add(this.lblFR10);
             this.tabPage3.Controls.Add(this.lblFR9);
-            this.tabPage3.Controls.Add(this.btnFR10);
-            this.tabPage3.Controls.Add(this.btnFR7);
             this.tabPage3.Controls.Add(this.lblFR8);
             this.tabPage3.Controls.Add(this.lblFR7);
             this.tabPage3.Controls.Add(this.lblFR6);
-            this.tabPage3.Controls.Add(this.btnFR8);
-            this.tabPage3.Controls.Add(this.btnFR6);
             this.tabPage3.Controls.Add(this.lblFR3);
             this.tabPage3.Controls.Add(this.lblFR2);
             this.tabPage3.Controls.Add(this.lblFR1);
+            this.tabPage3.Controls.Add(this.lblProducts3);
+            this.tabPage3.Controls.Add(this.btnFR15);
+            this.tabPage3.Controls.Add(this.btnFR12);
+            this.tabPage3.Controls.Add(this.btnFR13);
+            this.tabPage3.Controls.Add(this.btnFR11);
+            this.tabPage3.Controls.Add(this.btnFR4);
+            this.tabPage3.Controls.Add(this.btnFR5);
+            this.tabPage3.Controls.Add(this.btnFR9);
+            this.tabPage3.Controls.Add(this.btnFR10);
+            this.tabPage3.Controls.Add(this.btnFR7);
+            this.tabPage3.Controls.Add(this.btnFR8);
+            this.tabPage3.Controls.Add(this.btnFR6);
             this.tabPage3.Controls.Add(this.btnFR3);
             this.tabPage3.Controls.Add(this.btnFR2);
             this.tabPage3.Controls.Add(this.btnFR1);
-            this.tabPage3.Controls.Add(this.lblProducts3);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
@@ -1259,22 +730,6 @@
             this.tabPage3.Size = new System.Drawing.Size(976, 882);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "FRAPPE";
-            // 
-            // btnFR14
-            // 
-            this.btnFR14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnFR14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR14.BackgroundImage")));
-            this.btnFR14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFR14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFR14.ForeColor = System.Drawing.Color.Black;
-            this.btnFR14.Location = new System.Drawing.Point(640, 485);
-            this.btnFR14.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFR14.Name = "btnFR14";
-            this.btnFR14.Size = new System.Drawing.Size(115, 98);
-            this.btnFR14.TabIndex = 14;
-            this.btnFR14.UseVisualStyleBackColor = false;
-            this.btnFR14.Click += new System.EventHandler(this.buttonFR_Click);
             // 
             // lblFR15
             // 
@@ -1297,38 +752,6 @@
             this.lblFR14.TabIndex = 102;
             this.lblFR14.Text = "msFlavor";
             this.lblFR14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btnFR15
-            // 
-            this.btnFR15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnFR15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR15.BackgroundImage")));
-            this.btnFR15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFR15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFR15.ForeColor = System.Drawing.Color.Black;
-            this.btnFR15.Location = new System.Drawing.Point(855, 485);
-            this.btnFR15.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFR15.Name = "btnFR15";
-            this.btnFR15.Size = new System.Drawing.Size(115, 98);
-            this.btnFR15.TabIndex = 15;
-            this.btnFR15.UseVisualStyleBackColor = false;
-            this.btnFR15.Click += new System.EventHandler(this.buttonFR_Click);
-            // 
-            // btnFR12
-            // 
-            this.btnFR12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnFR12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR12.BackgroundImage")));
-            this.btnFR12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFR12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFR12.ForeColor = System.Drawing.Color.Black;
-            this.btnFR12.Location = new System.Drawing.Point(240, 485);
-            this.btnFR12.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFR12.Name = "btnFR12";
-            this.btnFR12.Size = new System.Drawing.Size(115, 98);
-            this.btnFR12.TabIndex = 12;
-            this.btnFR12.UseVisualStyleBackColor = false;
-            this.btnFR12.Click += new System.EventHandler(this.buttonFR_Click);
             // 
             // lblFR13
             // 
@@ -1363,54 +786,6 @@
             this.lblFR11.Text = "msFlavor";
             this.lblFR11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnFR13
-            // 
-            this.btnFR13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnFR13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR13.BackgroundImage")));
-            this.btnFR13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFR13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFR13.ForeColor = System.Drawing.Color.Black;
-            this.btnFR13.Location = new System.Drawing.Point(455, 485);
-            this.btnFR13.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFR13.Name = "btnFR13";
-            this.btnFR13.Size = new System.Drawing.Size(115, 98);
-            this.btnFR13.TabIndex = 13;
-            this.btnFR13.UseVisualStyleBackColor = false;
-            this.btnFR13.Click += new System.EventHandler(this.buttonFR_Click);
-            // 
-            // btnFR11
-            // 
-            this.btnFR11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnFR11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR11.BackgroundImage")));
-            this.btnFR11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFR11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFR11.ForeColor = System.Drawing.Color.Black;
-            this.btnFR11.Location = new System.Drawing.Point(26, 485);
-            this.btnFR11.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFR11.Name = "btnFR11";
-            this.btnFR11.Size = new System.Drawing.Size(115, 98);
-            this.btnFR11.TabIndex = 11;
-            this.btnFR11.UseVisualStyleBackColor = false;
-            this.btnFR11.Click += new System.EventHandler(this.buttonFR_Click);
-            // 
-            // btnFR4
-            // 
-            this.btnFR4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnFR4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR4.BackgroundImage")));
-            this.btnFR4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFR4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFR4.ForeColor = System.Drawing.Color.Black;
-            this.btnFR4.Location = new System.Drawing.Point(640, 149);
-            this.btnFR4.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFR4.Name = "btnFR4";
-            this.btnFR4.Size = new System.Drawing.Size(115, 98);
-            this.btnFR4.TabIndex = 4;
-            this.btnFR4.UseVisualStyleBackColor = false;
-            this.btnFR4.Click += new System.EventHandler(this.buttonFR_Click);
-            // 
             // lblFR5
             // 
             this.lblFR5.AutoSize = true;
@@ -1433,38 +808,6 @@
             this.lblFR4.Text = "msFlavor";
             this.lblFR4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnFR5
-            // 
-            this.btnFR5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnFR5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR5.BackgroundImage")));
-            this.btnFR5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFR5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFR5.ForeColor = System.Drawing.Color.Black;
-            this.btnFR5.Location = new System.Drawing.Point(855, 149);
-            this.btnFR5.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFR5.Name = "btnFR5";
-            this.btnFR5.Size = new System.Drawing.Size(115, 98);
-            this.btnFR5.TabIndex = 5;
-            this.btnFR5.UseVisualStyleBackColor = false;
-            this.btnFR5.Click += new System.EventHandler(this.buttonFR_Click);
-            // 
-            // btnFR9
-            // 
-            this.btnFR9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnFR9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR9.BackgroundImage")));
-            this.btnFR9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFR9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFR9.ForeColor = System.Drawing.Color.Black;
-            this.btnFR9.Location = new System.Drawing.Point(640, 327);
-            this.btnFR9.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFR9.Name = "btnFR9";
-            this.btnFR9.Size = new System.Drawing.Size(115, 98);
-            this.btnFR9.TabIndex = 9;
-            this.btnFR9.UseVisualStyleBackColor = false;
-            this.btnFR9.Click += new System.EventHandler(this.buttonFR_Click);
-            // 
             // lblFR10
             // 
             this.lblFR10.AutoSize = true;
@@ -1486,38 +829,6 @@
             this.lblFR9.TabIndex = 88;
             this.lblFR9.Text = "msFlavor";
             this.lblFR9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btnFR10
-            // 
-            this.btnFR10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnFR10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR10.BackgroundImage")));
-            this.btnFR10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFR10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFR10.ForeColor = System.Drawing.Color.Black;
-            this.btnFR10.Location = new System.Drawing.Point(855, 327);
-            this.btnFR10.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFR10.Name = "btnFR10";
-            this.btnFR10.Size = new System.Drawing.Size(115, 98);
-            this.btnFR10.TabIndex = 10;
-            this.btnFR10.UseVisualStyleBackColor = false;
-            this.btnFR10.Click += new System.EventHandler(this.buttonFR_Click);
-            // 
-            // btnFR7
-            // 
-            this.btnFR7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnFR7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR7.BackgroundImage")));
-            this.btnFR7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFR7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFR7.ForeColor = System.Drawing.Color.Black;
-            this.btnFR7.Location = new System.Drawing.Point(240, 327);
-            this.btnFR7.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFR7.Name = "btnFR7";
-            this.btnFR7.Size = new System.Drawing.Size(115, 98);
-            this.btnFR7.TabIndex = 7;
-            this.btnFR7.UseVisualStyleBackColor = false;
-            this.btnFR7.Click += new System.EventHandler(this.buttonFR_Click);
             // 
             // lblFR8
             // 
@@ -1553,38 +864,6 @@
             this.lblFR6.Text = "msFlavor";
             this.lblFR6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnFR8
-            // 
-            this.btnFR8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnFR8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR8.BackgroundImage")));
-            this.btnFR8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFR8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFR8.ForeColor = System.Drawing.Color.Black;
-            this.btnFR8.Location = new System.Drawing.Point(455, 327);
-            this.btnFR8.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFR8.Name = "btnFR8";
-            this.btnFR8.Size = new System.Drawing.Size(115, 98);
-            this.btnFR8.TabIndex = 8;
-            this.btnFR8.UseVisualStyleBackColor = false;
-            this.btnFR8.Click += new System.EventHandler(this.buttonFR_Click);
-            // 
-            // btnFR6
-            // 
-            this.btnFR6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnFR6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR6.BackgroundImage")));
-            this.btnFR6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFR6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFR6.ForeColor = System.Drawing.Color.Black;
-            this.btnFR6.Location = new System.Drawing.Point(26, 327);
-            this.btnFR6.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFR6.Name = "btnFR6";
-            this.btnFR6.Size = new System.Drawing.Size(115, 98);
-            this.btnFR6.TabIndex = 6;
-            this.btnFR6.UseVisualStyleBackColor = false;
-            this.btnFR6.Click += new System.EventHandler(this.buttonFR_Click);
-            // 
             // lblFR3
             // 
             this.lblFR3.AutoSize = true;
@@ -1618,54 +897,6 @@
             this.lblFR1.Text = "Javachip";
             this.lblFR1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnFR3
-            // 
-            this.btnFR3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnFR3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR3.BackgroundImage")));
-            this.btnFR3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFR3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFR3.ForeColor = System.Drawing.Color.Black;
-            this.btnFR3.Location = new System.Drawing.Point(455, 149);
-            this.btnFR3.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFR3.Name = "btnFR3";
-            this.btnFR3.Size = new System.Drawing.Size(115, 98);
-            this.btnFR3.TabIndex = 3;
-            this.btnFR3.UseVisualStyleBackColor = false;
-            this.btnFR3.Click += new System.EventHandler(this.buttonFR_Click);
-            // 
-            // btnFR2
-            // 
-            this.btnFR2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnFR2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR2.BackgroundImage")));
-            this.btnFR2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFR2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFR2.ForeColor = System.Drawing.Color.Black;
-            this.btnFR2.Location = new System.Drawing.Point(240, 149);
-            this.btnFR2.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFR2.Name = "btnFR2";
-            this.btnFR2.Size = new System.Drawing.Size(115, 98);
-            this.btnFR2.TabIndex = 2;
-            this.btnFR2.UseVisualStyleBackColor = false;
-            this.btnFR2.Click += new System.EventHandler(this.buttonFR_Click);
-            // 
-            // btnFR1
-            // 
-            this.btnFR1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
-            this.btnFR1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR1.BackgroundImage")));
-            this.btnFR1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFR1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFR1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFR1.ForeColor = System.Drawing.Color.Black;
-            this.btnFR1.Location = new System.Drawing.Point(26, 149);
-            this.btnFR1.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFR1.Name = "btnFR1";
-            this.btnFR1.Size = new System.Drawing.Size(115, 98);
-            this.btnFR1.TabIndex = 1;
-            this.btnFR1.UseVisualStyleBackColor = false;
-            this.btnFR1.Click += new System.EventHandler(this.buttonFR_Click);
-            // 
             // lblProducts3
             // 
             this.lblProducts3.AutoSize = true;
@@ -1683,7 +914,7 @@
             // 
             this.btnRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(140)))));
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemove.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
             this.btnRemove.Location = new System.Drawing.Point(1002, 672);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemove.Name = "btnRemove";
@@ -1881,7 +1112,7 @@
             this.btnTransact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(140)))));
             this.btnTransact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnTransact.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTransact.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTransact.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransact.Location = new System.Drawing.Point(7, 217);
             this.btnTransact.Margin = new System.Windows.Forms.Padding(4);
             this.btnTransact.Name = "btnTransact";
@@ -2007,7 +1238,7 @@
             this.lblDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDate.Location = new System.Drawing.Point(1320, 20);
+            this.lblDate.Location = new System.Drawing.Point(1009, 70);
             this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(65, 24);
@@ -2021,7 +1252,7 @@
             this.lblTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.Black;
-            this.lblTime.Location = new System.Drawing.Point(1327, 40);
+            this.lblTime.Location = new System.Drawing.Point(1326, 64);
             this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(59, 24);
@@ -2035,6 +1266,788 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // picLogo
+            // 
+            this.picLogo.BackColor = System.Drawing.Color.White;
+            this.picLogo.Image = global::POS_SYSTEM.Properties.Resources.Happy_Thirstday___Logo;
+            this.picLogo.Location = new System.Drawing.Point(0, 0);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(208, 66);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 28;
+            this.picLogo.TabStop = false;
+            // 
+            // btnMT14
+            // 
+            this.btnMT14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMT14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT14.BackgroundImage")));
+            this.btnMT14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMT14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMT14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMT14.ForeColor = System.Drawing.Color.Black;
+            this.btnMT14.Location = new System.Drawing.Point(638, 673);
+            this.btnMT14.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMT14.Name = "btnMT14";
+            this.btnMT14.Size = new System.Drawing.Size(115, 98);
+            this.btnMT14.TabIndex = 14;
+            this.btnMT14.UseVisualStyleBackColor = false;
+            this.btnMT14.Click += new System.EventHandler(this.buttonMT_Click);
+            // 
+            // btnMT15
+            // 
+            this.btnMT15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMT15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT15.BackgroundImage")));
+            this.btnMT15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMT15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMT15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMT15.ForeColor = System.Drawing.Color.Black;
+            this.btnMT15.Location = new System.Drawing.Point(853, 673);
+            this.btnMT15.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMT15.Name = "btnMT15";
+            this.btnMT15.Size = new System.Drawing.Size(115, 98);
+            this.btnMT15.TabIndex = 15;
+            this.btnMT15.UseVisualStyleBackColor = false;
+            this.btnMT15.Click += new System.EventHandler(this.buttonMT_Click);
+            // 
+            // btnMT12
+            // 
+            this.btnMT12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMT12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT12.BackgroundImage")));
+            this.btnMT12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMT12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMT12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMT12.ForeColor = System.Drawing.Color.Black;
+            this.btnMT12.Location = new System.Drawing.Point(238, 673);
+            this.btnMT12.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMT12.Name = "btnMT12";
+            this.btnMT12.Size = new System.Drawing.Size(115, 98);
+            this.btnMT12.TabIndex = 12;
+            this.btnMT12.UseVisualStyleBackColor = false;
+            this.btnMT12.Click += new System.EventHandler(this.buttonMT_Click);
+            // 
+            // btnMT13
+            // 
+            this.btnMT13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMT13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT13.BackgroundImage")));
+            this.btnMT13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMT13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMT13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMT13.ForeColor = System.Drawing.Color.Black;
+            this.btnMT13.Location = new System.Drawing.Point(453, 673);
+            this.btnMT13.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMT13.Name = "btnMT13";
+            this.btnMT13.Size = new System.Drawing.Size(115, 98);
+            this.btnMT13.TabIndex = 13;
+            this.btnMT13.UseVisualStyleBackColor = false;
+            this.btnMT13.Click += new System.EventHandler(this.buttonMT_Click);
+            // 
+            // btnMT11
+            // 
+            this.btnMT11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMT11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT11.BackgroundImage")));
+            this.btnMT11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMT11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMT11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMT11.ForeColor = System.Drawing.Color.Black;
+            this.btnMT11.Location = new System.Drawing.Point(24, 673);
+            this.btnMT11.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMT11.Name = "btnMT11";
+            this.btnMT11.Size = new System.Drawing.Size(115, 98);
+            this.btnMT11.TabIndex = 11;
+            this.btnMT11.UseVisualStyleBackColor = false;
+            this.btnMT11.Click += new System.EventHandler(this.buttonMT_Click);
+            // 
+            // btnMT9
+            // 
+            this.btnMT9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMT9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT9.BackgroundImage")));
+            this.btnMT9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMT9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMT9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMT9.ForeColor = System.Drawing.Color.Black;
+            this.btnMT9.Location = new System.Drawing.Point(638, 399);
+            this.btnMT9.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMT9.Name = "btnMT9";
+            this.btnMT9.Size = new System.Drawing.Size(115, 98);
+            this.btnMT9.TabIndex = 9;
+            this.btnMT9.UseVisualStyleBackColor = false;
+            this.btnMT9.Click += new System.EventHandler(this.buttonMT_Click);
+            // 
+            // btnMT10
+            // 
+            this.btnMT10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMT10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT10.BackgroundImage")));
+            this.btnMT10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMT10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMT10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMT10.ForeColor = System.Drawing.Color.Black;
+            this.btnMT10.Location = new System.Drawing.Point(840, 399);
+            this.btnMT10.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMT10.Name = "btnMT10";
+            this.btnMT10.Size = new System.Drawing.Size(115, 98);
+            this.btnMT10.TabIndex = 10;
+            this.btnMT10.UseVisualStyleBackColor = false;
+            this.btnMT10.Click += new System.EventHandler(this.buttonMT_Click);
+            // 
+            // btnMT7
+            // 
+            this.btnMT7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMT7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT7.BackgroundImage")));
+            this.btnMT7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMT7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMT7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMT7.ForeColor = System.Drawing.Color.Black;
+            this.btnMT7.Location = new System.Drawing.Point(238, 399);
+            this.btnMT7.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMT7.Name = "btnMT7";
+            this.btnMT7.Size = new System.Drawing.Size(115, 98);
+            this.btnMT7.TabIndex = 7;
+            this.btnMT7.UseVisualStyleBackColor = false;
+            this.btnMT7.Click += new System.EventHandler(this.buttonMT_Click);
+            // 
+            // btnMT8
+            // 
+            this.btnMT8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMT8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT8.BackgroundImage")));
+            this.btnMT8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMT8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMT8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMT8.ForeColor = System.Drawing.Color.Black;
+            this.btnMT8.Location = new System.Drawing.Point(440, 399);
+            this.btnMT8.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMT8.Name = "btnMT8";
+            this.btnMT8.Size = new System.Drawing.Size(115, 98);
+            this.btnMT8.TabIndex = 8;
+            this.btnMT8.UseVisualStyleBackColor = false;
+            this.btnMT8.Click += new System.EventHandler(this.buttonMT_Click);
+            // 
+            // btnMT6
+            // 
+            this.btnMT6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMT6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT6.BackgroundImage")));
+            this.btnMT6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMT6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMT6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMT6.ForeColor = System.Drawing.Color.Black;
+            this.btnMT6.Location = new System.Drawing.Point(24, 399);
+            this.btnMT6.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMT6.Name = "btnMT6";
+            this.btnMT6.Size = new System.Drawing.Size(115, 98);
+            this.btnMT6.TabIndex = 6;
+            this.btnMT6.UseVisualStyleBackColor = false;
+            this.btnMT6.Click += new System.EventHandler(this.buttonMT_Click);
+            // 
+            // btnMT4
+            // 
+            this.btnMT4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMT4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT4.BackgroundImage")));
+            this.btnMT4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMT4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMT4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMT4.ForeColor = System.Drawing.Color.Black;
+            this.btnMT4.Location = new System.Drawing.Point(638, 136);
+            this.btnMT4.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMT4.Name = "btnMT4";
+            this.btnMT4.Size = new System.Drawing.Size(115, 98);
+            this.btnMT4.TabIndex = 4;
+            this.btnMT4.UseVisualStyleBackColor = false;
+            this.btnMT4.Click += new System.EventHandler(this.buttonMT_Click);
+            // 
+            // btnMT5
+            // 
+            this.btnMT5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMT5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT5.BackgroundImage")));
+            this.btnMT5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMT5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMT5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMT5.ForeColor = System.Drawing.Color.Black;
+            this.btnMT5.Location = new System.Drawing.Point(840, 136);
+            this.btnMT5.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMT5.Name = "btnMT5";
+            this.btnMT5.Size = new System.Drawing.Size(115, 98);
+            this.btnMT5.TabIndex = 5;
+            this.btnMT5.UseVisualStyleBackColor = false;
+            this.btnMT5.Click += new System.EventHandler(this.buttonMT_Click);
+            // 
+            // btnMT2
+            // 
+            this.btnMT2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMT2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT2.BackgroundImage")));
+            this.btnMT2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMT2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMT2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMT2.ForeColor = System.Drawing.Color.Black;
+            this.btnMT2.Location = new System.Drawing.Point(238, 136);
+            this.btnMT2.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMT2.Name = "btnMT2";
+            this.btnMT2.Size = new System.Drawing.Size(115, 98);
+            this.btnMT2.TabIndex = 2;
+            this.btnMT2.UseVisualStyleBackColor = false;
+            this.btnMT2.Click += new System.EventHandler(this.buttonMT_Click);
+            // 
+            // btnMT3
+            // 
+            this.btnMT3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMT3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT3.BackgroundImage")));
+            this.btnMT3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMT3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMT3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMT3.ForeColor = System.Drawing.Color.Black;
+            this.btnMT3.Location = new System.Drawing.Point(440, 136);
+            this.btnMT3.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMT3.Name = "btnMT3";
+            this.btnMT3.Size = new System.Drawing.Size(115, 98);
+            this.btnMT3.TabIndex = 3;
+            this.btnMT3.UseVisualStyleBackColor = false;
+            this.btnMT3.Click += new System.EventHandler(this.buttonMT_Click);
+            // 
+            // btnMT1
+            // 
+            this.btnMT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMT1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMT1.BackgroundImage")));
+            this.btnMT1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMT1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMT1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMT1.ForeColor = System.Drawing.Color.Black;
+            this.btnMT1.Location = new System.Drawing.Point(24, 136);
+            this.btnMT1.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMT1.Name = "btnMT1";
+            this.btnMT1.Size = new System.Drawing.Size(115, 98);
+            this.btnMT1.TabIndex = 1;
+            this.btnMT1.UseVisualStyleBackColor = false;
+            this.btnMT1.Click += new System.EventHandler(this.buttonMT_Click);
+            // 
+            // btnMS14
+            // 
+            this.btnMS14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMS14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS14.BackgroundImage")));
+            this.btnMS14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMS14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMS14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMS14.ForeColor = System.Drawing.Color.Black;
+            this.btnMS14.Location = new System.Drawing.Point(645, 440);
+            this.btnMS14.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMS14.Name = "btnMS14";
+            this.btnMS14.Size = new System.Drawing.Size(115, 98);
+            this.btnMS14.TabIndex = 14;
+            this.btnMS14.UseVisualStyleBackColor = false;
+            this.btnMS14.Click += new System.EventHandler(this.buttonMS_Click);
+            // 
+            // btnMS15
+            // 
+            this.btnMS15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMS15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS15.BackgroundImage")));
+            this.btnMS15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMS15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMS15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMS15.ForeColor = System.Drawing.Color.Black;
+            this.btnMS15.Location = new System.Drawing.Point(860, 440);
+            this.btnMS15.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMS15.Name = "btnMS15";
+            this.btnMS15.Size = new System.Drawing.Size(115, 98);
+            this.btnMS15.TabIndex = 15;
+            this.btnMS15.UseVisualStyleBackColor = false;
+            this.btnMS15.Click += new System.EventHandler(this.buttonMS_Click);
+            // 
+            // btnMS12
+            // 
+            this.btnMS12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMS12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS12.BackgroundImage")));
+            this.btnMS12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMS12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMS12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMS12.ForeColor = System.Drawing.Color.Black;
+            this.btnMS12.Location = new System.Drawing.Point(245, 440);
+            this.btnMS12.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMS12.Name = "btnMS12";
+            this.btnMS12.Size = new System.Drawing.Size(115, 98);
+            this.btnMS12.TabIndex = 12;
+            this.btnMS12.UseVisualStyleBackColor = false;
+            this.btnMS12.Click += new System.EventHandler(this.buttonMS_Click);
+            // 
+            // btnMS13
+            // 
+            this.btnMS13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMS13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS13.BackgroundImage")));
+            this.btnMS13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMS13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMS13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMS13.ForeColor = System.Drawing.Color.Black;
+            this.btnMS13.Location = new System.Drawing.Point(460, 440);
+            this.btnMS13.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMS13.Name = "btnMS13";
+            this.btnMS13.Size = new System.Drawing.Size(115, 98);
+            this.btnMS13.TabIndex = 13;
+            this.btnMS13.UseVisualStyleBackColor = false;
+            this.btnMS13.Click += new System.EventHandler(this.buttonMS_Click);
+            // 
+            // btnMS11
+            // 
+            this.btnMS11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMS11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS11.BackgroundImage")));
+            this.btnMS11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMS11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMS11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMS11.ForeColor = System.Drawing.Color.Black;
+            this.btnMS11.Location = new System.Drawing.Point(31, 440);
+            this.btnMS11.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMS11.Name = "btnMS11";
+            this.btnMS11.Size = new System.Drawing.Size(115, 98);
+            this.btnMS11.TabIndex = 11;
+            this.btnMS11.UseVisualStyleBackColor = false;
+            this.btnMS11.Click += new System.EventHandler(this.buttonMS_Click);
+            // 
+            // btnMS4
+            // 
+            this.btnMS4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMS4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS4.BackgroundImage")));
+            this.btnMS4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMS4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMS4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMS4.ForeColor = System.Drawing.Color.Black;
+            this.btnMS4.Location = new System.Drawing.Point(645, 104);
+            this.btnMS4.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMS4.Name = "btnMS4";
+            this.btnMS4.Size = new System.Drawing.Size(115, 98);
+            this.btnMS4.TabIndex = 4;
+            this.btnMS4.UseVisualStyleBackColor = false;
+            this.btnMS4.Click += new System.EventHandler(this.buttonMS_Click);
+            // 
+            // btnMS5
+            // 
+            this.btnMS5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMS5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS5.BackgroundImage")));
+            this.btnMS5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMS5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMS5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMS5.ForeColor = System.Drawing.Color.Black;
+            this.btnMS5.Location = new System.Drawing.Point(860, 104);
+            this.btnMS5.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMS5.Name = "btnMS5";
+            this.btnMS5.Size = new System.Drawing.Size(115, 98);
+            this.btnMS5.TabIndex = 5;
+            this.btnMS5.UseVisualStyleBackColor = false;
+            this.btnMS5.Click += new System.EventHandler(this.buttonMS_Click);
+            // 
+            // btnMS9
+            // 
+            this.btnMS9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMS9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS9.BackgroundImage")));
+            this.btnMS9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMS9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMS9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMS9.ForeColor = System.Drawing.Color.Black;
+            this.btnMS9.Location = new System.Drawing.Point(645, 282);
+            this.btnMS9.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMS9.Name = "btnMS9";
+            this.btnMS9.Size = new System.Drawing.Size(115, 98);
+            this.btnMS9.TabIndex = 9;
+            this.btnMS9.UseVisualStyleBackColor = false;
+            this.btnMS9.Click += new System.EventHandler(this.buttonMS_Click);
+            // 
+            // btnMS10
+            // 
+            this.btnMS10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMS10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS10.BackgroundImage")));
+            this.btnMS10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMS10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMS10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMS10.ForeColor = System.Drawing.Color.Black;
+            this.btnMS10.Location = new System.Drawing.Point(860, 282);
+            this.btnMS10.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMS10.Name = "btnMS10";
+            this.btnMS10.Size = new System.Drawing.Size(115, 98);
+            this.btnMS10.TabIndex = 10;
+            this.btnMS10.UseVisualStyleBackColor = false;
+            this.btnMS10.Click += new System.EventHandler(this.buttonMS_Click);
+            // 
+            // btnMS7
+            // 
+            this.btnMS7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMS7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS7.BackgroundImage")));
+            this.btnMS7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMS7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMS7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMS7.ForeColor = System.Drawing.Color.Black;
+            this.btnMS7.Location = new System.Drawing.Point(245, 282);
+            this.btnMS7.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMS7.Name = "btnMS7";
+            this.btnMS7.Size = new System.Drawing.Size(115, 98);
+            this.btnMS7.TabIndex = 7;
+            this.btnMS7.UseVisualStyleBackColor = false;
+            this.btnMS7.Click += new System.EventHandler(this.buttonMS_Click);
+            // 
+            // btnMS8
+            // 
+            this.btnMS8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMS8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS8.BackgroundImage")));
+            this.btnMS8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMS8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMS8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMS8.ForeColor = System.Drawing.Color.Black;
+            this.btnMS8.Location = new System.Drawing.Point(460, 282);
+            this.btnMS8.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMS8.Name = "btnMS8";
+            this.btnMS8.Size = new System.Drawing.Size(115, 98);
+            this.btnMS8.TabIndex = 8;
+            this.btnMS8.UseVisualStyleBackColor = false;
+            this.btnMS8.Click += new System.EventHandler(this.buttonMS_Click);
+            // 
+            // btnMS6
+            // 
+            this.btnMS6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMS6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS6.BackgroundImage")));
+            this.btnMS6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMS6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMS6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMS6.ForeColor = System.Drawing.Color.Black;
+            this.btnMS6.Location = new System.Drawing.Point(31, 282);
+            this.btnMS6.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMS6.Name = "btnMS6";
+            this.btnMS6.Size = new System.Drawing.Size(115, 98);
+            this.btnMS6.TabIndex = 6;
+            this.btnMS6.UseVisualStyleBackColor = false;
+            this.btnMS6.Click += new System.EventHandler(this.buttonMS_Click);
+            // 
+            // btnMS3
+            // 
+            this.btnMS3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMS3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS3.BackgroundImage")));
+            this.btnMS3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMS3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMS3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMS3.ForeColor = System.Drawing.Color.Black;
+            this.btnMS3.Location = new System.Drawing.Point(460, 99);
+            this.btnMS3.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMS3.Name = "btnMS3";
+            this.btnMS3.Size = new System.Drawing.Size(115, 98);
+            this.btnMS3.TabIndex = 3;
+            this.btnMS3.UseVisualStyleBackColor = false;
+            this.btnMS3.Click += new System.EventHandler(this.buttonMS_Click);
+            // 
+            // btnMS2
+            // 
+            this.btnMS2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMS2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS2.BackgroundImage")));
+            this.btnMS2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMS2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMS2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMS2.ForeColor = System.Drawing.Color.Black;
+            this.btnMS2.Location = new System.Drawing.Point(245, 99);
+            this.btnMS2.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMS2.Name = "btnMS2";
+            this.btnMS2.Size = new System.Drawing.Size(115, 98);
+            this.btnMS2.TabIndex = 2;
+            this.btnMS2.UseVisualStyleBackColor = false;
+            this.btnMS2.Click += new System.EventHandler(this.buttonMS_Click);
+            // 
+            // btnMS1
+            // 
+            this.btnMS1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnMS1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMS1.BackgroundImage")));
+            this.btnMS1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMS1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMS1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMS1.ForeColor = System.Drawing.Color.Black;
+            this.btnMS1.Location = new System.Drawing.Point(46, 104);
+            this.btnMS1.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMS1.Name = "btnMS1";
+            this.btnMS1.Size = new System.Drawing.Size(115, 98);
+            this.btnMS1.TabIndex = 1;
+            this.btnMS1.UseVisualStyleBackColor = false;
+            this.btnMS1.Click += new System.EventHandler(this.buttonMS_Click);
+            // 
+            // btnFR14
+            // 
+            this.btnFR14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnFR14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR14.BackgroundImage")));
+            this.btnFR14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFR14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFR14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFR14.ForeColor = System.Drawing.Color.Black;
+            this.btnFR14.Location = new System.Drawing.Point(640, 485);
+            this.btnFR14.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFR14.Name = "btnFR14";
+            this.btnFR14.Size = new System.Drawing.Size(115, 98);
+            this.btnFR14.TabIndex = 14;
+            this.btnFR14.UseVisualStyleBackColor = false;
+            this.btnFR14.Click += new System.EventHandler(this.buttonFR_Click);
+            // 
+            // btnFR15
+            // 
+            this.btnFR15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnFR15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR15.BackgroundImage")));
+            this.btnFR15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFR15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFR15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFR15.ForeColor = System.Drawing.Color.Black;
+            this.btnFR15.Location = new System.Drawing.Point(855, 485);
+            this.btnFR15.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFR15.Name = "btnFR15";
+            this.btnFR15.Size = new System.Drawing.Size(115, 98);
+            this.btnFR15.TabIndex = 15;
+            this.btnFR15.UseVisualStyleBackColor = false;
+            this.btnFR15.Click += new System.EventHandler(this.buttonFR_Click);
+            // 
+            // btnFR12
+            // 
+            this.btnFR12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnFR12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR12.BackgroundImage")));
+            this.btnFR12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFR12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFR12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFR12.ForeColor = System.Drawing.Color.Black;
+            this.btnFR12.Location = new System.Drawing.Point(240, 485);
+            this.btnFR12.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFR12.Name = "btnFR12";
+            this.btnFR12.Size = new System.Drawing.Size(115, 98);
+            this.btnFR12.TabIndex = 12;
+            this.btnFR12.UseVisualStyleBackColor = false;
+            this.btnFR12.Click += new System.EventHandler(this.buttonFR_Click);
+            // 
+            // btnFR13
+            // 
+            this.btnFR13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnFR13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR13.BackgroundImage")));
+            this.btnFR13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFR13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFR13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFR13.ForeColor = System.Drawing.Color.Black;
+            this.btnFR13.Location = new System.Drawing.Point(455, 485);
+            this.btnFR13.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFR13.Name = "btnFR13";
+            this.btnFR13.Size = new System.Drawing.Size(115, 98);
+            this.btnFR13.TabIndex = 13;
+            this.btnFR13.UseVisualStyleBackColor = false;
+            this.btnFR13.Click += new System.EventHandler(this.buttonFR_Click);
+            // 
+            // btnFR11
+            // 
+            this.btnFR11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnFR11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR11.BackgroundImage")));
+            this.btnFR11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFR11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFR11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFR11.ForeColor = System.Drawing.Color.Black;
+            this.btnFR11.Location = new System.Drawing.Point(26, 485);
+            this.btnFR11.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFR11.Name = "btnFR11";
+            this.btnFR11.Size = new System.Drawing.Size(115, 98);
+            this.btnFR11.TabIndex = 11;
+            this.btnFR11.UseVisualStyleBackColor = false;
+            this.btnFR11.Click += new System.EventHandler(this.buttonFR_Click);
+            // 
+            // btnFR4
+            // 
+            this.btnFR4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnFR4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR4.BackgroundImage")));
+            this.btnFR4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFR4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFR4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFR4.ForeColor = System.Drawing.Color.Black;
+            this.btnFR4.Location = new System.Drawing.Point(640, 149);
+            this.btnFR4.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFR4.Name = "btnFR4";
+            this.btnFR4.Size = new System.Drawing.Size(115, 98);
+            this.btnFR4.TabIndex = 4;
+            this.btnFR4.UseVisualStyleBackColor = false;
+            this.btnFR4.Click += new System.EventHandler(this.buttonFR_Click);
+            // 
+            // btnFR5
+            // 
+            this.btnFR5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnFR5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR5.BackgroundImage")));
+            this.btnFR5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFR5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFR5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFR5.ForeColor = System.Drawing.Color.Black;
+            this.btnFR5.Location = new System.Drawing.Point(855, 149);
+            this.btnFR5.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFR5.Name = "btnFR5";
+            this.btnFR5.Size = new System.Drawing.Size(115, 98);
+            this.btnFR5.TabIndex = 5;
+            this.btnFR5.UseVisualStyleBackColor = false;
+            this.btnFR5.Click += new System.EventHandler(this.buttonFR_Click);
+            // 
+            // btnFR9
+            // 
+            this.btnFR9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnFR9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR9.BackgroundImage")));
+            this.btnFR9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFR9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFR9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFR9.ForeColor = System.Drawing.Color.Black;
+            this.btnFR9.Location = new System.Drawing.Point(640, 327);
+            this.btnFR9.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFR9.Name = "btnFR9";
+            this.btnFR9.Size = new System.Drawing.Size(115, 98);
+            this.btnFR9.TabIndex = 9;
+            this.btnFR9.UseVisualStyleBackColor = false;
+            this.btnFR9.Click += new System.EventHandler(this.buttonFR_Click);
+            // 
+            // btnFR10
+            // 
+            this.btnFR10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnFR10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR10.BackgroundImage")));
+            this.btnFR10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFR10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFR10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFR10.ForeColor = System.Drawing.Color.Black;
+            this.btnFR10.Location = new System.Drawing.Point(855, 327);
+            this.btnFR10.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFR10.Name = "btnFR10";
+            this.btnFR10.Size = new System.Drawing.Size(115, 98);
+            this.btnFR10.TabIndex = 10;
+            this.btnFR10.UseVisualStyleBackColor = false;
+            this.btnFR10.Click += new System.EventHandler(this.buttonFR_Click);
+            // 
+            // btnFR7
+            // 
+            this.btnFR7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnFR7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR7.BackgroundImage")));
+            this.btnFR7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFR7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFR7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFR7.ForeColor = System.Drawing.Color.Black;
+            this.btnFR7.Location = new System.Drawing.Point(240, 327);
+            this.btnFR7.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFR7.Name = "btnFR7";
+            this.btnFR7.Size = new System.Drawing.Size(115, 98);
+            this.btnFR7.TabIndex = 7;
+            this.btnFR7.UseVisualStyleBackColor = false;
+            this.btnFR7.Click += new System.EventHandler(this.buttonFR_Click);
+            // 
+            // btnFR8
+            // 
+            this.btnFR8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnFR8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR8.BackgroundImage")));
+            this.btnFR8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFR8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFR8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFR8.ForeColor = System.Drawing.Color.Black;
+            this.btnFR8.Location = new System.Drawing.Point(455, 327);
+            this.btnFR8.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFR8.Name = "btnFR8";
+            this.btnFR8.Size = new System.Drawing.Size(115, 98);
+            this.btnFR8.TabIndex = 8;
+            this.btnFR8.UseVisualStyleBackColor = false;
+            this.btnFR8.Click += new System.EventHandler(this.buttonFR_Click);
+            // 
+            // btnFR6
+            // 
+            this.btnFR6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnFR6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR6.BackgroundImage")));
+            this.btnFR6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFR6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFR6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFR6.ForeColor = System.Drawing.Color.Black;
+            this.btnFR6.Location = new System.Drawing.Point(26, 327);
+            this.btnFR6.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFR6.Name = "btnFR6";
+            this.btnFR6.Size = new System.Drawing.Size(115, 98);
+            this.btnFR6.TabIndex = 6;
+            this.btnFR6.UseVisualStyleBackColor = false;
+            this.btnFR6.Click += new System.EventHandler(this.buttonFR_Click);
+            // 
+            // btnFR3
+            // 
+            this.btnFR3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnFR3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR3.BackgroundImage")));
+            this.btnFR3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFR3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFR3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFR3.ForeColor = System.Drawing.Color.Black;
+            this.btnFR3.Location = new System.Drawing.Point(455, 149);
+            this.btnFR3.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFR3.Name = "btnFR3";
+            this.btnFR3.Size = new System.Drawing.Size(115, 98);
+            this.btnFR3.TabIndex = 3;
+            this.btnFR3.UseVisualStyleBackColor = false;
+            this.btnFR3.Click += new System.EventHandler(this.buttonFR_Click);
+            // 
+            // btnFR2
+            // 
+            this.btnFR2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnFR2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR2.BackgroundImage")));
+            this.btnFR2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFR2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFR2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFR2.ForeColor = System.Drawing.Color.Black;
+            this.btnFR2.Location = new System.Drawing.Point(240, 149);
+            this.btnFR2.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFR2.Name = "btnFR2";
+            this.btnFR2.Size = new System.Drawing.Size(115, 98);
+            this.btnFR2.TabIndex = 2;
+            this.btnFR2.UseVisualStyleBackColor = false;
+            this.btnFR2.Click += new System.EventHandler(this.buttonFR_Click);
+            // 
+            // btnFR1
+            // 
+            this.btnFR1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
+            this.btnFR1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFR1.BackgroundImage")));
+            this.btnFR1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFR1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFR1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFR1.ForeColor = System.Drawing.Color.Black;
+            this.btnFR1.Location = new System.Drawing.Point(26, 149);
+            this.btnFR1.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFR1.Name = "btnFR1";
+            this.btnFR1.Size = new System.Drawing.Size(115, 98);
+            this.btnFR1.TabIndex = 1;
+            this.btnFR1.UseVisualStyleBackColor = false;
+            this.btnFR1.Click += new System.EventHandler(this.buttonFR_Click);
+            // 
+            // btnTransactionHistory
+            // 
+            this.btnTransactionHistory.BackColor = System.Drawing.Color.OldLace;
+            this.btnTransactionHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnTransactionHistory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTransactionHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTransactionHistory.ForeColor = System.Drawing.Color.Black;
+            this.btnTransactionHistory.Image = global::POS_SYSTEM.Properties.Resources.graph;
+            this.btnTransactionHistory.Location = new System.Drawing.Point(1404, 91);
+            this.btnTransactionHistory.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTransactionHistory.Name = "btnTransactionHistory";
+            this.btnTransactionHistory.Size = new System.Drawing.Size(115, 98);
+            this.btnTransactionHistory.TabIndex = 21;
+            this.btnTransactionHistory.Tag = "TransactionHistory";
+            this.btnTransactionHistory.UseVisualStyleBackColor = false;
+            this.btnTransactionHistory.Click += new System.EventHandler(this.buttonsSettings_Click);
+            // 
+            // btnUsersManager
+            // 
+            this.btnUsersManager.BackColor = System.Drawing.Color.OldLace;
+            this.btnUsersManager.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUsersManager.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUsersManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsersManager.ForeColor = System.Drawing.Color.Black;
+            this.btnUsersManager.Image = global::POS_SYSTEM.Properties.Resources.user__4_;
+            this.btnUsersManager.Location = new System.Drawing.Point(1404, 195);
+            this.btnUsersManager.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUsersManager.Name = "btnUsersManager";
+            this.btnUsersManager.Size = new System.Drawing.Size(115, 98);
+            this.btnUsersManager.TabIndex = 22;
+            this.btnUsersManager.Tag = "UsersManager";
+            this.btnUsersManager.UseVisualStyleBackColor = false;
+            this.btnUsersManager.Click += new System.EventHandler(this.buttonsSettings_Click);
+            // 
+            // btnProductsManager
+            // 
+            this.btnProductsManager.BackColor = System.Drawing.Color.OldLace;
+            this.btnProductsManager.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnProductsManager.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnProductsManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductsManager.ForeColor = System.Drawing.Color.Black;
+            this.btnProductsManager.Image = global::POS_SYSTEM.Properties.Resources.order__1_;
+            this.btnProductsManager.Location = new System.Drawing.Point(1405, 300);
+            this.btnProductsManager.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProductsManager.Name = "btnProductsManager";
+            this.btnProductsManager.Size = new System.Drawing.Size(115, 98);
+            this.btnProductsManager.TabIndex = 23;
+            this.btnProductsManager.Tag = "ProductsManager";
+            this.btnProductsManager.UseVisualStyleBackColor = false;
+            this.btnProductsManager.Click += new System.EventHandler(this.buttonsSettings_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2042,6 +2055,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(1532, 989);
             this.ControlBox = false;
+            this.Controls.Add(this.picLogo);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.btnRemove);
@@ -2076,6 +2090,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2213,6 +2228,7 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox picLogo;
 
     }
 }

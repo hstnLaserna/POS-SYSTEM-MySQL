@@ -321,6 +321,9 @@
             this.Name = "frmCash";
             this.Tag = "10";
             this.Text = "Cash window";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.form_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.form_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.form_MouseUp);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -21,31 +21,27 @@ namespace POS_SYSTEM
         private List<double> mtPrice1, mtPrice2, mtPrice3;
         private List<double> msPrice1, msPrice2, msPrice3;
         private List<double> frPrice1, frPrice2, frPrice3;
-        string password = "x", hashedTempo = "z";
+        string password = "", hashedTempo = "";
         string user = frmLogin.user.ToUpper();
-        string position = frmLogin.position.ToUpperInvariant();
+        string position = frmLogin.position.ToUpper();
         int loginid = frmLogin.loginid;
         int salesinvoice;
         int purchasedHeight, paperHeight;
         int selectedRowIndex;
+
+
+
         MySqlCommand command;
         DataTable dataTable;
         MySqlDataAdapter mySqlDataAdapter;
         MySqlDataReader reader;
-
-
-        string selectedFlavor, selectedProductType;
-        //Product mt = new Product();
-        int order;
-        string orders = "";
-
 
         public frmMain()
         {
             InitializeComponent();
 
             lblUser.Text = user.ToUpper();
-            lblPosition.Text = frmLogin.position;
+            lblPosition.Text = "(LoginID: " + loginid + ") " + frmLogin.position;
             initializeFlavors();
             initializeButtons();
             initializeLabels();
@@ -88,8 +84,8 @@ namespace POS_SYSTEM
 
             lblDate.Text = DateTime.Now.ToLongDateString();// + " " + DateTime.Now.Day + ", " + DateTime.Now.Year; //30.5.2012
             lblTime.Text = DateTime.Now.ToString("HH:mm:ss"); //result 22:11:45
-            lblDate.Location = new Point(btnTransactionHistory.Location.X + btnTransactionHistory.Width - lblDate.Width, lblUser.Location.Y);
-            lblTime.Location = new Point(btnTransactionHistory.Location.X + btnTransactionHistory.Width - lblTime.Width, lblPosition.Location.Y);
+            lblDate.Location = new Point(dgvOrders.Location.X, dgvOrders.Location.Y - lblDate.Height);
+            lblTime.Location = new Point(dgvOrders.Location.X + dgvOrders.Width - lblTime.Width, lblDate.Location.Y);
         }
 
         private void initializeFlavors()
@@ -285,31 +281,21 @@ namespace POS_SYSTEM
         private void buttonMT_Click(object sender, EventArgs e)
         {
             int selectedIndex = Convert.ToInt32(((Button)sender).Tag);
-            selectedFlavor = mtFlavors[selectedIndex];
-            selectedProductType = "Milktea";
-            frmAddProduct frmAddProduct = new frmAddProduct(selectedProductType, selectedFlavor, mtPrice1[selectedIndex], mtPrice2[selectedIndex], mtPrice3[selectedIndex]);
+            frmAddProduct frmAddProduct = new frmAddProduct("Milktea", mtFlavors[selectedIndex], mtPrice1[selectedIndex], mtPrice2[selectedIndex], mtPrice3[selectedIndex]);
             frmAddProduct.ShowDialog();
-            //for (int i = 0; i < TransactionHistory.transactionOrders.Count(); i++)
-            //{
-            //    MessageBox.Show(TransactionHistory.transactionOrders[i].Type + "\n" + TransactionHistory.transactionOrders[i].ProductName + "\n" + TransactionHistory.transactionOrders[i].SizePrice + "\n" + TransactionHistory.transactionOrders[i].Addons + "\n" + TransactionHistory.transactionOrders[i].Notes + "\n" + TransactionHistory.transactionOrders[i].ProductPrice);
-            //}
             updateDisplay();
         }
         private void buttonMS_Click(object sender, EventArgs e)
         {
             int selectedIndex = Convert.ToInt32(((Button)sender).Tag);
-            selectedFlavor = msFlavors[selectedIndex];
-            selectedProductType = "Milkshake";
-            frmAddProduct frmMilkTea = new frmAddProduct(selectedProductType, selectedFlavor, msPrice1[selectedIndex], msPrice2[selectedIndex], msPrice3[selectedIndex]);
+            frmAddProduct frmMilkTea = new frmAddProduct("Milkshake", msFlavors[selectedIndex], msPrice1[selectedIndex], msPrice2[selectedIndex], msPrice3[selectedIndex]);
             frmMilkTea.ShowDialog();
             updateDisplay();
         }
         private void buttonFR_Click(object sender, EventArgs e)
         {
             int selectedIndex = Convert.ToInt32(((Button)sender).Tag);
-            selectedFlavor = frFlavors[selectedIndex];
-            selectedProductType = "Frappe";
-            frmAddProduct frmMilkTea = new frmAddProduct(selectedProductType, selectedFlavor, frPrice1[selectedIndex], frPrice2[selectedIndex], frPrice3[selectedIndex]);
+            frmAddProduct frmMilkTea = new frmAddProduct("Frappe", frFlavors[selectedIndex], frPrice1[selectedIndex], frPrice2[selectedIndex], frPrice3[selectedIndex]);
             frmMilkTea.ShowDialog();
             updateDisplay();
         }
@@ -352,7 +338,7 @@ namespace POS_SYSTEM
 
         private bool transactOnGoing()
         {
-            if (/*txtDisplay.Text != ""*/ dgvOrders.RowCount != 0)
+            if (dgvOrders.RowCount != 0)
             {
                 MessageBox.Show("Unable to leave form. A transaction is on-going.");
                 return true;
@@ -472,14 +458,14 @@ namespace POS_SYSTEM
                     command.Dispose();
 
 
-                    query = "INSERT INTO " + DatabaseConnection.SalesTable + "(sino, customer, total,vatable,vat,userid) values(@si, @customer, @total,@vatable,@vat,@userid);";
+                    query = "INSERT INTO " + DatabaseConnection.SalesTable + "(sino, customer, total,vatable,vat,loginid) values(@si, @customer, @total,@vatable,@vat,@loginid);";
                     command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@si", salesinvoice);
                     command.Parameters.AddWithValue("@customer", txtCustomer.Text.Trim());
                     command.Parameters.AddWithValue("@total", Transact.Total);
                     command.Parameters.AddWithValue("@vatable", Transact.VATable);
                     command.Parameters.AddWithValue("@vat", Transact.VatAmt);
-                    command.Parameters.AddWithValue("@userid", loginid);
+                    command.Parameters.AddWithValue("@loginid", loginid);
                     reader = command.ExecuteReader();
                     reader.Close();
                     command.Dispose();
@@ -501,20 +487,18 @@ namespace POS_SYSTEM
         {
             //lblDate.Text = DateTime.Now.Date.ToShortDateString();
             //lblTime.Text = DateTime.Now.TimeOfDay.ToString();
-            orders = "";
             DataTable table = new DataTable();
             table.Columns.Add("Order", typeof(string));
-            for (order = 0; order < TransactionHistory.History.Count(); order++)
+            for (int order = 0; order < TransactionHistory.History.Count(); order++)
             {
                 table.Rows.Add(TransactionHistory.History[order]);
-
-                orders += TransactionHistory.History[order] + "\r\n\n";
             }
 
             foreach (DataGridViewColumn column in dgvOrders.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+
             dgvOrders.DataSource = table;
             dgvOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -527,12 +511,12 @@ namespace POS_SYSTEM
 
             computeChange();
 
-            if (Transact.Change >= 0 && order > 0)
+            if (Transact.Change >= 0 && TransactionHistory.priceTotal.Sum() != 0)
             {
                 txtChange.Text = string.Format("{0:#,##0.00}", Transact.Change); ;
                 btnTransact.Enabled = true;
             }
-            else if (Transact.Change >= 0 && order == 0)
+            else if (Transact.Change >= 0 && TransactionHistory.priceTotal.Sum() != 0)
             {
                 btnTransact.Enabled = false;
                 txtChange.Text = "0.00";
@@ -566,7 +550,6 @@ namespace POS_SYSTEM
             Transact.Total = 0;
             Transact.VATable = 0;
             Transact.VatAmt = 0;
-            order = 0;
             TransactionHistory.priceTotal.Clear();
             TransactionHistory.History.Clear();
             TransactionHistory.transactionOrders.Clear();
@@ -632,8 +615,10 @@ namespace POS_SYSTEM
 
         private void formResize()
         {
-            lblUser.Location = new System.Drawing.Point(10, 10);
-            lblPosition.Location = new System.Drawing.Point(10, 10 + lblUser.Height);
+            lblUser.Size = new System.Drawing.Size(this.ClientRectangle.Width, lblUser.Height);
+            lblPosition.Size = new System.Drawing.Size(this.ClientRectangle.Width, lblPosition.Height);
+            lblUser.Location = new System.Drawing.Point(0, 0);
+            lblPosition.Location = new System.Drawing.Point(0, lblUser.Height);
             tabControl.Location = new System.Drawing.Point(10, lblPosition.Location.Y + lblPosition.Height + 10);
 
             btnTransactionHistory.Location = new System.Drawing.Point(this.ClientRectangle.Width - btnTransactionHistory.Width - 10, tabControl.Location.Y + 21);
@@ -857,8 +842,13 @@ namespace POS_SYSTEM
                 e.Graphics.DrawString(string.Format("{0:#,##0.00}", TransactionHistory.transactionOrders[i].SizePrice), f3, Brushes.Black, new RectangleF(-40, purchasedHeight + 20, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Far });
                 //e.Graphics.DrawString("Qty:", f3, Brushes.Black, new RectangleF(60, purchasedHeight + 30, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Near });
                 //e.Graphics.DrawString(TransactionHistory.transactionOrders[i].Quantity.ToString(), f3, Brushes.Black, new RectangleF(-70, purchasedHeight + 30, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Far });
-                e.Graphics.DrawString("Addon Price:", f3, Brushes.Black, new RectangleF(50, purchasedHeight + 30, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Near });
-                e.Graphics.DrawString(string.Format("{0:#,##0.00}", TransactionHistory.transactionOrders[i].SinkerPrice), f3, Brushes.Black, new RectangleF(-40, purchasedHeight + 30, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Far });
+
+                if (TransactionHistory.transactionOrders[i].Addons != null)
+                {
+                    e.Graphics.DrawString("Addon Price:", f3, Brushes.Black, new RectangleF(50, purchasedHeight + 30, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Near });
+                    e.Graphics.DrawString(string.Format("{0:#,##0.00}", TransactionHistory.transactionOrders[i].SinkerPrice), f3, Brushes.Black, new RectangleF(-40, purchasedHeight + 30, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Far });
+                
+                }
                 e.Graphics.DrawString(miscNotes, f3, Brushes.Black, new RectangleF(50, purchasedHeight + 40, 160, (20 + 10*multipler)), new StringFormat() { Alignment = StringAlignment.Near });
 
                 purchasedHeight += 35 + (10 * multipler);
@@ -904,8 +894,8 @@ namespace POS_SYSTEM
         {
             lblDate.Text = DateTime.Now.ToLongDateString();// + " " + DateTime.Now.Day + ", " + DateTime.Now.Year; //30.5.2012
             lblTime.Text = DateTime.Now.ToString("HH:mm:ss"); //result 22:11:45
-            lblDate.Location = new Point(btnTransactionHistory.Location.X + btnTransactionHistory.Width - lblDate.Width, lblUser.Location.Y);
-            lblTime.Location = new Point(btnTransactionHistory.Location.X + btnTransactionHistory.Width - lblTime.Width, lblPosition.Location.Y);
+            lblDate.Location = new Point(dgvOrders.Location.X, dgvOrders.Location.Y - lblDate.Height);
+            lblTime.Location = new Point(dgvOrders.Location.X + dgvOrders.Width - lblTime.Width, lblDate.Location.Y);
         }
 
         private void lblCash_Click(object sender, EventArgs e)

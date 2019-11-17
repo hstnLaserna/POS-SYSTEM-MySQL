@@ -351,7 +351,7 @@ namespace POS_SYSTEM
             txtPrice1.Text = "0.00";
             txtPrice2.Text = "0.00";
             txtPrice3.Text = "0.00";
-            listProductType.SelectedIndex = 0;
+            listProductType.ClearSelected();
             chkEnabled.Checked = true;
             selectedID = 0;
             btnUpdate.Enabled = false;

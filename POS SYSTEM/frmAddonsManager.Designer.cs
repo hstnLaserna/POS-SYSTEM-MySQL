@@ -289,7 +289,7 @@
             this.btnBack.Location = new System.Drawing.Point(1452, 711);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(131, 47);
+            this.btnBack.Size = new System.Drawing.Size(131, 28);
             this.btnBack.TabIndex = 9;
             this.btnBack.Text = "BACK";
             this.btnBack.UseVisualStyleBackColor = false;

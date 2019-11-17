@@ -10,6 +10,8 @@ using System.Windows.Forms;
 //using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using System.Threading;
+using System.Reflection;
+using System.Diagnostics;
 
 namespace POS_SYSTEM
 {
@@ -23,11 +25,21 @@ namespace POS_SYSTEM
         public static int loginid;
         private int isEnabled;
         public static string uname = "";
+
+
+
         
         public frmLogin()
         {
             InitializeComponent();
             txtUsername.Text = frmLogin.uname;
+
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            FileVersionInfo fileVersionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
+            string version = fileVersionInfo.ProductVersion;
+
+            lblVersion.Text = "v" + version;
+            lblVersion.Location = new Point(panel1.Width - lblVersion.Width - 5, panel1.Height - lblVersion.Height - 5);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -64,7 +76,7 @@ namespace POS_SYSTEM
                 connection.Open();
                 try
                 {
-                    string query = "SELECT CONCAT(FirstName,' ',LastName) AS FullName, Position, loginid, isEnabled FROM " + DatabaseConnection.UsersTable + " WHERE username = @Username AND PassWord = MD5(@Password)";
+                    string query = "SELECT CONCAT(LastName, ', ', FirstName) AS FullName, Position, loginid, isEnabled FROM " + DatabaseConnection.UsersTable + " WHERE username = @Username AND PassWord = MD5(@Password)";
                     command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Username", txtUsername.Text);
                     command.Parameters.AddWithValue("@Password", txtPassword.Text);
