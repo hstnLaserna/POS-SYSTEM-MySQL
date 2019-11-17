@@ -785,7 +785,7 @@ namespace POS_SYSTEM
 
         public void print()
         {
-            paperHeight = 70 + (TransactionHistory.transactionOrders.Count() * 45) + 190;
+            paperHeight = 70 + (TransactionHistory.transactionOrders.Count() * 45) + 210;
             PrinterSettings ps = new PrinterSettings();
             PaperSize psize = new PaperSize("Custom", 250, paperHeight);
             ps.DefaultPageSettings.PaperSize = psize;
