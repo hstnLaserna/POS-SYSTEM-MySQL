@@ -31,9 +31,9 @@ namespace POS_SYSTEM
         {
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
             {
-                connection.Open();
                 try
                 {
+                    connection.Open();
                     string query = "SELECT tempopw, username FROM " + DatabaseConnection.UsersTable + " WHERE username = @Uname AND answer1 = @Answer1 OR answer2 = @Answer2; ";
                     command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Uname", txtUsername.Text);

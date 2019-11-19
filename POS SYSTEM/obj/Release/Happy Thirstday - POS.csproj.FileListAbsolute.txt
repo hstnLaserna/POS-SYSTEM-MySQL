@@ -24,3 +24,4 @@ C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\Happy 
 C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.Properties.Resources.resources
 C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.exe
 C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.pdb
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.frmDevelopers.resources

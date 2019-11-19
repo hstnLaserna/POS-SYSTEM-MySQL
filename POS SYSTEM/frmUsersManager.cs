@@ -115,10 +115,10 @@ namespace POS_SYSTEM
                     {
                         using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
                         {
-                            connection.Open();
                             try
                             {
-                                if(txtPassword.TextLength> 0)
+                                connection.Open();
+                                if (txtPassword.TextLength >= 4)
                                 {
                                     string query = "CALL updateUser(@Username, @Password, @Firstname, @Lastname, @Position, @Answer1, @Answer2, @Enabled, @selectedid); SELECT tempopw FROM " + DatabaseConnection.UsersTable + " WHERE loginid = @selectedid";
                                     command = new MySqlCommand(query, connection);
@@ -131,8 +131,12 @@ namespace POS_SYSTEM
                                     command.Parameters.AddWithValue("@Answer2", txtAnswer2.Text.Trim());
                                     command.Parameters.AddWithValue("@Enabled", isEnabled);
                                     command.Parameters.AddWithValue("@selectedid", selectedID);
+                                    reader = command.ExecuteReader();
+
+                                    reader.Close();
+                                    command.Dispose();
                                 }
-                                else
+                                else if (txtPassword.TextLength == 0)
                                 {
                                     string query = "CALL updateUserNoPassword(@Username, @Firstname, @Lastname, @Position, @Answer1, @Answer2, @Enabled, @selectedid); SELECT tempopw FROM " + DatabaseConnection.UsersTable + " WHERE loginid = @selectedid";
                                     command = new MySqlCommand(query, connection);
@@ -144,11 +148,15 @@ namespace POS_SYSTEM
                                     command.Parameters.AddWithValue("@Answer2", txtAnswer2.Text.Trim());
                                     command.Parameters.AddWithValue("@Enabled", isEnabled);
                                     command.Parameters.AddWithValue("@selectedid", selectedID);
-                                }
-                                reader = command.ExecuteReader();
+                                    reader = command.ExecuteReader();
 
-                                reader.Close();
-                                command.Dispose();
+                                    reader.Close();
+                                    command.Dispose();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("The updated temporary password must be at least 4 characters!\nYou can choose not to change the password by leaving it blank.", "Error in Setting Temporary Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
                             }
                             catch (Exception ex)
                             {
@@ -182,9 +190,9 @@ namespace POS_SYSTEM
                     {
                         using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
                         {
-                            connection.Open();
                             try
                             {
+                                connection.Open();
                                 string query = "CALL addUser(@Username, @Password, @Firstname, @Lastname, @Position, @Answer1, @Answer2, @Enabled);";
                                 command = new MySqlCommand(query, connection);
                                 command.Parameters.AddWithValue("@Username", txtUsername.Text);
@@ -241,9 +249,9 @@ namespace POS_SYSTEM
         {
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
             {
-                connection.Open();
                 try
                 {
+                    connection.Open();
                     mySqlDataAdapter = new MySqlDataAdapter("SELECT loginid 'UserID', username 'Username', firstname 'First Name', lastname 'Last Name', position 'Position', answer1 'Security 1', answer2 'Security 2', isEnabled, tempopw 'Tempo Pass' FROM " + DatabaseConnection.UsersTable + " WHERE POSITION = 'admin' or POSITION = 'cashier';", connection);
                     DataSet DS = new DataSet();
                     mySqlDataAdapter.Fill(DS);
@@ -274,6 +282,7 @@ namespace POS_SYSTEM
         {
             btnBack.Location = new System.Drawing.Point(this.ClientRectangle.Width - btnBack.Width - 10, this.ClientRectangle.Height - btnBack.Height - 10);
             groupBox1.Location = new System.Drawing.Point(this.ClientRectangle.Width - groupBox1.Width - 10, dgvUsers.Location.Y);
+            dgvUsers.Size = new System.Drawing.Size(this.ClientRectangle.Width - 33 - groupBox1.Width - 15, this.ClientRectangle.Height - 70 - 10);
         }
 
         private void dgvUsers_CellClick(object sender, DataGridViewCellEventArgs e)

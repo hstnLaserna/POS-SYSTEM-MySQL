@@ -15,12 +15,12 @@ namespace POS_SYSTEM
 {
     public partial class frmMain : Form
     {
-        private List<Button> milkteaButtons, milkshakeButtons, frappeButtons;
-        private List<Label> milkteaLabels, milkshakeLabels, frappeLabels;
         private List<string> mtFlavors, msFlavors, frFlavors;
         private List<double> mtPrice1, mtPrice2, mtPrice3;
         private List<double> msPrice1, msPrice2, msPrice3;
         private List<double> frPrice1, frPrice2, frPrice3;
+        private List<Button> milkteaButtons, milkshakeButtons, frappeButtons;
+        private List<Label> milkteaLabels, milkshakeLabels, frappeLabels;
         string password = "", hashedTempo = "";
         string user = frmLogin.user.ToUpper();
         string position = frmLogin.position.ToUpper();
@@ -48,9 +48,9 @@ namespace POS_SYSTEM
             newTransaction();
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
             {
-                connection.Open();
                 try
                 {
+                    connection.Open();
                     string query = "UPDATE " + DatabaseConnection.UsersTable + " SET log_attempts = 0 WHERE loginid = @LoginID;";
                     command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@LoginID", loginid);
@@ -107,9 +107,9 @@ namespace POS_SYSTEM
 
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
             {
-                connection.Open();
                 try
                 {
+                    connection.Open();
                     mySqlDataAdapter = new MySqlDataAdapter("SELECT name, price1, price2, price3 FROM " + DatabaseConnection.ProductsTable + " WHERE isAvailable = 1 AND productType = 'milktea' ORDER BY name ASC;", connection);
                     mySqlDataAdapter.Fill(dataTable);
                     foreach (DataRow row in dataTable.Rows)
@@ -281,10 +281,13 @@ namespace POS_SYSTEM
         private void buttonMT_Click(object sender, EventArgs e)
         {
             int selectedIndex = Convert.ToInt32(((Button)sender).Tag);
+
             frmAddProduct frmAddProduct = new frmAddProduct("Milktea", mtFlavors[selectedIndex], mtPrice1[selectedIndex], mtPrice2[selectedIndex], mtPrice3[selectedIndex]);
             frmAddProduct.ShowDialog();
+
             updateDisplay();
         }
+
         private void buttonMS_Click(object sender, EventArgs e)
         {
             int selectedIndex = Convert.ToInt32(((Button)sender).Tag);
@@ -394,9 +397,9 @@ namespace POS_SYSTEM
         {
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
             {
-                connection.Open();
                 try
                 {
+                    connection.Open();
                     string query = "SELECT password, MD5(tempopw) AS hashedTempo FROM " + DatabaseConnection.UsersTable + " WHERE loginid = @id;";
                     command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@id", loginid);
@@ -433,9 +436,9 @@ namespace POS_SYSTEM
         {
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
             {
-                connection.Open();
                 try
                 {
+                    connection.Open();
                     string query = "SELECT MAX(sino) as si FROM " + DatabaseConnection.SalesTable + ";";
                     command = new MySqlCommand(query, connection);
                     reader = command.ExecuteReader();
@@ -651,12 +654,12 @@ namespace POS_SYSTEM
             btnMT3.Location = new System.Drawing.Point((tabPage1.Width * 3 / 6) - (btnMT3.Width / 2), btnMT1.Location.Y);
             btnMT4.Location = new System.Drawing.Point((tabPage1.Width * 4 / 6) - (btnMT4.Width / 2), btnMT1.Location.Y);
             btnMT5.Location = new System.Drawing.Point((tabPage1.Width * 5 / 6) - (btnMT5.Width / 2), btnMT1.Location.Y);
-            btnMT6.Location = new System.Drawing.Point((tabPage1.Width * 1 / 6) - (btnMT6.Width / 2), btnMT1.Location.Y + btnMT1.Height + 150);
+            btnMT6.Location = new System.Drawing.Point((tabPage1.Width * 1 / 6) - (btnMT6.Width / 2), btnMT1.Location.Y + btnMT1.Height + 130);
             btnMT7.Location = new System.Drawing.Point((tabPage1.Width * 2 / 6) - (btnMT7.Width / 2), btnMT6.Location.Y);
             btnMT8.Location = new System.Drawing.Point((tabPage1.Width * 3 / 6) - (btnMT8.Width / 2), btnMT6.Location.Y);
             btnMT9.Location = new System.Drawing.Point((tabPage1.Width * 4 / 6) - (btnMT9.Width / 2), btnMT6.Location.Y);
             btnMT10.Location = new System.Drawing.Point((tabPage1.Width * 5 / 6) - (btnMT10.Width / 2), btnMT6.Location.Y);
-            btnMT11.Location = new System.Drawing.Point((tabPage1.Width * 1 / 6) - (btnMT11.Width / 2), btnMT6.Location.Y + btnMT6.Height + 150);
+            btnMT11.Location = new System.Drawing.Point((tabPage1.Width * 1 / 6) - (btnMT11.Width / 2), btnMT6.Location.Y + btnMT6.Height + 130);
             btnMT12.Location = new System.Drawing.Point((tabPage1.Width * 2 / 6) - (btnMT12.Width / 2), btnMT11.Location.Y);
             btnMT13.Location = new System.Drawing.Point((tabPage1.Width * 3 / 6) - (btnMT13.Width / 2), btnMT11.Location.Y);
             btnMT14.Location = new System.Drawing.Point((tabPage1.Width * 4 / 6) - (btnMT14.Width / 2), btnMT11.Location.Y);
@@ -686,12 +689,12 @@ namespace POS_SYSTEM
             btnMS3.Location = new System.Drawing.Point((tabPage1.Width * 3 / 6) - (btnMS3.Width / 2), btnMS1.Location.Y);
             btnMS4.Location = new System.Drawing.Point((tabPage1.Width * 4 / 6) - (btnMS4.Width / 2), btnMS1.Location.Y);
             btnMS5.Location = new System.Drawing.Point((tabPage1.Width * 5 / 6) - (btnMS5.Width / 2), btnMS1.Location.Y);
-            btnMS6.Location = new System.Drawing.Point((tabPage1.Width * 1 / 6) - (btnMS6.Width / 2), btnMS1.Location.Y + btnMS1.Height + 150);
+            btnMS6.Location = new System.Drawing.Point((tabPage1.Width * 1 / 6) - (btnMS6.Width / 2), btnMS1.Location.Y + btnMS1.Height + 130);
             btnMS7.Location = new System.Drawing.Point((tabPage1.Width * 2 / 6) - (btnMS7.Width / 2), btnMS6.Location.Y);
             btnMS8.Location = new System.Drawing.Point((tabPage1.Width * 3 / 6) - (btnMS8.Width / 2), btnMS6.Location.Y);
             btnMS9.Location = new System.Drawing.Point((tabPage1.Width * 4 / 6) - (btnMS9.Width / 2), btnMS6.Location.Y);
             btnMS10.Location = new System.Drawing.Point((tabPage1.Width * 5 / 6) - (btnMS10.Width / 2), btnMS6.Location.Y);
-            btnMS11.Location = new System.Drawing.Point((tabPage1.Width * 1 / 6) - (btnMS11.Width / 2), btnMS6.Location.Y + btnMS6.Height + 150);
+            btnMS11.Location = new System.Drawing.Point((tabPage1.Width * 1 / 6) - (btnMS11.Width / 2), btnMS6.Location.Y + btnMS6.Height + 130);
             btnMS12.Location = new System.Drawing.Point((tabPage1.Width * 2 / 6) - (btnMS12.Width / 2), btnMS11.Location.Y);
             btnMS13.Location = new System.Drawing.Point((tabPage1.Width * 3 / 6) - (btnMS13.Width / 2), btnMS11.Location.Y);
             btnMS14.Location = new System.Drawing.Point((tabPage1.Width * 4 / 6) - (btnMS14.Width / 2), btnMS11.Location.Y);
@@ -721,12 +724,12 @@ namespace POS_SYSTEM
             btnFR3.Location = new System.Drawing.Point((tabPage1.Width * 3 / 6) - (btnFR3.Width / 2), btnFR1.Location.Y);
             btnFR4.Location = new System.Drawing.Point((tabPage1.Width * 4 / 6) - (btnFR4.Width / 2), btnFR1.Location.Y);
             btnFR5.Location = new System.Drawing.Point((tabPage1.Width * 5 / 6) - (btnFR5.Width / 2), btnFR1.Location.Y);
-            btnFR6.Location = new System.Drawing.Point((tabPage1.Width * 1 / 6) - (btnFR6.Width / 2), btnFR1.Location.Y + btnFR1.Height + 150);
+            btnFR6.Location = new System.Drawing.Point((tabPage1.Width * 1 / 6) - (btnFR6.Width / 2), btnFR1.Location.Y + btnFR1.Height + 130);
             btnFR7.Location = new System.Drawing.Point((tabPage1.Width * 2 / 6) - (btnFR7.Width / 2), btnFR6.Location.Y);
             btnFR8.Location = new System.Drawing.Point((tabPage1.Width * 3 / 6) - (btnFR8.Width / 2), btnFR6.Location.Y);
             btnFR9.Location = new System.Drawing.Point((tabPage1.Width * 4 / 6) - (btnFR9.Width / 2), btnFR6.Location.Y);
             btnFR10.Location = new System.Drawing.Point((tabPage1.Width * 5 / 6) - (btnFR10.Width / 2), btnFR6.Location.Y);
-            btnFR11.Location = new System.Drawing.Point((tabPage1.Width * 1 / 6) - (btnFR11.Width / 2), btnFR6.Location.Y + btnFR6.Height + 150);
+            btnFR11.Location = new System.Drawing.Point((tabPage1.Width * 1 / 6) - (btnFR11.Width / 2), btnFR6.Location.Y + btnFR6.Height + 130);
             btnFR12.Location = new System.Drawing.Point((tabPage1.Width * 2 / 6) - (btnFR12.Width / 2), btnFR11.Location.Y);
             btnFR13.Location = new System.Drawing.Point((tabPage1.Width * 3 / 6) - (btnFR13.Width / 2), btnFR11.Location.Y);
             btnFR14.Location = new System.Drawing.Point((tabPage1.Width * 4 / 6) - (btnFR14.Width / 2), btnFR11.Location.Y);
@@ -968,6 +971,12 @@ namespace POS_SYSTEM
 
 
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void picLogo_Click(object sender, EventArgs e)
+        {
+            frmDevelopers frmDevelopers = new frmDevelopers();
+            frmDevelopers.ShowDialog();
         }
 
 

@@ -71,9 +71,9 @@ namespace POS_SYSTEM
 
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
             {
-                connection.Open();
                 try
                 {
+                    connection.Open();
                     mySqlDataAdapter = new MySqlDataAdapter();
                     string query = "SELECT name, price FROM " + DatabaseConnection.AddonsTable + " WHERE forProductType = @selectedProductType AND isAvailable = 1;";
                     command = new MySqlCommand(query, connection);
@@ -82,6 +82,7 @@ namespace POS_SYSTEM
 
 
                     mySqlDataAdapter.Fill(dataTable);
+
                     foreach (DataRow row in dataTable.Rows)
                     {
                         addons.Add((string)row["name"]);

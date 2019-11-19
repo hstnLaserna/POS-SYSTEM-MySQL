@@ -131,9 +131,9 @@ namespace POS_SYSTEM
                         using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
                         {
                             int activatedAddOns = 0;
-                            connection.Open();
                             try
                             {
+                                connection.Open();
                                 string query = "SELECT COUNT(*) as activatedAddOns from " + DatabaseConnection.AddonsTable + " where forProductType = @ForProductType AND isavailable = 1;";
                                 command = new MySqlCommand(query, connection);
                                 command.Parameters.AddWithValue("@ForProductType", listProductType.SelectedItem.ToString());
@@ -220,9 +220,9 @@ namespace POS_SYSTEM
                         using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
                         {
                             int activatedAddOns = 0;
-                            connection.Open();
                             try
                             {
+                                connection.Open();
                                 string query = "SELECT COUNT(*) as activatedAddOns FROM " + DatabaseConnection.AddonsTable + " WHERE forProductType = @ForProductType AND isavailable = 1;";
                                 command = new MySqlCommand(query, connection);
                                 command.Parameters.AddWithValue("@ForProductType", listProductType.SelectedItem.ToString());
@@ -363,9 +363,9 @@ namespace POS_SYSTEM
         {
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
             {
-                connection.Open();
                 try
                 {
+                    connection.Open();
                     mySqlDataAdapter = new MySqlDataAdapter("SELECT addonID '#', name 'Addons', price 'Price', forProductType 'AddOn for', isAvailable FROM " + DatabaseConnection.AddonsTable + " WHERE " + displayedProducts() + ";", connection);
                     DataSet DS = new DataSet();
                     mySqlDataAdapter.Fill(DS);
@@ -398,6 +398,9 @@ namespace POS_SYSTEM
             groupBox1.Location = new System.Drawing.Point(this.ClientRectangle.Width - groupBox1.Width - 10, dgvAddons.Location.Y);
             grpFilter.Location = new System.Drawing.Point(groupBox1.Location.X, groupBox1.Location.Y + groupBox1.Height + 10);
             btnBack.Location = new System.Drawing.Point(this.ClientRectangle.Width - btnBack.Width - 10, this.ClientRectangle.Height - btnBack.Height - 10);
+            dgvAddons.Size = new System.Drawing.Size(this.ClientRectangle.Width - 33 - groupBox1.Width - 15, this.ClientRectangle.Height - 70 - 10);
+
+
         }
 
         private void listProductType_SelectedValueChanged(object sender, EventArgs e)

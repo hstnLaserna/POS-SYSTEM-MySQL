@@ -172,4 +172,22 @@
   <data name="Happy_Thirstday___Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Happy Thirstday - Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hustino" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hustino.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iSee_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iSee Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="matt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\matt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nobs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nobs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ralf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ralf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

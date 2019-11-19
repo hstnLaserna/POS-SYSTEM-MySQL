@@ -41,7 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.chkWithTransactionHistory = new System.Windows.Forms.CheckBox();
             this.btnViewHistory = new System.Windows.Forms.Button();
             this.btnYear = new System.Windows.Forms.Button();
             this.btnMonth = new System.Windows.Forms.Button();
@@ -151,7 +150,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.OldLace;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.chkWithTransactionHistory);
             this.panel1.Controls.Add(this.btnViewHistory);
             this.panel1.Controls.Add(this.btnYear);
             this.panel1.Controls.Add(this.btnMonth);
@@ -165,17 +163,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(281, 528);
             this.panel1.TabIndex = 12;
-            // 
-            // chkWithTransactionHistory
-            // 
-            this.chkWithTransactionHistory.AutoSize = true;
-            this.chkWithTransactionHistory.Location = new System.Drawing.Point(59, 495);
-            this.chkWithTransactionHistory.Name = "chkWithTransactionHistory";
-            this.chkWithTransactionHistory.Size = new System.Drawing.Size(185, 21);
-            this.chkWithTransactionHistory.TabIndex = 16;
-            this.chkWithTransactionHistory.Text = "With Transaction History";
-            this.chkWithTransactionHistory.UseVisualStyleBackColor = true;
-            this.chkWithTransactionHistory.Visible = false;
             // 
             // btnViewHistory
             // 
@@ -337,7 +324,6 @@
         private System.Windows.Forms.Button btnMonth;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnViewHistory;
-        private System.Windows.Forms.CheckBox chkWithTransactionHistory;
         private System.Windows.Forms.PrintPreviewDialog printPreview;
         private System.Drawing.Printing.PrintDocument printDocument;
         private System.Windows.Forms.Label lblHeader;

@@ -17,7 +17,7 @@ namespace POS_SYSTEM
         MySqlDataReader reader;
         MySqlCommand command;
         MySqlDataAdapter mySqlDataAdapter;
-        string from, to, groupBy = "day";
+        string from, to, column2, groupBy = "day";
 
 
         public frmTransactionHistory()
@@ -27,7 +27,7 @@ namespace POS_SYSTEM
 
         private void fetchTransaction()
         {
-            if (dtpFrom.Value > dtpTo.Value)
+            if (dtpFrom.Value > dtpTo.Value && dtpTo.Value <= DateTime.Now)
             {
                 dtpFrom.Value = DateTime.Now;
                 dtpTo.Value = DateTime.Now;
@@ -35,41 +35,68 @@ namespace POS_SYSTEM
             }
             else
             {
-            from = dtpFrom.Value.Year.ToString() + "-" + dtpFrom.Value.Month.ToString() + "-" + dtpFrom.Value.Day.ToString();
-            to = dtpTo.Value.Year.ToString() + "-" + dtpTo.Value.Month.ToString() + "-" + dtpTo.Value.Day.ToString();
-            using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
-            {
-                connection.Open();
-                try
+                if (dtpTo.Value > DateTime.Now)
                 {
-                    string query = "SELECT sino 'SI Number', Customer 'Customer', vatable 'VATable', vat 'VAT', total 'Total', loginid 'Cashier ID', transdate 'Transaction Date' FROM " + DatabaseConnection.SalesTable + " WHERE date(transdate) BETWEEN '" + from + "' AND '" + to + "';";
-                    mySqlDataAdapter = new MySqlDataAdapter(query, connection);
-                    DataTable dt = new DataTable();
-                    mySqlDataAdapter.Fill(dt);
-                    dgvTransactionHistory.DataSource = dt;
-                    dgvTransactionHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dtpTo.Value = DateTime.Now;
                 }
-                catch (Exception ex)
+
+                using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
                 {
-                    MessageBox.Show(ex.ToString());
+
+                    from = dtpFrom.Value.Year.ToString() + "-" + dtpFrom.Value.Month.ToString() + "-" + dtpFrom.Value.Day.ToString();
+                    to = dtpTo.Value.Year.ToString() + "-" + dtpTo.Value.Month.ToString() + "-" + dtpTo.Value.Day.ToString();
+                    
+                    try
+                    {
+                        connection.Open();
+                        string query = "SELECT sino 'SI Number', Customer 'Customer', vatable 'VATable', vat 'VAT', total 'Total', loginid 'Cashier ID', transdate 'Transaction Date' FROM " + DatabaseConnection.SalesTable + " WHERE date(transdate) BETWEEN '" + from + "' AND '" + to + "';";
+                        mySqlDataAdapter = new MySqlDataAdapter(query, connection);
+                        DataTable dt = new DataTable();
+                        mySqlDataAdapter.Fill(dt);
+                        dgvTransactionHistory.DataSource = dt;
+                        dgvTransactionHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+
+                    connection.Close();
                 }
-                connection.Close();
-            }
 
 
-            chartSales.DataSource = GetData(from, to);
-            chartSales.Series["Sales"].XValueMember = groupBy;
-            chartSales.Series["Sales"].YValueMembers = "Total";
-            chartSales.Series["Sales"].ShadowColor = Color.LightSlateGray;
-            chartSales.Series["Sales"].ShadowOffset = 2;
-            chartSales.Series["Sales"].IsValueShownAsLabel = true;
-            chartSales.Series["Sales"].LabelFormat = "{0:#,##0.00}";
-            chartSales.Series["Sales"].Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartSales.Series["Sales"].LabelForeColor = Color.SaddleBrown;
-            chartSales.Series["Sales"].LabelBackColor = Color.White;
-            chartSales.ChartAreas[0].AxisX.Title = "Period by " + groupBy;
-            chartSales.ChartAreas[0].AxisY.Title = "Sales";
-            chartSales.DataBind();
+                if (groupBy.ToLower() == "day")
+                {
+                    column2 = "concat(month(transdate), '/', day(transdate)) AS 'day'";
+                }
+                else if (groupBy.ToLower() == "month")
+                {
+                    from = dtpFrom.Value.Year.ToString() + "-" + dtpFrom.Value.Month.ToString() + "-01";
+                    to = dtpTo.Value.Year.ToString() + "-" + dtpTo.Value.Month.ToString() + "-31";
+                    column2 = "concat(month(transdate), '/', year(transdate)) AS 'month'";
+                }
+                else
+                {
+                    from = dtpFrom.Value.Year.ToString() + "-01-01";
+                    to = dtpTo.Value.Year.ToString() + "-12-31";
+                    column2 = "year(transdate) AS 'year' ";
+                }
+
+
+                chartSales.DataSource = GetData(from, to, column2);
+                chartSales.Series["Sales"].XValueMember = groupBy;
+                chartSales.Series["Sales"].YValueMembers = "Total";
+                chartSales.Series["Sales"].ShadowColor = Color.LightSlateGray;
+                chartSales.Series["Sales"].ShadowOffset = 2;
+                chartSales.Series["Sales"].IsValueShownAsLabel = true;
+                chartSales.Series["Sales"].LabelFormat = "{0:#,##0.00}";
+                chartSales.Series["Sales"].Font = new System.Drawing.Font("Microsoft Sans Serif", 10.4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                chartSales.Series["Sales"].LabelForeColor = Color.SaddleBrown;
+                chartSales.Series["Sales"].LabelBackColor = Color.White;
+                chartSales.ChartAreas[0].AxisX.Title = "Period by " + groupBy;
+                chartSales.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 10.4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                chartSales.ChartAreas[0].AxisY.Title = "Sales";
+                chartSales.DataBind();
             }
         }
 
@@ -78,15 +105,15 @@ namespace POS_SYSTEM
             formResize();
         }
 
-        private object GetData(string fetchFrom, string fetchTo)
+        private object GetData(string fetchFrom, string fetchTo, string selectCol2)
         {
             DataTable dtData = new DataTable();
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
             {
-                connection.Open();
                 try
                 {
-                    string query = "SELECT sum(total) AS 'Total', " + groupBy + "(transdate) AS '" + groupBy + "' FROM " + DatabaseConnection.SalesTable + " WHERE date(transdate) BETWEEN '" + fetchFrom + "' AND '" + fetchTo + "' GROUP BY " + groupBy + "; ";
+                    connection.Open();
+                    string query = "SELECT sum(total) AS 'Total', " + selectCol2 + " FROM " + DatabaseConnection.SalesTable + " WHERE date(transdate) BETWEEN '" + fetchFrom + "' AND '" + fetchTo + "' GROUP BY " + groupBy + "; ";
                     command = new MySqlCommand(query, connection);
                     reader = command.ExecuteReader();
                     dtData.Load(reader);

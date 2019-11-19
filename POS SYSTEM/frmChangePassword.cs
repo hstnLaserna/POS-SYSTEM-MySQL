@@ -63,9 +63,9 @@ namespace POS_SYSTEM
         {
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
             {
-                connection.Open();
                 try
                 {
+                    connection.Open();
                     string query = "SELECT CONCAT(FirstName,' ',LastName) AS FullName, Position, loginid FROM " + DatabaseConnection.UsersTable + " WHERE username = @Username AND PassWord = MD5(@Password)";
                     command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Username", txtUsername.Text);

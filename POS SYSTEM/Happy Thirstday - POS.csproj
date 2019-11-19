@@ -91,6 +91,12 @@
     <Compile Include="frmCash.Designer.cs">
       <DependentUpon>frmCash.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDevelopers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDevelopers.Designer.cs">
+      <DependentUpon>frmDevelopers.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProductsManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCash.resx">
       <DependentUpon>frmCash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDevelopers.resx">
+      <DependentUpon>frmDevelopers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductsManager.resx">
       <DependentUpon>frmProductsManager.cs</DependentUpon>
@@ -261,6 +270,12 @@
   <ItemGroup>
     <Content Include="Happy Thirstday.ico" />
     <Content Include="HappyT.ico" />
+    <None Include="Resources\fb.png" />
+    <None Include="Resources\iSee Logo.png" />
+    <None Include="Resources\ralf.png" />
+    <None Include="Resources\nobs.png" />
+    <None Include="Resources\matt.png" />
+    <None Include="Resources\hustino.png" />
     <None Include="Resources\Happy Thirstday - Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

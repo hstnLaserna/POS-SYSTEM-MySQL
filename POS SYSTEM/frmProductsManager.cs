@@ -120,7 +120,10 @@ namespace POS_SYSTEM
         {
             if (btnUpdate.Text == "UPDATE")
             {
-                if (txtProductName.TextLength >= 4)
+                if (txtProductName.TextLength >= 4 &&
+                    Convert.ToDouble(txtPrice1.Text) < Convert.ToDouble(txtPrice2.Text) &&
+                    Convert.ToDouble(txtPrice2.Text) < Convert.ToDouble(txtPrice3.Text) &&
+                    Convert.ToDouble(txtPrice1.Text) < Convert.ToDouble(txtPrice3.Text))
                 {
                     var exists = dgvProducts.Rows.Cast<DataGridViewRow>()
                                  .Where(row => !row.IsNewRow)
@@ -131,9 +134,9 @@ namespace POS_SYSTEM
                         using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
                         {
                             int activatedProducts = 0;
-                            connection.Open();
                             try
                             {
+                                connection.Open();
                                 string query = "SELECT COUNT(*) as activatedProducts FROM " + DatabaseConnection.ProductsTable + " WHERE producttype = @ProductType AND isavailable = 1;";
                                 command = new MySqlCommand(query, connection);
                                 command.Parameters.AddWithValue("@ProductType", listProductType.SelectedItem.ToString());
@@ -201,9 +204,13 @@ namespace POS_SYSTEM
                         MessageBox.Show("Please select a Product");
                     }
                 }
-                else
+                else if (txtProductName.TextLength < 4)
                 {
                     MessageBox.Show("Product must be 4 or more characters");
+                }
+                else
+                {
+                    MessageBox.Show("Please take note of the prices: \n  • Price 1 must be less than Price 2\n  • Price 2 must be less than Price 3\n  • Price 1 must be less than Price 3", "Invalid Price Ranges", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 
@@ -211,14 +218,17 @@ namespace POS_SYSTEM
 
             else
             {
-                if (txtProductName.TextLength >= 4)
+                if (txtProductName.TextLength >= 4 &&
+                    Convert.ToDouble(txtPrice1.Text) < Convert.ToDouble(txtPrice2.Text) &&
+                    Convert.ToDouble(txtPrice2.Text) < Convert.ToDouble(txtPrice3.Text) &&
+                    Convert.ToDouble(txtPrice1.Text) < Convert.ToDouble(txtPrice3.Text))
                 {
                     using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
                     {
                         int activatedProducts = 0;
-                        connection.Open();
                         try
                         {
+                            connection.Open();
                             string query = "SELECT COUNT(*) as activatedProducts FROM " + DatabaseConnection.ProductsTable + " WHERE producttype = @ProductType AND isavailable = 1;";
                             command = new MySqlCommand(query, connection);
                             command.Parameters.AddWithValue("@ProductType", listProductType.SelectedItem.ToString());
@@ -269,9 +279,13 @@ namespace POS_SYSTEM
                         initializeDisplay();
                     }
                 }
-                else
+                else if (txtProductName.TextLength < 4)
                 {
                     MessageBox.Show("Product must be 4 or more characters");
+                }
+                else
+                {
+                    MessageBox.Show("Please take note of the prices: \n  • Price 1 must be less than Price 2\n  • Price 2 must be less than Price 3\n  • Price 1 must be less than Price 3", "Invalid Price Ranges", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -361,9 +375,9 @@ namespace POS_SYSTEM
         {
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
             {
-                connection.Open();
                 try
                 {
+                    connection.Open();
                     string querystring = "SELECT  productID 'ID', name 'Product', price1 'Price (S)', price2 'Price (M)', price3 'Price (L)', productType 'Product Type', isAvailable, DATE(dateadded) 'Date Added' FROM " + DatabaseConnection.ProductsTable + " WHERE " + displayedProducts();
                     mySqlDataAdapter = new MySqlDataAdapter(querystring, connection);
                     DataSet DS = new DataSet();
@@ -398,6 +412,10 @@ namespace POS_SYSTEM
         {
             btnBack.Location = new System.Drawing.Point(this.ClientRectangle.Width - btnBack.Width - 10, this.ClientRectangle.Height - btnBack.Height - 10);
             groupBox1.Location = new System.Drawing.Point(this.ClientRectangle.Width - groupBox1.Width - 10, dgvProducts.Location.Y);
+            dgvProducts.Size = new System.Drawing.Size(this.ClientRectangle.Width - 33 - groupBox1.Width - 15, this.ClientRectangle.Height - 70 - 10);
+
+
+
             btnAddonsManager.Location = new System.Drawing.Point(groupBox1.Location.X, groupBox1.Location.Y + groupBox1.Height + 10);
             grpFilter.Location = new System.Drawing.Point(groupBox1.Location.X, btnAddonsManager.Location.Y + btnAddonsManager.Height + 10);
         }

@@ -25,6 +25,7 @@ namespace POS_SYSTEM
         public static int loginid;
         private int isEnabled;
         public static string uname = "";
+        int counter = 0;
 
 
 
@@ -73,9 +74,9 @@ namespace POS_SYSTEM
             uname = txtUsername.Text;
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
             {
-                connection.Open();
                 try
                 {
+                    connection.Open();
                     string query = "SELECT CONCAT(LastName, ', ', FirstName) AS FullName, Position, loginid, isEnabled FROM " + DatabaseConnection.UsersTable + " WHERE username = @Username AND PassWord = MD5(@Password)";
                     command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Username", txtUsername.Text);
@@ -198,5 +199,37 @@ namespace POS_SYSTEM
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            counter = 0;
+            if(txtServer.TextLength == 0)
+            {
+                txtServer.Visible = false;
+            }
+        }
+
+        private void txtServer_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                DatabaseConnection.server = txtServer.Text;
+                DatabaseConnection.connectionString = @"server=" + DatabaseConnection.server + ";database=" + DatabaseConnection.schema + ";uid=" + DatabaseConnection.dbuser + ";pwd=" + DatabaseConnection.dbpassword + "";
+                txtServer.Visible = false;
+                txtUsername.Text = DatabaseConnection.server;
+            }
+        }
+
+        private void picLogo_MouseDown(object sender, MouseEventArgs e)
+        {
+            timer1.Enabled = false;
+            counter++;
+            if (counter == 5)
+            {
+                txtServer.Text = DatabaseConnection.server;
+                txtServer.Visible = true;
+                txtServer.Select();
+            }
+            timer1.Enabled = true;
+        }
     }
 }

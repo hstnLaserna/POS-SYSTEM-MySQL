@@ -124,12 +124,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_17E5A095050C09C7952E3D44D5D123EC"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_BB2A291AA6D54661925D1C7A51EC5179"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -175,6 +169,12 @@
         "OwnerKey" = "8:_7F9015DA5F4A9EDDB2BDBFF40584419E"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_17E5A095050C09C7952E3D44D5D123EC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -193,6 +193,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -209,6 +225,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -248,7 +280,7 @@
                     "_0B0D7B6449482D7F9DEBE70B12EAF2C3"
                     {
                     "Name" = "8:MySQL.Data.EntityFrameworkCore.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:MySQL.Data.EntityFrameworkCore.dll"
@@ -259,7 +291,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -279,7 +311,7 @@
                     "_0C0F9B6A4DE80A777EAFEE073EB378CF"
                     {
                     "Name" = "8:MySql.Web.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:MySql.Web.dll"
@@ -290,7 +322,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -310,7 +342,7 @@
                     "_17E5A095050C09C7952E3D44D5D123EC"
                     {
                     "Name" = "8:BouncyCastle.Crypto.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:BouncyCastle.Crypto.dll"
@@ -321,7 +353,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -341,7 +373,7 @@
                     "_2829978624712E77F2F4FD9E25B26E0A"
                     {
                     "Name" = "8:MySQL.Data.EntityFrameworkCore.Design.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:MySQL.Data.EntityFrameworkCore.Design.dll"
@@ -352,7 +384,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -372,7 +404,7 @@
                     "_5B51A61B5EBE8003F4FC5CBA27596579"
                     {
                     "Name" = "8:MySql.Data.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:MySql.Data.dll"
@@ -383,7 +415,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -403,7 +435,7 @@
                     "_7237CF1ED5F0C0764D12E2D10DC3DF0B"
                     {
                     "Name" = "8:MySql.Data.EntityFramework.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:MySql.Data.EntityFramework.dll"
@@ -414,7 +446,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -434,7 +466,7 @@
                     "_7F9015DA5F4A9EDDB2BDBFF40584419E"
                     {
                     "Name" = "8:Google.Protobuf.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:Google.Protobuf.dll"
@@ -445,7 +477,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -465,7 +497,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -485,7 +517,7 @@
                     "_BD0433601C1C38AF06456905593318E4"
                     {
                     "Name" = "8:Renci.SshNet.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:Renci.SshNet.dll"
@@ -496,7 +528,7 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -561,9 +593,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Happy Thirstday Point of Sales"
+        "ProductName" = "8:Happy Thirstday - POS"
         "ProductCode" = "8:{71B91088-DC83-46A7-8941-4C653CDF4FF3}"
-        "PackageCode" = "8:{A0F59E9A-1B88-4ADC-B2D4-4539FF3052B1}"
+        "PackageCode" = "8:{A46AACC7-6036-476A-A95B-65059D4A0520}"
         "UpgradeCode" = "8:{A671144E-C4C1-4A41-BA24-ECA27A26F811}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -574,13 +606,13 @@
         "Manufacturer" = "8:iSee POS"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:Happy T POS Setup"
+        "Title" = "8:Happy Thirstday - POS Setup"
         "Subject" = "8:"
         "ARPCONTACT" = "8:iSee POS"
         "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:"
+        "ARPCOMMENTS" = "8:Installer for Happy Thirstday Point of Sales system"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_9878D6C1B02343F9BF35C096940BB0AD"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -685,7 +717,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_899C7A44FB76455CA169D565520B39BD"
             {
-            "Name" = "8:Happy T - POS"
+            "Name" = "8:Happy Thirstday - POS"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -699,7 +731,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8FC7A1BC6C324CBDBAB2F4BD6092EAC2"
             {
-            "Name" = "8:Happy T - POS"
+            "Name" = "8:Happy Thirstday - POS"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -1112,7 +1144,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_BB2A291AA6D54661925D1C7A51EC5179"
             {
-            "SourcePath" = "8:..\\POS SYSTEM\\obj\\Debug\\POS_SYSTEM.exe"
+            "SourcePath" = "8:..\\POS SYSTEM\\obj\\Release\\POS_SYSTEM.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_D1A3F2787880421A9B344D21FA6EB74E"

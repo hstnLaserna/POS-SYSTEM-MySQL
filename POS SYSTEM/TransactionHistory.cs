@@ -10,6 +10,7 @@ namespace POS_SYSTEM
     public static class TransactionHistory
     {
         public static List<Product> transactionOrders = new List<Product>();
+
         public static List<string> History = new List<string>();
         public static string[] orders = { };
         public static List<double> priceTotal = new List<double>();
