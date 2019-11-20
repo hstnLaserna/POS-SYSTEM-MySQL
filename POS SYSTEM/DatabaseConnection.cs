@@ -11,8 +11,8 @@ namespace POS_SYSTEM
     public class DatabaseConnection
     {
         //public static string server = "REPUBLIKA"; // "REPUBLIKA" is Computer Name
-        public static string server = "192.168.169.41";
-        public static string schema = "dbPOS";
+        public static string server = "localhost";
+        public static string schema = "dbHappyThirstday";
         public static string dbuser = "happythirstday";
         public static string dbpassword = "bois";
         

@@ -444,15 +444,15 @@ namespace POS_SYSTEM
                     reader = command.ExecuteReader();
 
 
-
+                    
                     while (reader.Read())
                     {
-                        salesinvoice = Convert.ToInt32(reader["si"]);
-                        if (salesinvoice != 0)
+                        try
                         {
+                            salesinvoice = Convert.ToInt32(reader["si"]);
                             salesinvoice++;
                         }
-                        else
+                        catch (Exception)
                         {
                             salesinvoice = 190001;
                         }
@@ -461,7 +461,7 @@ namespace POS_SYSTEM
                     command.Dispose();
 
 
-                    query = "INSERT INTO " + DatabaseConnection.SalesTable + "(sino, customer, total,vatable,vat,loginid) values(@si, @customer, @total,@vatable,@vat,@loginid);";
+                    query = "CALL saveTransaction(@si, @customer, @total, @vatable, @vat, @loginid);";
                     command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@si", salesinvoice);
                     command.Parameters.AddWithValue("@customer", txtCustomer.Text.Trim());
@@ -475,7 +475,7 @@ namespace POS_SYSTEM
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show(ex.ToString(), ex.HResult.ToString());
                 }
                 connection.Close();
             }
@@ -830,18 +830,21 @@ namespace POS_SYSTEM
 
             purchasedHeight = 90;
 
-            string miscNotes = "";
+            string miscNotes = "", sugarLvl = "";
             for (int i = 0; i < TransactionHistory.transactionOrders.Count(); i++)
             {
                 e.Graphics.DrawString(string.Format("{0:#,##0}", TransactionHistory.transactionOrders[i].Quantity), f1, Brushes.Black, new RectangleF(20, purchasedHeight + 10, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Near });
-                e.Graphics.DrawString(string.Format("{0:#,##0.00}", TransactionHistory.transactionOrders[i].ProductName), f1, Brushes.Black, new RectangleF(40, purchasedHeight + 10, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Near });
+                e.Graphics.DrawString(string.Format("{0:#,##0.00}", TransactionHistory.transactionOrders[i].ProductName), f1, Brushes.Black, new RectangleF(40, purchasedHeight + 10, 150, 10), new StringFormat() { Alignment = StringAlignment.Near });
                 e.Graphics.DrawString(string.Format("{0:#,##0.00}", TransactionHistory.transactionOrders[i].ProductPrice), f1, Brushes.Black, new RectangleF(-20, purchasedHeight + 10, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Far });
-
 
 
                 miscNotes = TransactionHistory.transactionOrders[i].Addons + " " + TransactionHistory.transactionOrders[i].Notes;
                 int multipler = (miscNotes.Length / 35) + 1;
-                e.Graphics.DrawString(TransactionHistory.transactionOrders[i].Size + " (Sugar: " + TransactionHistory.transactionOrders[i].SugarLevel + ")", f3, Brushes.Black, new RectangleF(50, purchasedHeight + 20, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Near });
+                if(TransactionHistory.transactionOrders[i].Type.ToLower() == "milktea")
+                {
+                    sugarLvl = " (Sugar: " + TransactionHistory.transactionOrders[i].SugarLevel + ")";
+                }
+                e.Graphics.DrawString(TransactionHistory.transactionOrders[i].Size + sugarLvl, f3, Brushes.Black, new RectangleF(50, purchasedHeight + 20, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Near });
                 e.Graphics.DrawString(string.Format("{0:#,##0.00}", TransactionHistory.transactionOrders[i].SizePrice), f3, Brushes.Black, new RectangleF(-40, purchasedHeight + 20, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Far });
                 //e.Graphics.DrawString("Qty:", f3, Brushes.Black, new RectangleF(60, purchasedHeight + 30, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Near });
                 //e.Graphics.DrawString(TransactionHistory.transactionOrders[i].Quantity.ToString(), f3, Brushes.Black, new RectangleF(-70, purchasedHeight + 30, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Far });
@@ -851,6 +854,10 @@ namespace POS_SYSTEM
                     e.Graphics.DrawString("Addon Price:", f3, Brushes.Black, new RectangleF(50, purchasedHeight + 30, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Near });
                     e.Graphics.DrawString(string.Format("{0:#,##0.00}", TransactionHistory.transactionOrders[i].SinkerPrice), f3, Brushes.Black, new RectangleF(-40, purchasedHeight + 30, e.PageBounds.Width, 10), new StringFormat() { Alignment = StringAlignment.Far });
                 
+                }
+                else
+                {
+                    purchasedHeight -= 10;
                 }
                 e.Graphics.DrawString(miscNotes, f3, Brushes.Black, new RectangleF(50, purchasedHeight + 40, 160, (20 + 10*multipler)), new StringFormat() { Alignment = StringAlignment.Near });
 
