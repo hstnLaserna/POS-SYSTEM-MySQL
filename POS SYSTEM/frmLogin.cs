@@ -202,19 +202,22 @@ namespace POS_SYSTEM
         private void timer1_Tick(object sender, EventArgs e)
         {
             counter = 0;
-            if(txtServer.TextLength == 0)
-            {
+            if (txtServer.TextLength == 0 || txtSchema.TextLength == 0)
+            { 
                 txtServer.Visible = false;
+                txtSchema.Visible = false;
             }
         }
 
-        private void txtServer_KeyDown(object sender, KeyEventArgs e)
+        private void TextChangeConnection_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 DatabaseConnection.server = txtServer.Text;
+                DatabaseConnection.schema = txtSchema.Text;
                 DatabaseConnection.connectionString = @"server=" + DatabaseConnection.server + ";database=" + DatabaseConnection.schema + ";uid=" + DatabaseConnection.dbuser + ";pwd=" + DatabaseConnection.dbpassword + "";
                 txtServer.Visible = false;
+                txtSchema.Visible = false;
                 txtUsername.Text = DatabaseConnection.server;
             }
         }
@@ -227,6 +230,8 @@ namespace POS_SYSTEM
             {
                 txtServer.Text = DatabaseConnection.server;
                 txtServer.Visible = true;
+                txtSchema.Text = DatabaseConnection.schema;
+                txtSchema.Visible = true;
                 txtServer.Select();
             }
             timer1.Enabled = true;

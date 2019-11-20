@@ -140,13 +140,13 @@ DELIMITER ;
 DROP PROCEDURE IF EXISTS saveTransaction;
 
 DELIMITER $$
-CREATE PROCEDURE saveTransaction(IN sino_ INT(11), IN customer_ VARCHAR(50), IN total_ DECIMAL(13,2), IN vatable_ DECIMAL(13,2), IN vat_ DECIMAL(13,2), IN loginid_ INT(8))
+CREATE PROCEDURE saveTransaction(IN sino_ INT(11), IN customer_ VARCHAR(50), IN vatable_ DECIMAL(13,2), IN vat_ DECIMAL(13,2), IN total_ DECIMAL(13,2), IN cash_ DECIMAL(13,2), IN change_ DECIMAL(13,2), IN loginid_ INT(8))
     BEGIN
 		IF ((SELECT EXISTS (SELECT 1 FROM tblSales)) = 1)
 		THEN
-			INSERT INTO tblSales(sino, customer, total,vatable,vat,loginid) values(sino_, customer_, total_, vatable_, vat_, loginid_);
+			INSERT INTO tblSales(sino, customer, vatable, vat, total, cash, `change`, loginid) values(sino_, customer_, vatable_, vat_, total_, cash_, change_, loginid_);
 		ELSE
-			INSERT INTO tblSales(sino, customer, total, vatable, vat, loginid) values(190001, customer_, total_, vatable_, vat_, loginid_);
+			INSERT INTO tblSales(sino, customer, vatable, vat, total, cash, `change`, loginid) values(190001, customer_, vatable_, vat_, total_, cash_, change_, loginid_);
         END IF;
     END$$
 DELIMITER ;

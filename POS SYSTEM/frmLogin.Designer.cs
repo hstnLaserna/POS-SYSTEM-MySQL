@@ -42,6 +42,7 @@
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.txtServer = new System.Windows.Forms.TextBox();
+            this.txtSchema = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -205,7 +206,19 @@
             this.txtServer.Size = new System.Drawing.Size(376, 31);
             this.txtServer.TabIndex = 26;
             this.txtServer.Visible = false;
-            this.txtServer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtServer_KeyDown);
+            this.txtServer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextChangeConnection_KeyDown);
+            // 
+            // txtSchema
+            // 
+            this.txtSchema.BackColor = System.Drawing.Color.Black;
+            this.txtSchema.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSchema.ForeColor = System.Drawing.Color.White;
+            this.txtSchema.Location = new System.Drawing.Point(5, 43);
+            this.txtSchema.Name = "txtSchema";
+            this.txtSchema.Size = new System.Drawing.Size(376, 31);
+            this.txtSchema.TabIndex = 27;
+            this.txtSchema.Visible = false;
+            this.txtSchema.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextChangeConnection_KeyDown);
             // 
             // frmLogin
             // 
@@ -214,6 +227,7 @@
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(828, 505);
             this.ControlBox = false;
+            this.Controls.Add(this.txtSchema);
             this.Controls.Add(this.txtServer);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -249,5 +263,6 @@
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox txtServer;
+        private System.Windows.Forms.TextBox txtSchema;
     }
 }

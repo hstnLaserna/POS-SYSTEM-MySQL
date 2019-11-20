@@ -461,13 +461,15 @@ namespace POS_SYSTEM
                     command.Dispose();
 
 
-                    query = "CALL saveTransaction(@si, @customer, @total, @vatable, @vat, @loginid);";
+                    query = "CALL saveTransaction(@si, @customer, @vatable, @vat, @total, @cash, @change, @loginid);";
                     command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@si", salesinvoice);
                     command.Parameters.AddWithValue("@customer", txtCustomer.Text.Trim());
-                    command.Parameters.AddWithValue("@total", Transact.Total);
                     command.Parameters.AddWithValue("@vatable", Transact.VATable);
                     command.Parameters.AddWithValue("@vat", Transact.VatAmt);
+                    command.Parameters.AddWithValue("@total", Transact.Total);
+                    command.Parameters.AddWithValue("@cash", Transact.Cash);
+                    command.Parameters.AddWithValue("@change", Transact.Change);
                     command.Parameters.AddWithValue("@loginid", loginid);
                     reader = command.ExecuteReader();
                     reader.Close();
