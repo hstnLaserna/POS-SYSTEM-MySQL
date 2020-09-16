@@ -25,3 +25,5 @@ C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Debug\POS_SYST
 C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Debug\POS_SYSTEM.pdb
 C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Debug\Happy Thirstday - POS.csprojResolveAssemblyReference.cache
 C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Debug\POS_SYSTEM.frmDevelopers.resources
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Debug\POS_SYSTEM.frmDiscount.resources
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Debug\POS_SYSTEM.frmAdminNumber.resources

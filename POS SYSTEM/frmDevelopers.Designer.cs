@@ -326,9 +326,9 @@
             this.label17.Font = new System.Drawing.Font("Trebuchet MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(81, 95);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(173, 29);
+            this.label17.Size = new System.Drawing.Size(176, 29);
             this.label17.TabIndex = 40;
-            this.label17.Text = "Michael Angelo";
+            this.label17.Text = "Ralph Christian";
             // 
             // label18
             // 
@@ -612,10 +612,6 @@
             this.Controls.Add(this.pic3);
             this.Controls.Add(this.pic2);
             this.Controls.Add(this.pic1);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblSE);
             this.Controls.Add(this.lblBA);
             this.Controls.Add(this.lblPM);
@@ -626,6 +622,10 @@
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.picBusiness);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Trebuchet MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

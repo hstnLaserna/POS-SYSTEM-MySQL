@@ -364,6 +364,11 @@ namespace POS_SYSTEM
         #endregion
 
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;
+        }
+
         private void size_MouseHover(object sender, EventArgs e)
         {
             if (!timer1.Enabled)
@@ -393,11 +398,6 @@ namespace POS_SYSTEM
                 tip.Show(string.Format("{0:#,##0.00}", hoveredPrice), this, Cursor.Position.X - this.Location.X + 30, Cursor.Position.Y - this.Location.Y, 1000);
                 timer1.Enabled = true;
             }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            timer1.Enabled = false;
         }
 
         private void addonHover(object sender, EventArgs e)

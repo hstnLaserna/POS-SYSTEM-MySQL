@@ -150,6 +150,5 @@ namespace POS_SYSTEM
         {
             mouseDown = false;
         }
-
     }
 }

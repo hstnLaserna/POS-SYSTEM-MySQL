@@ -140,28 +140,6 @@ namespace POS_SYSTEM
         }
 
 
-        // ----------------- Form Move Implementation  (Drag Form Body) ------------------
-
-        private bool mouseDown;
-        private Point lastLocation;
-        private void form_MouseDown(object sender, MouseEventArgs e)
-        {
-            mouseDown = true;
-            lastLocation = e.Location;
-        }
-
-        private void form_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (mouseDown)
-            {
-                this.Location = new Point((this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
-                this.Update();
-            }
-        }
-        private void form_MouseUp(object sender, MouseEventArgs e)
-        {
-            mouseDown = false;
-        }
 
         private void text_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -176,34 +154,11 @@ namespace POS_SYSTEM
         }
 
 
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            if (keyData == (Keys.Alt | Keys.F))
-            {
-                uname = this.txtUsername.Text;
-                frmForgotPassword frmForgotPassword = new frmForgotPassword();
-                frmForgotPassword.ShowDialog();
-                this.Show();
-                return true;
-            }
-
-
-            // CLOSING
-            if (keyData == (Keys.Alt | Keys.F12))
-            {
-                Application.Exit();
-                return true;
-            }
-
-
-            return base.ProcessCmdKey(ref msg, keyData);
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             counter = 0;
             if (txtServer.TextLength == 0 || txtSchema.TextLength == 0)
-            { 
+            {
                 txtServer.Visible = false;
                 txtSchema.Visible = false;
             }
@@ -235,6 +190,53 @@ namespace POS_SYSTEM
                 txtServer.Select();
             }
             timer1.Enabled = true;
+        }
+
+
+        // ----------------- Form Move Implementation  (Drag Form Body) ------------------
+
+        private bool mouseDown;
+        private Point lastLocation;
+        private void form_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void form_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point((this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+                this.Update();
+            }
+        }
+        private void form_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Alt | Keys.F))
+            {
+                uname = this.txtUsername.Text;
+                frmForgotPassword frmForgotPassword = new frmForgotPassword();
+                frmForgotPassword.ShowDialog();
+                this.Show();
+                return true;
+            }
+
+
+            // CLOSING
+            if (keyData == (Keys.Alt | Keys.F12))
+            {
+                Application.Exit();
+                return true;
+            }
+
+
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

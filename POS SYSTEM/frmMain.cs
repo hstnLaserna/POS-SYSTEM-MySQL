@@ -71,7 +71,7 @@ namespace POS_SYSTEM
 
             formResize();
             updateDisplay();
-            if (position.ToLower() == "developer" || position.ToLower() == "admin")
+            if (position.ToLower() == "business admin" || position.ToLower() == "admin")
             {
                 btnProductsManager.Visible = true;
                 btnUsersManager.Visible = true;
@@ -329,12 +329,37 @@ namespace POS_SYSTEM
             }
         }
 
+        private void btnClearOrders_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Remove all orders?", "REMOVE ALL ORDERS", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    removeAllOrders();
+                }
+                catch
+                {
+                }
+            }
+        }
+
         private void removeOrder()
         {
             TransactionHistory.History.RemoveAt(selectedRowIndex);
             TransactionHistory.priceTotal.RemoveAt(selectedRowIndex);
             TransactionHistory.transactionOrders.RemoveAt(selectedRowIndex);
             Transact.Total = TransactionHistory.priceTotal.Sum();
+            Transact.isVATable(Transact.Total);
+            updateDisplay();
+        }
+
+        private void removeAllOrders()
+        {
+            TransactionHistory.History.Clear();
+            TransactionHistory.priceTotal.Clear();
+            TransactionHistory.transactionOrders.Clear();
+            Transact.Total = 0;
             Transact.isVATable(Transact.Total);
             updateDisplay();
         }
@@ -506,8 +531,16 @@ namespace POS_SYSTEM
 
             dgvOrders.DataSource = table;
             dgvOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
+            
             txtCash.Text = string.Format("{0:#,##0.00}", Transact.Cash);
+            if (Transact.Discount > 0)
+            {
+            txtDiscount.Text = Transact.DiscountType + " (" +string.Format("{0:#,##0}", (Transact.Discount * 100) + "%)");
+            }
+            else
+            {
+                txtDiscount.Text = "N/A";
+            }
             txtTotalAmtDue.Text = string.Format("{0:#,##0.00}", Transact.Total);
             txtVATable.Text = string.Format("{0:#,##0.00}", Transact.VATable);
             txtVATAmount.Text = string.Format("{0:#,##0.00}", Transact.VatAmt);
@@ -641,6 +674,7 @@ namespace POS_SYSTEM
 
             btnLogout.Location = new System.Drawing.Point(this.ClientRectangle.Width - btnLogout.Width - 10, this.ClientRectangle.Height - btnLogout.Height - 10);
             btnChangePassword.Location = new System.Drawing.Point(btnLogout.Location.X, btnLogout.Location.Y - btnChangePassword.Height - 10);
+            btnClearOrders.Location = new System.Drawing.Point(btnLogout.Location.X, btnChangePassword.Location.Y - btnClearOrders.Height - 10);
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -910,7 +944,7 @@ namespace POS_SYSTEM
             lblTime.Location = new Point(dgvOrders.Location.X + dgvOrders.Width - lblTime.Width, lblDate.Location.Y);
         }
 
-        private void lblCash_Click(object sender, EventArgs e)
+        private void btnCash_Click(object sender, EventArgs e)
         {
             frmCash frmCash = new frmCash();
             frmCash.ShowDialog();
@@ -957,7 +991,7 @@ namespace POS_SYSTEM
                 }
                 return true;
             }
-            if (keyData == (Keys.ControlKey | Keys.Alt | Keys.Enter))
+            if (keyData == (Keys.F5))
             {
                 saveTransaction();
                 return true;
@@ -989,5 +1023,47 @@ namespace POS_SYSTEM
         }
 
 
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;
+        }
+
+        private void Controls_MouseHover(object sender, EventArgs e)
+        {
+            Button btn;
+            if (!timer1.Enabled)
+            {
+                ToolTip tip = new ToolTip();
+                string hoverdButton = "";
+                btn = ((Button)sender);
+
+
+                switch (btn.Tag.ToString())
+                {
+                    case "TransactionHistory":
+                        hoverdButton = "Transaction History";
+                        break;
+                    case "UsersManager":
+                        hoverdButton = "Users Manager";
+                        break;
+                    case "ProductsManager":
+                        hoverdButton = "Products Manager";
+                        break;
+                    default:
+                        break;
+                }
+
+                Point p = btn.Location;
+                tip.Show(hoverdButton, this, Cursor.Position.X - this.Location.X + 30, Cursor.Position.Y - this.Location.Y, 1000);
+                timer1.Enabled = true;
+            }
+        }
+        private void lblDiscount_Click(object sender, EventArgs e)
+        {
+            frmDiscount frmDiscount = new frmDiscount();
+            frmDiscount.ShowDialog();
+            updateDisplay();
+        }
     }
 }

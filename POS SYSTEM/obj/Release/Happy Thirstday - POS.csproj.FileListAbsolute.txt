@@ -25,3 +25,5 @@ C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SY
 C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.exe
 C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.pdb
 C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.frmDevelopers.resources
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.frmDiscount.resources
+C:\Users\Hustino\Documents\GitHub\SAD - POS System\POS SYSTEM\obj\Release\POS_SYSTEM.frmAdminNumber.resources

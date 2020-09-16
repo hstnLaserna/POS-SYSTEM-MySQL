@@ -163,6 +163,11 @@ namespace POS_SYSTEM
                 btnMonth.Enabled = true;
                 btnYear.Enabled = true;
                 fetchTransaction();
+                return true; 
+            }
+            if (keyData == (Keys.F5))
+            {
+                toggleDisplay();
                 return true;
             }
             if (keyData == (Keys.Alt | Keys.M))
@@ -190,26 +195,23 @@ namespace POS_SYSTEM
                 this.Close();
                 return true;
             }
-            if (keyData == (Keys.RControlKey | Keys.F12))
-            {
-                Application.Exit();
-                return true;
-            }
-
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
 
         private void btnViewHistory_Click(object sender, EventArgs e)
         {
-            //print();
+            toggleDisplay();
+        }
+        private void toggleDisplay()
+        {
             if (dgvTransactionHistory.Visible)
             {
                 btnViewHistory.Text = "Display Transactions";
                 dgvTransactionHistory.Visible = false;
                 chartSales.Size = new System.Drawing.Size((ClientSize.Width - panel1.Width - 50), ClientSize.Height - 130);
                 dgvTransactionHistory.Size = chartSales.Size;
-                
+
             }
             else
             {

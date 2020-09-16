@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.lblUser = new System.Windows.Forms.Label();
             this.lblPosition = new System.Windows.Forms.Label();
@@ -91,6 +91,7 @@
             this.lblProducts3 = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCash = new System.Windows.Forms.Button();
             this.txtChange = new System.Windows.Forms.Label();
             this.txtVATAmount = new System.Windows.Forms.Label();
             this.txtVATable = new System.Windows.Forms.Label();
@@ -115,6 +116,11 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.btnClearOrders = new System.Windows.Forms.Button();
+            this.txtDiscount = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.btnMT14 = new System.Windows.Forms.Button();
             this.btnMT15 = new System.Windows.Forms.Button();
@@ -915,7 +921,7 @@
             this.btnRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(140)))));
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRemove.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.btnRemove.Location = new System.Drawing.Point(1002, 672);
+            this.btnRemove.Location = new System.Drawing.Point(1002, 644);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(384, 45);
@@ -927,12 +933,17 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.OldLace;
+            this.panel1.Controls.Add(this.txtDiscount);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtChange);
             this.panel1.Controls.Add(this.txtVATAmount);
             this.panel1.Controls.Add(this.txtVATable);
             this.panel1.Controls.Add(this.txtTotalAmtDue);
-            this.panel1.Controls.Add(this.lblCustomer);
             this.panel1.Controls.Add(this.txtCustomer);
+            this.panel1.Controls.Add(this.txtCash);
+            this.panel1.Controls.Add(this.btnCash);
+            this.panel1.Controls.Add(this.lblCustomer);
             this.panel1.Controls.Add(this.lblCash);
             this.panel1.Controls.Add(this.p4);
             this.panel1.Controls.Add(this.p2);
@@ -944,19 +955,31 @@
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.lblVatable);
             this.panel1.Controls.Add(this.lblAmtDue);
-            this.panel1.Controls.Add(this.txtCash);
-            this.panel1.Location = new System.Drawing.Point(1002, 722);
+            this.panel1.Location = new System.Drawing.Point(1002, 697);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(383, 257);
+            this.panel1.Size = new System.Drawing.Size(383, 284);
             this.panel1.TabIndex = 0;
+            // 
+            // btnCash
+            // 
+            this.btnCash.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnCash.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCash.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCash.Location = new System.Drawing.Point(57, 178);
+            this.btnCash.Name = "btnCash";
+            this.btnCash.Size = new System.Drawing.Size(48, 30);
+            this.btnCash.TabIndex = 80;
+            this.btnCash.Text = "...";
+            this.btnCash.UseVisualStyleBackColor = false;
+            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
             // 
             // txtChange
             // 
             this.txtChange.BackColor = System.Drawing.Color.Cornsilk;
             this.txtChange.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtChange.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChange.Location = new System.Drawing.Point(195, 186);
+            this.txtChange.Location = new System.Drawing.Point(195, 216);
             this.txtChange.Name = "txtChange";
             this.txtChange.Size = new System.Drawing.Size(176, 25);
             this.txtChange.TabIndex = 79;
@@ -968,7 +991,7 @@
             this.txtVATAmount.BackColor = System.Drawing.Color.Cornsilk;
             this.txtVATAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVATAmount.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVATAmount.Location = new System.Drawing.Point(195, 117);
+            this.txtVATAmount.Location = new System.Drawing.Point(195, 147);
             this.txtVATAmount.Name = "txtVATAmount";
             this.txtVATAmount.Size = new System.Drawing.Size(176, 25);
             this.txtVATAmount.TabIndex = 78;
@@ -980,7 +1003,7 @@
             this.txtVATable.BackColor = System.Drawing.Color.Cornsilk;
             this.txtVATable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVATable.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVATable.Location = new System.Drawing.Point(195, 84);
+            this.txtVATable.Location = new System.Drawing.Point(195, 114);
             this.txtVATable.Name = "txtVATable";
             this.txtVATable.Size = new System.Drawing.Size(176, 25);
             this.txtVATable.TabIndex = 77;
@@ -1004,7 +1027,7 @@
             this.lblCustomer.AutoSize = true;
             this.lblCustomer.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomer.ForeColor = System.Drawing.Color.Black;
-            this.lblCustomer.Location = new System.Drawing.Point(18, 15);
+            this.lblCustomer.Location = new System.Drawing.Point(18, 18);
             this.lblCustomer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new System.Drawing.Size(148, 22);
@@ -1024,23 +1047,22 @@
             // lblCash
             // 
             this.lblCash.AutoSize = true;
-            this.lblCash.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblCash.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblCash.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCash.ForeColor = System.Drawing.Color.Black;
-            this.lblCash.Location = new System.Drawing.Point(112, 151);
+            this.lblCash.Location = new System.Drawing.Point(112, 182);
             this.lblCash.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCash.Name = "lblCash";
             this.lblCash.Size = new System.Drawing.Size(54, 22);
             this.lblCash.TabIndex = 68;
             this.lblCash.Text = "Cash";
-            this.lblCash.Click += new System.EventHandler(this.lblCash_Click);
             // 
             // p4
             // 
             this.p4.AutoSize = true;
             this.p4.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.p4.ForeColor = System.Drawing.Color.Black;
-            this.p4.Location = new System.Drawing.Point(168, 187);
+            this.p4.Location = new System.Drawing.Point(168, 217);
             this.p4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.p4.Name = "p4";
             this.p4.Size = new System.Drawing.Size(23, 22);
@@ -1052,7 +1074,7 @@
             this.p2.AutoSize = true;
             this.p2.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.p2.ForeColor = System.Drawing.Color.Black;
-            this.p2.Location = new System.Drawing.Point(168, 116);
+            this.p2.Location = new System.Drawing.Point(168, 148);
             this.p2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.p2.Name = "p2";
             this.p2.Size = new System.Drawing.Size(23, 22);
@@ -1064,7 +1086,7 @@
             this.p3.AutoSize = true;
             this.p3.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.p3.ForeColor = System.Drawing.Color.Black;
-            this.p3.Location = new System.Drawing.Point(168, 153);
+            this.p3.Location = new System.Drawing.Point(168, 182);
             this.p3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.p3.Name = "p3";
             this.p3.Size = new System.Drawing.Size(23, 22);
@@ -1076,7 +1098,7 @@
             this.p1.AutoSize = true;
             this.p1.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.p1.ForeColor = System.Drawing.Color.Black;
-            this.p1.Location = new System.Drawing.Point(168, 85);
+            this.p1.Location = new System.Drawing.Point(168, 115);
             this.p1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.p1.Name = "p1";
             this.p1.Size = new System.Drawing.Size(23, 22);
@@ -1088,7 +1110,7 @@
             this.p0.AutoSize = true;
             this.p0.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.p0.ForeColor = System.Drawing.Color.Black;
-            this.p0.Location = new System.Drawing.Point(168, 53);
+            this.p0.Location = new System.Drawing.Point(168, 52);
             this.p0.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.p0.Name = "p0";
             this.p0.Size = new System.Drawing.Size(23, 22);
@@ -1100,7 +1122,7 @@
             this.lblVat.AutoSize = true;
             this.lblVat.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVat.ForeColor = System.Drawing.Color.Black;
-            this.lblVat.Location = new System.Drawing.Point(51, 117);
+            this.lblVat.Location = new System.Drawing.Point(51, 148);
             this.lblVat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVat.Name = "lblVat";
             this.lblVat.Size = new System.Drawing.Size(115, 22);
@@ -1113,7 +1135,7 @@
             this.btnTransact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnTransact.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTransact.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransact.Location = new System.Drawing.Point(7, 217);
+            this.btnTransact.Location = new System.Drawing.Point(7, 247);
             this.btnTransact.Margin = new System.Windows.Forms.Padding(4);
             this.btnTransact.Name = "btnTransact";
             this.btnTransact.Size = new System.Drawing.Size(363, 33);
@@ -1127,7 +1149,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(90, 185);
+            this.label11.Location = new System.Drawing.Point(90, 217);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(76, 22);
@@ -1139,7 +1161,7 @@
             this.lblVatable.AutoSize = true;
             this.lblVatable.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVatable.ForeColor = System.Drawing.Color.Black;
-            this.lblVatable.Location = new System.Drawing.Point(86, 83);
+            this.lblVatable.Location = new System.Drawing.Point(86, 115);
             this.lblVatable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVatable.Name = "lblVatable";
             this.lblVatable.Size = new System.Drawing.Size(80, 22);
@@ -1151,7 +1173,7 @@
             this.lblAmtDue.AutoSize = true;
             this.lblAmtDue.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmtDue.ForeColor = System.Drawing.Color.Black;
-            this.lblAmtDue.Location = new System.Drawing.Point(7, 49);
+            this.lblAmtDue.Location = new System.Drawing.Point(7, 52);
             this.lblAmtDue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAmtDue.Name = "lblAmtDue";
             this.lblAmtDue.Size = new System.Drawing.Size(159, 22);
@@ -1164,7 +1186,7 @@
             this.txtCash.BackColor = System.Drawing.Color.White;
             this.txtCash.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCash.ForeColor = System.Drawing.Color.Black;
-            this.txtCash.Location = new System.Drawing.Point(195, 150);
+            this.txtCash.Location = new System.Drawing.Point(195, 179);
             this.txtCash.Margin = new System.Windows.Forms.Padding(4);
             this.txtCash.MaxLength = 10;
             this.txtCash.Name = "txtCash";
@@ -1201,34 +1223,34 @@
             this.dgvOrders.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvOrders.BackgroundColor = System.Drawing.Color.OldLace;
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOrders.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOrders.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvOrders.Location = new System.Drawing.Point(1003, 91);
             this.dgvOrders.MultiSelect = false;
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrders.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrders.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvOrders.RowHeadersVisible = false;
             this.dgvOrders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrders.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrders.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvOrders.RowTemplate.Height = 24;
             this.dgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrders.Size = new System.Drawing.Size(383, 574);
+            this.dgvOrders.Size = new System.Drawing.Size(383, 546);
             this.dgvOrders.TabIndex = 16;
             this.dgvOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellClick);
             // 
@@ -1265,6 +1287,63 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 500;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // btnClearOrders
+            // 
+            this.btnClearOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(200)))), ((int)(((byte)(140)))));
+            this.btnClearOrders.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClearOrders.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.btnClearOrders.Location = new System.Drawing.Point(1388, 750);
+            this.btnClearOrders.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClearOrders.Name = "btnClearOrders";
+            this.btnClearOrders.Size = new System.Drawing.Size(132, 148);
+            this.btnClearOrders.TabIndex = 29;
+            this.btnClearOrders.Text = "REMOVE\r\nALL ORDERS\r\n";
+            this.btnClearOrders.UseVisualStyleBackColor = false;
+            this.btnClearOrders.Click += new System.EventHandler(this.btnClearOrders_Click);
+            // 
+            // txtDiscount
+            // 
+            this.txtDiscount.BackColor = System.Drawing.Color.Cornsilk;
+            this.txtDiscount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDiscount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtDiscount.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiscount.Location = new System.Drawing.Point(194, 82);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.Size = new System.Drawing.Size(176, 25);
+            this.txtDiscount.TabIndex = 83;
+            this.txtDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtDiscount.Click += new System.EventHandler(this.lblDiscount_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(167, 83);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 22);
+            this.label2.TabIndex = 82;
+            this.label2.Text = "₱";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(30, 83);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(136, 22);
+            this.label3.TabIndex = 81;
+            this.label3.Text = "Discount Type:";
             // 
             // picLogo
             // 
@@ -2014,6 +2093,7 @@
             this.btnTransactionHistory.Tag = "TransactionHistory";
             this.btnTransactionHistory.UseVisualStyleBackColor = false;
             this.btnTransactionHistory.Click += new System.EventHandler(this.buttonsSettings_Click);
+            this.btnTransactionHistory.MouseHover += new System.EventHandler(this.Controls_MouseHover);
             // 
             // btnUsersManager
             // 
@@ -2031,6 +2111,7 @@
             this.btnUsersManager.Tag = "UsersManager";
             this.btnUsersManager.UseVisualStyleBackColor = false;
             this.btnUsersManager.Click += new System.EventHandler(this.buttonsSettings_Click);
+            this.btnUsersManager.MouseHover += new System.EventHandler(this.Controls_MouseHover);
             // 
             // btnProductsManager
             // 
@@ -2048,6 +2129,7 @@
             this.btnProductsManager.Tag = "ProductsManager";
             this.btnProductsManager.UseVisualStyleBackColor = false;
             this.btnProductsManager.Click += new System.EventHandler(this.buttonsSettings_Click);
+            this.btnProductsManager.MouseHover += new System.EventHandler(this.Controls_MouseHover);
             // 
             // frmMain
             // 
@@ -2056,6 +2138,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(1532, 989);
             this.ControlBox = false;
+            this.Controls.Add(this.btnClearOrders);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblDate);
@@ -2231,6 +2314,12 @@
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Button btnClearOrders;
+        private System.Windows.Forms.Button btnCash;
+        private System.Windows.Forms.Label txtDiscount;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
 
     }
 }

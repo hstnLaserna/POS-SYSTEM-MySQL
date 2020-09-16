@@ -120,10 +120,7 @@ namespace POS_SYSTEM
         {
             if (btnUpdate.Text == "UPDATE")
             {
-                if (txtProductName.TextLength >= 4 &&
-                    Convert.ToDouble(txtPrice1.Text) < Convert.ToDouble(txtPrice2.Text) &&
-                    Convert.ToDouble(txtPrice2.Text) < Convert.ToDouble(txtPrice3.Text) &&
-                    Convert.ToDouble(txtPrice1.Text) < Convert.ToDouble(txtPrice3.Text))
+                if (txtProductName.TextLength >= 4)
                 {
                     var exists = dgvProducts.Rows.Cast<DataGridViewRow>()
                                  .Where(row => !row.IsNewRow)
@@ -218,10 +215,7 @@ namespace POS_SYSTEM
 
             else
             {
-                if (txtProductName.TextLength >= 4 &&
-                    Convert.ToDouble(txtPrice1.Text) < Convert.ToDouble(txtPrice2.Text) &&
-                    Convert.ToDouble(txtPrice2.Text) < Convert.ToDouble(txtPrice3.Text) &&
-                    Convert.ToDouble(txtPrice1.Text) < Convert.ToDouble(txtPrice3.Text))
+                if (txtProductName.TextLength >= 4)
                 {
                     using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.connectionString))
                     {

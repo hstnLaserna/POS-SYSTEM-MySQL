@@ -241,6 +241,8 @@ namespace POS_SYSTEM
             txtAnswer2.ResetText();
             chkEnabled.Checked = true;
             radCashier.Checked = true;
+            radCashier.Enabled = true;
+            radAdmin.Enabled = true;
             selectedID = 0;
             btnUpdate.Enabled = false;
             openDB();
@@ -252,10 +254,11 @@ namespace POS_SYSTEM
                 try
                 {
                     connection.Open();
-                    mySqlDataAdapter = new MySqlDataAdapter("SELECT loginid 'UserID', username 'Username', firstname 'First Name', lastname 'Last Name', position 'Position', answer1 'Security 1', answer2 'Security 2', isEnabled, tempopw 'Tempo Pass' FROM " + DatabaseConnection.UsersTable + " WHERE POSITION = 'admin' or POSITION = 'cashier';", connection);
+                    mySqlDataAdapter = new MySqlDataAdapter("SELECT loginid 'UserID', username 'Username', firstname 'First Name', lastname 'Last Name', position 'Position', answer1 'Security 1', answer2 'Security 2', isEnabled, tempopw 'Tempo Pass' FROM " + DatabaseConnection.UsersTable + " WHERE POSITION = 'admin' or POSITION = 'cashier' or POSITION = 'business admin';", connection);
                     DataSet DS = new DataSet();
                     mySqlDataAdapter.Fill(DS);
                     dgvUsers.DataSource = DS.Tables[0];
+ 
                 }
                 catch (Exception ex)
                 {
@@ -292,7 +295,9 @@ namespace POS_SYSTEM
                 //gets a collection that contains all the rows
                 DataGridViewRow row = this.dgvUsers.Rows[e.RowIndex];
 
-                //populate the textbox from specific value of the coordinates of column and row.
+                groupBox1.Enabled = true;
+                radAdmin.Enabled = true;
+                radCashier.Enabled = true;
                 selectedID = Convert.ToInt32(row.Cells[0].Value);
                 txtID.Text = selectedID.ToString();
                 txtUsername.Text = row.Cells[1].Value.ToString();
@@ -305,8 +310,6 @@ namespace POS_SYSTEM
 
                 switch (row.Cells[4].Value.ToString().ToLower())
                 {
-                    case "developer":
-                        break;
                     case "admin":
                         radAdmin.Checked = true;
                         radCashier.Checked = false;
@@ -316,10 +319,12 @@ namespace POS_SYSTEM
                         radCashier.Checked = true;
                         break;
                     default:
+                        radAdmin.Checked = false;
+                        radCashier.Checked = false;
                         break;
                 }
 
-                if(Convert.ToBoolean(row.Cells[7].Value) == true)
+                if (Convert.ToBoolean(row.Cells[7].Value) == true)
                 {
                     chkEnabled.Checked = true;
                 }
@@ -327,6 +332,26 @@ namespace POS_SYSTEM
                 {
                     chkEnabled.Checked = false;
                 }
+
+
+                //disable the groupbox if the logged in user is not super admin and the selected cell is super admin.
+                if (row.Cells[4].Value.ToString().ToLower() == "business admin")
+                {
+                    if(frmLogin.position.ToLower() == "business admin")
+                    {
+                        groupBox1.Enabled = true;
+                        txtFirstname.Enabled = true;
+                        radAdmin.Enabled = false;
+                        radCashier.Enabled = false;
+                        position = "Business Admin";
+                    }
+                    else
+                    {
+                        txtFirstname.Enabled = false;
+                        groupBox1.Enabled = false;
+                    }
+                }
+
             }
         }
 
